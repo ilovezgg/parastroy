@@ -1,0 +1,47 @@
+.flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.flow .s {
+  padding: 24px 20px 26px;
+  border-radius: var(--r-m);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.flow .s u {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ochre);
+  text-decoration: none;
+}
+
+.flow .s h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 16px 0 8px;
+}
+
+.flow .s p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.flow .s .when {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+}
+
+@media (max-width: 1180px) {
+  .flow { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 680px) {
+  .flow { grid-template-columns: 1fr; }
+}
