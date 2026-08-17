@@ -8,14 +8,14 @@ import Gallery from './components/Gallery/Gallery';
 import Delivery from './components/Delivery/Delivery';
 import FAQ from './components/FAQ/FAQ';
 import Footer from './components/Footer/Footer';
-
+import AssemblyScroll from './components/AssemblyScroll/AssemblyScroll'
 export default function Landing(){
   return (
     <div className="shell">
       <Header />
       <Hero />
       
-   
+    <AssemblyScroll/>
       <Products/>
          <Models />
       <Gallery />
