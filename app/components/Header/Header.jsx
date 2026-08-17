@@ -5,12 +5,11 @@ export default function Header(){
   return (
     <div className="topbar">
       <div className="brand">
-        <svg width="46" height="22" viewBox="0 0 46 22" fill="none">
-          <path d="M2 20V8l10-6 10 6v12" stroke="#0F1614" strokeWidth="1.3"/>
-          <path d="M24 20V11l10-5 10 5v9" stroke="#1E5A47" strokeWidth="1.3"/>
-        </svg>
-        <b>СЕВЕРМОДУЛЬ</b>
-        <span>бытовки и блок-контейнеры</span>
+        <img src="/para_modul_logo.png" alt="ПАРА МОДУЛЬ" className="brand-logo" />
+        <div className="brand-text">
+          <b>ПАРА | МОДУЛЬ</b>
+          <span>бытовки и блок-контейнеры</span>
+        </div>
       </div>
 
       <nav className="nav">

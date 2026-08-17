@@ -7,21 +7,38 @@
   padding: 22px 26px;
 }
 
+
 .brand {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
-  min-width: 160px;
+  flex-direction: row;
+  align-items: center;
+  min-width: 240px;
 }
 
-.brand b {
+.brand-logo {
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+  display: block;
+  flex: none;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand-text b {
   font-family: var(--font-unbounded);
   font-weight: 500;
   font-size: 12.5px;
   letter-spacing: 0.22em;
+  line-height: 1;
 }
 
-.brand span {
+.brand-text span {
+  font-family: var(--font-golos);
   font-size: 9.5px;
   letter-spacing: 0.24em;
   color: var(--muted);
@@ -101,7 +118,7 @@
   background: var(--accent);
   display: grid;
   place-items: center;
-  box-shadow: 0 6px 16px rgba(30, 90, 71, 0.28);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.28);
 }
 
 .phone b {
@@ -109,19 +126,7 @@
   font-size: 15px;
   white-space: nowrap;
 }
-.cta span{
-  font-family: var(--font-golos);
-  font-weight: 500;
-}
-.step u{
-  font-family: var(--font-mono);
-}
-.step b{
-  font-family: var(--font-golos);
-}
-.model-head .t, .model-head .c{
-  font-family: var(--font-mono);
-}
+
 @media (max-width: 1180px) {
   .nav { display: none; }
 }
@@ -129,4 +134,5 @@
 @media (max-width: 680px) {
   .topbar { padding: 16px; }
   .acts .btn-light { display: none; }
+  .brand-logo { width: 44px; height: 44px; }
 }

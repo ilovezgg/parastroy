@@ -2,6 +2,8 @@
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Models from './components/Models/Models';
+import Products from './components/Products/Products';
+
 import Gallery from './components/Gallery/Gallery';
 import Delivery from './components/Delivery/Delivery';
 import FAQ from './components/FAQ/FAQ';
@@ -12,7 +14,10 @@ export default function Landing(){
     <div className="shell">
       <Header />
       <Hero />
-      <Models />
+      
+   
+      <Products/>
+         <Models />
       <Gallery />
       <Delivery />
       <FAQ />
