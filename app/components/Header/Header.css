@@ -7,7 +7,6 @@
   padding: 22px 26px;
 }
 
-
 .brand {
   display: flex;
   flex-direction: row;
@@ -48,7 +47,7 @@
 .nav {
   margin: 0 auto;
   display: flex;
-  gap: 6px;
+  gap: 2px;
   padding: 6px;
   background: var(--glass);
   border: 1px solid rgba(255, 255, 255, 0.85);
@@ -59,12 +58,13 @@
 }
 
 .nav a {
-  padding: 11px 20px;
+  padding: 11px 18px;
   border-radius: 999px;
   font-size: 14px;
   color: #3A4642;
   text-decoration: none;
   transition: 0.25s;
+  white-space: nowrap;
 }
 
 .nav a:hover {
@@ -109,22 +109,35 @@
   background: var(--glass);
   border: 1px solid rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(18px);
+  text-decoration: none;
+  color: var(--ink);
 }
 
 .phone i {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--accent);
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--ink);
   display: grid;
   place-items: center;
-  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.28);
+  flex: none;
+}
+
+.phone i svg{
+  width: 18px;
+  height: 18px;
 }
 
 .phone b {
   font-weight: 500;
   font-size: 15px;
   white-space: nowrap;
+}
+
+@media (max-width: 1280px) {
+  .nav a{ padding: 11px 14px; font-size: 13px; }
 }
 
 @media (max-width: 1180px) {

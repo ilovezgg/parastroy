@@ -36,7 +36,7 @@ const data = [
 export default function Products(){
   const [active, setActive] = useState(0);
   return (
-    <section id="products">
+    <section id="products" className="products-sec">
       <div className="sec-head">
         <h2>Продукция <em>завода</em></h2>
         <p>Веди мышкой по блокам — они разъезжаются как контейнеры на площадке. 3 типа, все в наличии в Пестово.</p>
@@ -53,20 +53,25 @@ export default function Products(){
             viewport={{ once: true }}
             transition={{ delay: i*0.1, duration: .7, ease:[0.16,1,0.3,1] }}
           >
-            <div className="rail-bg"><img src={p.img} alt={p.title}/></div>
+            <div className="rail-bg">
+              <img src={p.img} alt={p.title}/>
+            </div>
+
             <div className="rail-wm">{p.id}</div>
             
             <div className="rail-top">
-              <span className="mono rail-id">{p.id} / {p.sub}</span>
-              <span className="rail-accent">{p.accent}</span>
+              <span className="rail-id">{p.id} / {p.sub}</span>
             </div>
 
             <div className="rail-bottom">
-              <div className="rail-titles">
+              <div className="rail-headline">
                 <h3>{p.title}</h3>
-                <span className="rail-price mono">{p.price}</span>
+                <span className="rail-accent">{p.accent}</span>
               </div>
+
+              <span className="rail-price">{p.price}</span>
               <p className="rail-desc">{p.desc}</p>
+
               <a href="#models" className="rail-btn">
                 <span>Подробнее</span>
                 <i>↗</i>
