@@ -1,0 +1,284 @@
+/* ================= СОЦСЕТИ =================
+   Шахматка: каждая вторая плитка тёмная, снизу темная полоса
+   с прямой связью. Ширину секция не задаёт — она внутри .shell.
+   Переменные из globals.css:
+   --ink --muted --line --ochre --accent --r-xl --r-l --r-m
+   =========================================== */
+
+.socials {
+  padding: 104px 6px;
+}
+
+.socials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* ---------- плитка соцсети ---------- */
+.s-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 210px;
+  padding: 24px 24px 26px;
+  border-radius: var(--r-m);
+  text-decoration: none;
+  color: var(--ink);
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 12px 34px rgba(15, 22, 20, 0.05);
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+/* подсветка на ховере */
+.s-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(199, 130, 43, 0.1), rgba(30, 90, 71, 0.08));
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+.s-card:hover {
+  border-color: rgba(199, 130, 43, 0.5);
+  box-shadow: 0 22px 50px rgba(15, 22, 20, 0.1);
+}
+.s-card:hover::after {
+  opacity: 1;
+}
+
+.s-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 34px;
+}
+.s-top span {
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ochre);
+}
+.s-meta {
+  color: var(--muted);
+}
+
+.s-card h3 {
+  position: relative;
+  margin: 0 0 8px;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.s-card p {
+  position: relative;
+  margin: auto 0 0;
+  padding-right: 46px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 26ch;
+}
+
+.s-arrow {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--line);
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+.s-arrow svg {
+  width: 16px;
+  height: 16px;
+}
+.s-card:hover .s-arrow {
+  background: var(--ink);
+  color: #f4f6f3;
+  transform: translate(2px, -2px);
+}
+
+/* ---------- тёмные плитки (шахматка) ---------- */
+.s-card:not(.s-manager):nth-child(2n) {
+  color: #eff3f0;
+  border-color: transparent;
+  background: linear-gradient(155deg, #1b2723, #0d1412);
+}
+.s-card:not(.s-manager):nth-child(2n) h3 {
+  color: #f4f7f4;
+}
+.s-card:not(.s-manager):nth-child(2n) p,
+.s-card:not(.s-manager):nth-child(2n) .s-meta {
+  color: #8e9c96;
+}
+.s-card:not(.s-manager):nth-child(2n)::after {
+  background: linear-gradient(160deg, rgba(199, 130, 43, 0.22), transparent 65%);
+}
+.s-card:not(.s-manager):nth-child(2n):hover {
+  border-color: rgba(199, 130, 43, 0.55);
+}
+.s-card:not(.s-manager):nth-child(2n) .s-arrow {
+  color: #eff3f0;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.s-card:not(.s-manager):nth-child(2n):hover .s-arrow {
+  background: #f4f6f3;
+  color: #0f1614;
+}
+
+/* ---------- менеджер — теперь темный как 3 кнопки ---------- */
+.s-manager {
+  grid-column: span 3;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  min-height: 0;
+  padding: 32px 38px;
+  border-radius: var(--r-l);
+  color: #eff3f0;
+  background: linear-gradient(155deg, #1b2723, #0d1412);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 16px 40px rgba(15, 22, 20, 0.18);
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.s-manager::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(199, 130, 43, 0.22), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+.s-manager:hover {
+  border-color: rgba(199, 130, 43, 0.55);
+  box-shadow: 0 22px 50px rgba(15, 22, 20, 0.25);
+}
+.s-manager:hover::after {
+  opacity: 1;
+}
+.s-manager > div {
+  position: relative;
+  max-width: 56ch;
+}
+.s-manager span.mono {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ochre);
+}
+.s-manager h3 {
+  position: relative;
+  margin: 0 0 10px;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 200;
+  font-size: clamp(20px, 2vw, 28px);
+  color: #f4f7f4;
+  line-height: 1.2;
+}
+.s-manager p {
+  position: relative;
+  margin: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #8e9c96;
+}
+
+.s-manager-btn {
+  position: relative;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 26px;
+  border-radius: 999px;
+  background: #f4f6f3;
+  color: #0f1614;
+  font-weight: 500;
+  font-size: 14.5px;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.s-manager-btn i {
+  display: grid;
+  place-items: center;
+  transition: transform 0.25s;
+}
+.s-manager-btn svg {
+  width: 18px;
+  height: 18px;
+}
+.s-manager:hover .s-manager-btn {
+  box-shadow: 0 14px 30px rgba(244, 246, 243, 0.18);
+}
+.s-manager:hover .s-manager-btn i {
+  transform: translateX(4px);
+}
+
+/* ---------- адаптив ---------- */
+@media (max-width: 1180px) {
+  .socials-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .s-manager {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 680px) {
+  .socials {
+    padding: 64px 4px;
+  }
+  .socials-grid {
+    grid-template-columns: 1fr;
+  }
+  .s-card {
+    min-height: 0;
+    padding: 20px 20px 22px;
+  }
+  .s-top {
+    margin-bottom: 26px;
+  }
+  .s-card p {
+    margin-top: 14px;
+  }
+  .s-arrow {
+    right: 18px;
+    bottom: 18px;
+    width: 34px;
+    height: 34px;
+  }
+  .s-manager {
+    grid-column: span 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    padding: 24px 20px;
+  }
+  .s-manager p {
+    margin-top: 0;
+  }
+  .s-manager-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
