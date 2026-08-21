@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=Unbounded:wght@300;600&family=IBM+Plex+Mono:wght@400&display=swap');
+
+.uni-wrap{background:#EDECE6; min-height:100vh; padding:32px; font-family:Manrope,sans-serif}
+.uni-header{background:#fff; border:1px solid #E8E3D9; border-radius:24px; padding:32px 36px 28px; margin:0 auto 20px; max-width:1320px}
+.uni-header.top{display:flex; justify-content:space-between; align-items:center; margin-bottom:16px}
+.uni-pill{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; border:1px solid #E8E3D9; background:#F6F3EE; border-radius:100px; padding:6px 12px; display:inline-flex; gap:6px; align-items:center}
+.uni-pill.dot{color:#C58A4A}
+.step{font-family:'IBM Plex Mono',monospace; font-size:11px; color:#A07B4F}
+.uni-header h1{font-family:Unbounded,sans-serif; font-weight:300; font-size:clamp(22px,2.4vw,36px); line-height:.95; margin:0; color:#121212}
+.uni-header h1 b{font-weight:600; color:#A07B4F}
+.progress{height:2px; background:#E8E3D9; margin-top:20px; border-radius:10px; overflow:hidden}
+.progress div{height:100%; background:#121212; transition:width.4s ease}
+
+.uni-card,.uni-black-card{background:#fff; border:1px solid #E8E3D9; border-radius:24px; padding:32px 36px; box-shadow:0 8px 30px rgba(0,0,0,.06); max-width:1320px; margin:0 auto}
+.uni-black-card{background:#121212; color:#fff; border-color:#121212}
+
+.q-head{display:flex; justify-content:space-between; gap:12px; margin-bottom:22px}
+.q-head h2{font-family:Unbounded,sans-serif; font-size:26px; font-weight:400; margin:0; color:#121212}
+.q-head.num{font-family:'IBM Plex Mono',monospace; font-size:11px; color:#A07B4F; flex:0 0 auto}
+
+.grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.opt{border:1.5px solid #E8E3D9; border-radius:18px; padding:20px 22px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; background:#fff; transition:.2s; min-height:68px}
+.opt:hover{border-color:#121212}
+.opt.sel{background:#121212; color:#fff; border-color:#121212}
+.meta{font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.08em; color:#A09B93; margin-bottom:6px; text-transform:uppercase}
+.label{font-size:16px; line-height:1.2; font-weight:500}
+.check{width:24px; height:24px; border-radius:100px; border:1.5px solid #E8E3D9; flex:0 0 24px; display:grid; place-items:center}
+.opt.sel.check{background:#C58A4A; border-color:#C58A4A}
+.opt.sel.check::after{content:'✓'; font-size:12px; color:#fff}
+
+.sec{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#A07B4F; margin:22px 0 12px}
+
+.nav{display:flex; justify-content:space-between; margin-top:28px; gap:12px}
+.nav.single{justify-content:flex-start}
+.back{height:56px; padding:0 24px; border-radius:100px; border:1px solid #E8E3D9; background:#fff; cursor:pointer}
+.back:disabled{opacity:.4; pointer-events:none}
+
+.btn-black{height:56px; padding:0 8px 0 24px; border-radius:100px; background:#121212; color:#fff; border:0; display:inline-flex; align-items:center; gap:14px; font-weight:600; cursor:pointer}
+.btn-black:disabled{opacity:.35; pointer-events:none}
+.btn-white{height:64px; padding:0 10px 0 28px; border-radius:100px; background:#fff; color:#121212; border:0; display:inline-flex; align-items:center; gap:16px; font-weight:600; cursor:pointer; font-size:15px}
+.circle{width:36px; height:36px; border-radius:100px; background:#C58A4A; display:grid; place-items:center; color:#fff; flex:0 0 36px}
+.btn-white.circle{width:44px; height:44px; flex:0 0 44px}
+
+.bonus-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:0 0 28px}
+.bonus{background:#1E1E1E; border:1px solid #2A2A2A; border-radius:14px; padding:0 18px; font-size:15px; display:flex; gap:12px; align-items:center; color:#fff; height:56px}
+.bonus i{width:24px; height:24px; background:#C58A4A; border-radius:100px; display:grid; place-items:center; font-style:normal; font-size:11px; color:#fff; flex:0 0 24px}
+
+.form-row{display:flex; gap:14px; margin-top:6px}
+.uni-input{flex:1; height:52px; border-radius:100px; border:1px solid #2A2A2A; background:#1E1E1E; color:#fff; padding:0 18px; font-size:15px}
+.uni-input.light{height:64px; background:#fff; color:#121212; border-color:#fff; font-size:16px; padding:0 24px}
+.uni-input.light::placeholder{color:#9A9A9A}
+.small{margin-top:16px; font-family:'IBM Plex Mono'; font-size:10px; color:#6B6B6B}
+
+.thanks{text-align:center; padding:20px 0}
+.thanks h3{font-family:Unbounded; font-size:26px; margin:16px 0 8px}
+
+@media(max-width:860px){.grid,.bonus-grid{grid-template-columns:1fr}.uni-wrap{padding:16px}.uni-header,.uni-card,.uni-black-card{padding:24px}.q-head h2{font-size:22px}.form-row{flex-direction:column}}

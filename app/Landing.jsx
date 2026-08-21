@@ -10,6 +10,7 @@ import FAQ from './components/FAQ/FAQ';
 import Footer from './components/Footer/Footer';
 import AssemblyScroll from './components/AssemblyScroll/AssemblyScroll'
 import Socials from './components/Socials/Socials'
+import Quiz from './components/Quiz/Quiz'
 import Contacts from './components/Contacts/Contacts'
 export default function Landing(){
   return (
@@ -24,7 +25,7 @@ export default function Landing(){
       <About/>
        <FAQ />
        <Socials/>
-
+<Quiz/>
     <AssemblyScroll/>
      
          
