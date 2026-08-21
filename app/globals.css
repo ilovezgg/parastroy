@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -17,6 +17,11 @@
   --r-xl:36px;
   --r-l:24px;
   --r-m:16px;
+
+  /* вот это добавь — ничего больше не меняй */
+  --font-unbounded: "Unbounded", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-golos: "Golos Text", system-ui, sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}

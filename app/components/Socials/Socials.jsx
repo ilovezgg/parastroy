@@ -36,7 +36,7 @@ export default function Socials() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.h2 variants={rise}>
-          Мы, <em>в соцсетях</em>
+          Мы <em>в соцсетях</em>
         </motion.h2>
         <motion.p variants={rise}>
           Каждый день фото и видео с цеха в Пестово. Без монтажа, как есть.
