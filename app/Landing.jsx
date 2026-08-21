@@ -10,11 +10,13 @@ import FAQ from './components/FAQ/FAQ';
 import Footer from './components/Footer/Footer';
 import AssemblyScroll from './components/AssemblyScroll/AssemblyScroll'
 import Socials from './components/Socials/Socials'
+import Contacts from './components/Contacts/Contacts'
 export default function Landing(){
   return (
     <div className="shell">
       <Header />
       <Hero />
+    
        <Products/>
        <Models />
        <Gallery/>
@@ -22,11 +24,12 @@ export default function Landing(){
       <About/>
        <FAQ />
        <Socials/>
+
     <AssemblyScroll/>
      
          
     
-     
+       <Contacts/>
       <Footer />
     </div>
   )
