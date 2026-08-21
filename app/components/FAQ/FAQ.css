@@ -1,40 +1,278 @@
+/* ================= FAQ =================
+   Всё вложено в .faq — секция ничего не ломает снаружи.
+   Переменные из globals.css:
+   --ink --muted --line --ochre --accent --r-xl --r-l --r-m
+   ======================================= */
+
+.faq {
+  --edge: rgba(255, 255, 255, 0.9);
+  padding: 104px 6px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ---------- левая колонка ---------- */
+.faq-aside {
+  position: sticky;
+  top: 32px;
+}
+.faq-aside h2 {
+  margin: 0 0 14px;
+  max-width: 14ch;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 200;
+  font-size: clamp(26px, 2.7vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.faq-aside h2 em {
+  font-style: normal;
+  font-weight: 500;
+}
+.faq-aside > p {
+  margin: 0 0 28px;
+  max-width: 32ch;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* фильтр по темам */
+.faq-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.faq-tabs button {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.6);
+  font: inherit;
+  font-size: 12.5px;
+  color: var(--ink);
+  cursor: pointer;
+  transition: 0.25s;
+}
+.faq-tabs button:hover {
+  border-color: var(--ochre);
+}
+.faq-tabs button.on {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #f4f6f3;
+}
+
+/* карточка «спросить» */
+.faq-ask {
+  position: relative;
+  display: block;
+  padding: 22px 60px 24px 24px;
+  border-radius: var(--r-l);
+  text-decoration: none;
+  color: #eff3f0;
+  background: radial-gradient(80% 140% at 88% 8%, rgba(199, 130, 43, 0.24), transparent 60%),
+    linear-gradient(150deg, #1b2723, #0d1412);
+  transition: transform 0.3s;
+}
+.faq-ask:hover {
+  transform: translateY(-3px);
+}
+.faq-ask span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ochre);
+}
+.faq-ask b {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+.faq-ask i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.25s, color 0.25s;
+}
+.faq-ask i svg {
+  width: 16px;
+  height: 16px;
+}
+.faq-ask:hover i {
+  background: #f4f6f3;
+  color: #0f1614;
+}
+
+/* ---------- список ---------- */
 .faq-list {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .faq-item {
   border-radius: var(--r-l);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  background: linear-gradient(170deg, rgba(255,255,255,.9), rgba(255,255,255,.6));
+  border: 1px solid var(--edge);
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.58));
+  box-shadow: 0 10px 30px rgba(15, 22, 20, 0.04);
   overflow: hidden;
-  box-shadow: 0 14px 40px rgba(15, 22, 20, 0.06);
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
 }
-#faq .sec-head h2{
-  font-family: var(--font-unbounded);
-  font-weight: 200;
+.faq-item:hover {
+  border-color: rgba(199, 130, 43, 0.45);
 }
-.faq-item button b{
-  font-family: var(--font-golos);
-  font-weight: 500;
+.faq-item.open {
+  background: linear-gradient(170deg, #ffffff, rgba(255, 255, 255, 0.82));
+  border-color: rgba(199, 130, 43, 0.55);
+  box-shadow: 0 20px 46px rgba(15, 22, 20, 0.09);
 }
+
 .faq-item button {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 22px 26px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 24px;
   background: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
-  font-size: 15px;
+  font: inherit;
+}
+.faq-item button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -4px;
+  border-radius: var(--r-l);
+}
+.faq-n {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  transition: color 0.25s;
+}
+.faq-item.open .faq-n {
+  color: var(--ochre);
+}
+.faq-item button b {
   font-weight: 500;
+  font-size: 15.5px;
+  line-height: 1.35;
+  color: var(--ink);
 }
 
-.faq-item .answer {
-  padding: 0 26px 22px;
-  color: var(--muted);
+/* плюс, который превращается в минус */
+.faq-sign {
+  position: relative;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+  transition: background 0.3s, border-color 0.3s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-sign i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 13px;
+  height: 1.5px;
+  background: var(--ink);
+  transform: translate(-50%, -50%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s;
+}
+.faq-sign i:last-child {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.faq-item.open .faq-sign {
+  background: var(--ink);
+  border-color: var(--ink);
+  transform: rotate(180deg);
+}
+.faq-item.open .faq-sign i {
+  background: #f4f6f3;
+}
+.faq-item.open .faq-sign i:last-child {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* ---------- ответ ---------- */
+.faq-answer {
+  padding: 0 24px 24px 74px;
+}
+.faq-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ochre);
+  background: rgba(199, 130, 43, 0.12);
+}
+.faq-answer p {
+  margin: 0;
+  max-width: 68ch;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* ---------- адаптив ---------- */
+@media (max-width: 1180px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .faq-aside {
+    position: static;
+  }
+  .faq-aside h2 {
+    max-width: none;
+  }
+  .faq-ask {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 680px) {
+  .faq {
+    padding: 64px 4px;
+  }
+  .faq-item button {
+    gap: 12px;
+    padding: 18px 18px;
+  }
+  .faq-item button b {
+    font-size: 14.5px;
+  }
+  .faq-n {
+    display: none;
+  }
+  .faq-answer {
+    padding: 0 18px 20px;
+  }
+  .faq-ask {
+    max-width: none;
+  }
 }
