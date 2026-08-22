@@ -12,7 +12,6 @@ import AssemblyScroll from './components/AssemblyScroll/AssemblyScroll'
 import Socials from './components/Socials/Socials'
 import Quiz from './components/Quiz/Quiz'
 import Contacts from './components/Contacts/Contacts'
-import Floating from './components/Floating/Floating'
 export default function Landing(){
   return (
     <div className="shell">
@@ -25,7 +24,6 @@ export default function Landing(){
        <Delivery/>
       <About/>
        <FAQ />
-       <Floating/>
        <Socials/>
 <Quiz/>
 
