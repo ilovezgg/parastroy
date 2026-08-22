@@ -22,33 +22,12 @@ const CO = {
 };
 
 const NAV = [
-  {
-    title: "Продукция",
-    links: [
-      ["Бытовки Б-01", "#models"],
-      ["Блок-контейнеры", "#lineup"],
-      ["Модульные здания", "#lineup"],
-      ["Опции и комплектация", "#options"],
-    ],
-  },
-  {
-    title: "Покупателю",
-    links: [
-      ["Характеристики", "#spec"],
-      ["Цены и доставка", "#delivery"],
-      ["Фото с площадки", "#gallery"],
-      ["Вопросы и ответы", "#faq"],
-    ],
-  },
-  {
-    title: "Компания",
-    links: [
-      ["О заводе", "#about"],
-      ["Соцсети", "#socials"],
-      ["Тендеры и госконтракты", "#contacts"],
-      ["Контакты", "#contacts"],
-    ],
-  },
+  ["Главная", "#top"],
+  ["Продукция", "#lineup"],
+  ["Галерея", "#gallery"],
+  ["Вопросы", "#faq"],
+  ["Контакты", "#contacts"],
+  ["Соцсети", "#socials"],
 ];
 
 export default function Footer() {
@@ -95,7 +74,6 @@ export default function Footer() {
 
   return (
     <section id="contact" className="calc-sec">
-      {/* ---------- призыв ---------- */}
       <motion.div
         className="free-final"
         variants={grid}
@@ -213,18 +191,14 @@ export default function Footer() {
           </div>
 
           <nav className="f-nav">
-            {NAV.map((col) => (
-              <div key={col.title}>
-                <h4 className="mono">{col.title}</h4>
-                <ul>
-                  {col.links.map(([label, href]) => (
-                    <li key={label}>
-                      <a href={href}>{label}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <h4 className="mono">Разделы сайта</h4>
+            <div className="f-links">
+              {NAV.map(([label, href]) => (
+                <a key={label} href={href}>
+                  {label}
+                </a>
+              ))}
+            </div>
           </nav>
         </div>
 
