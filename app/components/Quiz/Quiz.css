@@ -1,57 +1,428 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=Unbounded:wght@300;600&family=IBM+Plex+Mono:wght@400&display=swap');
+/* ================= КВИЗ =================
+   Всё вложено в .quiz — секция ничего не ломает снаружи.
+   Переменные и шрифты берём из globals.css:
+   --ink --muted --line --ochre --accent --r-xl --r-l --r-m
+   ======================================== */
 
-.uni-wrap{background:#EDECE6; min-height:100vh; padding:32px; font-family:Manrope,sans-serif}
-.uni-header{background:#fff; border:1px solid #E8E3D9; border-radius:24px; padding:32px 36px 28px; margin:0 auto 20px; max-width:1320px}
-.uni-header.top{display:flex; justify-content:space-between; align-items:center; margin-bottom:16px}
-.uni-pill{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; border:1px solid #E8E3D9; background:#F6F3EE; border-radius:100px; padding:6px 12px; display:inline-flex; gap:6px; align-items:center}
-.uni-pill.dot{color:#C58A4A}
-.step{font-family:'IBM Plex Mono',monospace; font-size:11px; color:#A07B4F}
-.uni-header h1{font-family:Unbounded,sans-serif; font-weight:300; font-size:clamp(22px,2.4vw,36px); line-height:.95; margin:0; color:#121212}
-.uni-header h1 b{font-weight:600; color:#A07B4F}
-.progress{height:2px; background:#E8E3D9; margin-top:20px; border-radius:10px; overflow:hidden}
-.progress div{height:100%; background:#121212; transition:width.4s ease}
+.quiz {
+  --edge: rgba(255, 255, 255, 0.9);
+  --surface: linear-gradient(170deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.62));
+  padding: 104px 6px;
+}
 
-.uni-card,.uni-black-card{background:#fff; border:1px solid #E8E3D9; border-radius:24px; padding:32px 36px; box-shadow:0 8px 30px rgba(0,0,0,.06); max-width:1320px; margin:0 auto}
-.uni-black-card{background:#121212; color:#fff; border-color:#121212}
+/* ---------- шапка ---------- */
+.q-header {
+  padding: 30px 34px 26px;
+  margin-bottom: 14px;
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  border: 1px solid var(--edge);
+  box-shadow: 0 14px 40px rgba(15, 22, 20, 0.06);
+}
+.q-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.q-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #3e4a45;
+}
+.q-pill s {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ochre);
+  text-decoration: none;
+}
+.q-step {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.q-header h2 {
+  margin: 0;
+  max-width: 26ch;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 200;
+  font-size: clamp(22px, 2.4vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.q-header h2 em {
+  font-style: normal;
+  font-weight: 500;
+}
+.q-progress {
+  height: 3px;
+  margin-top: 22px;
+  border-radius: 999px;
+  background: rgba(15, 22, 20, 0.1);
+  overflow: hidden;
+}
+.q-progress span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--ochre);
+}
 
-.q-head{display:flex; justify-content:space-between; gap:12px; margin-bottom:22px}
-.q-head h2{font-family:Unbounded,sans-serif; font-size:26px; font-weight:400; margin:0; color:#121212}
-.q-head.num{font-family:'IBM Plex Mono',monospace; font-size:11px; color:#A07B4F; flex:0 0 auto}
+/* ---------- карточка шага ---------- */
+.q-card {
+  padding: 32px 34px 30px;
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  border: 1px solid var(--edge);
+  box-shadow: 0 14px 40px rgba(15, 22, 20, 0.06);
+}
+.q-card.dark {
+  color: #eff3f0;
+  border-color: transparent;
+  background: radial-gradient(80% 140% at 88% 8%, rgba(199, 130, 43, 0.22), transparent 60%),
+    linear-gradient(150deg, #16221e, #0d1412);
+}
 
-.grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
-.opt{border:1.5px solid #E8E3D9; border-radius:18px; padding:20px 22px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; background:#fff; transition:.2s; min-height:68px}
-.opt:hover{border-color:#121212}
-.opt.sel{background:#121212; color:#fff; border-color:#121212}
-.meta{font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.08em; color:#A09B93; margin-bottom:6px; text-transform:uppercase}
-.label{font-size:16px; line-height:1.2; font-weight:500}
-.check{width:24px; height:24px; border-radius:100px; border:1.5px solid #E8E3D9; flex:0 0 24px; display:grid; place-items:center}
-.opt.sel.check{background:#C58A4A; border-color:#C58A4A}
-.opt.sel.check::after{content:'✓'; font-size:12px; color:#fff}
+.q-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.q-question h3 {
+  margin: 0;
+  max-width: 30ch;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  font-size: clamp(19px, 1.9vw, 26px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.q-question span {
+  flex: none;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--ochre);
+}
 
-.sec{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#A07B4F; margin:22px 0 12px}
+/* ---------- варианты ---------- */
+.q-opts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.q-opts.tight {
+  margin-bottom: 4px;
+}
+.q-sub {
+  margin: 22px 0 12px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ochre);
+}
 
-.nav{display:flex; justify-content:space-between; margin-top:28px; gap:12px}
-.nav.single{justify-content:flex-start}
-.back{height:56px; padding:0 24px; border-radius:100px; border:1px solid #E8E3D9; background:#fff; cursor:pointer}
-.back:disabled{opacity:.4; pointer-events:none}
+.q-opt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 72px;
+  padding: 16px 20px;
+  border-radius: var(--r-l);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.62);
+  font: inherit;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s, color 0.25s;
+}
+.q-opt:hover {
+  border-color: var(--ochre);
+  transform: translateY(-2px);
+}
+.q-opt:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.q-opt.sel {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #f4f6f3;
+}
 
-.btn-black{height:56px; padding:0 8px 0 24px; border-radius:100px; background:#121212; color:#fff; border:0; display:inline-flex; align-items:center; gap:14px; font-weight:600; cursor:pointer}
-.btn-black:disabled{opacity:.35; pointer-events:none}
-.btn-white{height:64px; padding:0 10px 0 28px; border-radius:100px; background:#fff; color:#121212; border:0; display:inline-flex; align-items:center; gap:16px; font-weight:600; cursor:pointer; font-size:15px}
-.circle{width:36px; height:36px; border-radius:100px; background:#C58A4A; display:grid; place-items:center; color:#fff; flex:0 0 36px}
-.btn-white.circle{width:44px; height:44px; flex:0 0 44px}
+.q-meta {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.25s;
+}
+.q-opt.sel .q-meta {
+  color: #8e9c96;
+}
+.q-label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.25;
+}
 
-.bonus-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:0 0 28px}
-.bonus{background:#1E1E1E; border:1px solid #2A2A2A; border-radius:14px; padding:0 18px; font-size:15px; display:flex; gap:12px; align-items:center; color:#fff; height:56px}
-.bonus i{width:24px; height:24px; background:#C58A4A; border-radius:100px; display:grid; place-items:center; font-style:normal; font-size:11px; color:#fff; flex:0 0 24px}
+.q-check {
+  flex: none;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: rgba(255, 255, 255, 0.8);
+  transition: background 0.25s, border-color 0.25s;
+}
+.q-check::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 10px;
+  height: 5px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: translate(-50%, -50%) rotate(-45deg) scale(0.4);
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.q-opt.sel .q-check {
+  background: var(--ochre);
+  border-color: var(--ochre);
+}
+.q-opt.sel .q-check::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+}
 
-.form-row{display:flex; gap:14px; margin-top:6px}
-.uni-input{flex:1; height:52px; border-radius:100px; border:1px solid #2A2A2A; background:#1E1E1E; color:#fff; padding:0 18px; font-size:15px}
-.uni-input.light{height:64px; background:#fff; color:#121212; border-color:#fff; font-size:16px; padding:0 24px}
-.uni-input.light::placeholder{color:#9A9A9A}
-.small{margin-top:16px; font-family:'IBM Plex Mono'; font-size:10px; color:#6B6B6B}
+/* ---------- навигация ---------- */
+.q-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+.q-back,
+.q-next,
+.q-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: box-shadow 0.25s, opacity 0.25s, background 0.25s;
+}
+.q-back {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: inherit;
+}
+.q-back:hover:not(:disabled) {
+  border-color: var(--ink);
+}
+.q-next,
+.q-submit {
+  border: none;
+  background: var(--ink);
+  color: #f4f6f3;
+}
+.q-card.dark .q-back {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+.q-card.dark .q-back:hover:not(:disabled) {
+  border-color: #f4f6f3;
+}
+.q-card.dark .q-submit {
+  background: #f4f6f3;
+  color: #0f1614;
+}
+.q-next i,
+.q-submit i {
+  display: grid;
+  place-items: center;
+  transition: transform 0.25s;
+}
+.q-next svg,
+.q-submit svg {
+  width: 17px;
+  height: 17px;
+}
+.q-next:hover:not(:disabled) i,
+.q-submit:hover:not(:disabled) i {
+  transform: translateX(4px);
+}
+.q-submit:hover:not(:disabled) i {
+  transform: translate(2px, -2px);
+}
+.q-back:disabled,
+.q-next:disabled,
+.q-submit:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
 
-.thanks{text-align:center; padding:20px 0}
-.thanks h3{font-family:Unbounded; font-size:26px; margin:16px 0 8px}
+/* ---------- финальный шаг ---------- */
+.q-bonus {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+.q-bonus div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 58px;
+  padding: 0 20px;
+  border-radius: var(--r-m);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 14.5px;
+}
+.q-bonus i {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--ochre);
+  color: #0f1614;
+}
+.q-bonus svg {
+  width: 15px;
+  height: 15px;
+}
 
-@media(max-width:860px){.grid,.bonus-grid{grid-template-columns:1fr}.uni-wrap{padding:16px}.uni-header,.uni-card,.uni-black-card{padding:24px}.q-head h2{font-size:22px}.form-row{flex-direction:column}}
+.q-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.q-form input {
+  flex: 1 1 260px;
+  height: 56px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  font: inherit;
+  font-size: 15px;
+  color: #f1f4f1;
+}
+.q-form input::placeholder {
+  color: #8e9c96;
+}
+.q-form input:focus {
+  outline: none;
+  border-color: var(--ochre);
+}
+.q-form .q-submit {
+  height: 56px;
+  flex: none;
+}
+
+.q-small {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: #8e9c96;
+  max-width: 46ch;
+}
+.q-small.err {
+  color: #e5a06a;
+}
+
+/* ---------- благодарность ---------- */
+.q-thanks {
+  padding: 56px 44px;
+  text-align: center;
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  border: 1px solid var(--edge);
+  box-shadow: 0 14px 40px rgba(15, 22, 20, 0.06);
+}
+.q-thanks h2 {
+  margin: 22px auto 12px;
+  max-width: 22ch;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 200;
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+.q-thanks h2 em {
+  font-style: normal;
+  font-weight: 500;
+}
+.q-thanks p {
+  margin: 0 auto;
+  max-width: 48ch;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ---------- адаптив ---------- */
+@media (max-width: 900px) {
+  .q-opts,
+  .q-bonus {
+    grid-template-columns: 1fr;
+  }
+  .q-header,
+  .q-card {
+    padding: 24px 22px;
+  }
+  .q-question {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 680px) {
+  .quiz {
+    padding: 64px 4px;
+  }
+  .q-form .q-submit,
+  .q-form input {
+    width: 100%;
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+  .q-nav {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .q-nav .q-back,
+  .q-nav .q-next {
+    justify-content: center;
+  }
+}

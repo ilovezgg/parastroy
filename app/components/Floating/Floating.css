@@ -1,0 +1,259 @@
+/* ================= ПЛЫВУЩИЙ РЯД =================
+   Всё вложено в .floating — секция ничего не ломает снаружи.
+   Ряд выходит за пределы .shell на всю ширину экрана.
+   Переменные из globals.css:
+   --ink --muted --line --ochre --accent --r-xl --r-l --r-m
+   ================================================ */
+
+.floating {
+  --edge: rgba(255, 255, 255, 0.9);
+  padding: 104px 0;
+  overflow: hidden;
+}
+.floating .sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin: 0 6px 34px;
+  flex-wrap: wrap;
+}
+.floating .sec-head h2 {
+  margin: 0;
+  max-width: 18ch;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 200;
+  font-size: clamp(26px, 2.7vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.floating .sec-head h2 em {
+  font-style: normal;
+  font-weight: 500;
+}
+.floating .sec-head p {
+  margin: 0;
+  max-width: 34ch;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* ---------- лента ---------- */
+.fl-viewport {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 10px 0 24px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.fl-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  will-change: transform;
+}
+
+/* ---------- карточка: одна плитка, подпись внутри ---------- */
+.fl-card {
+  position: relative;
+  flex: none;
+  width: 380px;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: #dde1d9;
+  border: 1px solid var(--edge);
+  box-shadow: 0 18px 44px rgba(15, 22, 20, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s;
+}
+.fl-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(15, 22, 20, 0.16);
+}
+
+.fl-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* лёгкая тонировка: гасит пёстрые жёлто-синие фасады до палитры сайта */
+  filter: saturate(0.72) contrast(1.06) brightness(0.98);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s;
+}
+.fl-card:hover img {
+  transform: scale(1.05);
+  filter: saturate(0.92) contrast(1.04) brightness(1);
+}
+/* тёплая вуаль поверх фото + затемнение под плашку */
+.fl-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 42%, rgba(10, 16, 14, 0.62) 100%),
+    linear-gradient(140deg, rgba(30, 90, 71, 0.14), rgba(199, 130, 43, 0.12));
+}
+
+.fl-stock {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: 16px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #10201b;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--edge);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ---------- стеклянная плашка с подписью ---------- */
+.fl-plate {
+  position: absolute;
+  z-index: 2;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 16px 16px 20px;
+  border-radius: var(--r-l);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  transition: background 0.35s;
+}
+.fl-card:hover .fl-plate {
+  background: rgba(255, 255, 255, 0.94);
+}
+.fl-text {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.fl-title {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  flex-wrap: wrap;
+  font-family: "Unbounded", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.fl-kind {
+  font-weight: 200;
+  font-size: 17px;
+  color: var(--muted);
+}
+.fl-title b {
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--ink);
+}
+.fl-spec {
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.fl-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+}
+.fl-price {
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--ink);
+  background: rgba(199, 130, 43, 0.16);
+  border: 1px solid rgba(199, 130, 43, 0.34);
+  white-space: nowrap;
+}
+.fl-go {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+.fl-go svg {
+  width: 16px;
+  height: 16px;
+}
+.fl-card:hover .fl-go {
+  background: var(--ink);
+  color: #f4f6f3;
+  transform: translate(2px, -2px);
+}
+
+/* ---------- адаптив ---------- */
+@media (max-width: 1180px) {
+  .floating .sec-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .floating .sec-head p {
+    text-align: left;
+  }
+  .fl-card {
+    width: 330px;
+  }
+}
+
+@media (max-width: 680px) {
+  .floating {
+    padding: 64px 0;
+  }
+  .floating .sec-head {
+    margin: 0 4px 24px;
+  }
+  .fl-track {
+    gap: 12px;
+  }
+  .fl-card {
+    width: 270px;
+    border-radius: var(--r-l);
+  }
+  .fl-plate {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding: 12px 12px 12px 15px;
+    gap: 10px;
+  }
+  .fl-kind,
+  .fl-title b {
+    font-size: 15px;
+  }
+  .fl-price {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fl-viewport {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
