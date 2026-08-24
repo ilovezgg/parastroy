@@ -7,14 +7,15 @@ const EASE = [0.16, 1, 0.3, 1];
 const rise = { hidden: { opacity: 0, y: 28 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } } };
 const grid = { hidden: {}, show: { transition: { staggerChildren: 0.07 } } };
 
+/* TODO: реквизиты временные, заменить на реальные данные ПАРА | МОДУЛЬ */
 const FOUNDER = {
-  name: "Сергей Ковалёв",
+  name: "Сергей Ковалёв", // TODO: уточнить имя
   role: "основатель и директор завода",
   photo: "/founder.jpg",
-  since: "на производстве с 2011 года",
-  phone: "+7 (812) 250-10-25",
-  phoneHref: "+78122501025",
-  mail: "info@unistroy.pro",
+  since: "на производстве с 2011 года", // TODO: уточнить год
+  phone: "+7 (812) 250-10-25", // TODO: реальный телефон
+  phoneHref: "+78122501025", // TODO: реальный телефон
+  mail: "info@para-modul.ru", // TODO: реальный email
 };
 
 const PILLARS = [

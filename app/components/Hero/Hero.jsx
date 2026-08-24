@@ -21,7 +21,7 @@ export default function Hero(){
   const y = useTransform(scrollY, [0, 600], [0, -60]);
 
   return (
-    <motion.div className="hero" style={{ y }}>
+    <motion.div id="hero" className="hero" style={{ y }}>
       <div className="hero-grid">
         <div>
           <div className="eyebrow"><s></s>В НАЛИЧИИ 12 БЛОКОВ · ОТГРУЗКА ЗА 24 ЧАСА · -52 500 ₽ НА ДОСТАВКЕ</div>

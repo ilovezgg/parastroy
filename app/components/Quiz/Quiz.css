@@ -358,7 +358,7 @@
   max-width: 46ch;
 }
 .q-small.err {
-  color: #e5a06a;
+  color: var(--warn);
 }
 
 /* ---------- благодарность ---------- */

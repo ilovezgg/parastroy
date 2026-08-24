@@ -236,7 +236,7 @@
   color: #8e9c96;
 }
 .free-form small.err {
-  color: #e5a06a;
+  color: var(--warn);
 }
 
 /* ---------- футер ---------- */
@@ -382,6 +382,9 @@
   color: var(--ink);
   text-decoration: none;
   transition: border-color 0.25s;
+  background: none;
+  font: inherit;
+  cursor: pointer;
 }
 .f-up i {
   display: grid;

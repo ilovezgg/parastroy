@@ -1,0 +1,418 @@
+.cat-page {
+  padding: 104px 6px;
+}
+
+/* крошки */
+.cat-page .cat-crumbs {
+  margin: 0 0 40px;
+}
+
+.cat-page .cat-crumbs ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.cat-page .cat-crumbs li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cat-page .cat-crumbs li:not(:last-child)::after {
+  content: "/";
+  color: var(--muted);
+  opacity: .5;
+}
+
+.cat-page .cat-crumbs a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.cat-page .cat-crumbs a:hover {
+  color: var(--accent);
+}
+
+.cat-page .cat-crumbs li:last-child {
+  color: var(--ink);
+}
+
+/* верхний блок: фото + инфо */
+.cat-page .cat-hero {
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.cat-page .cat-photo {
+  position: relative;
+  min-height: 440px;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255,255,255,.7);
+  box-shadow: 0 30px 90px rgba(15,22,20,.10);
+  background:
+    radial-gradient(120% 90% at 82% 100%, rgba(199,130,43,.20), rgba(199,130,43,0) 55%),
+    radial-gradient(90% 70% at 8% 0%, rgba(30,90,71,.14), rgba(30,90,71,0) 60%),
+    linear-gradient(180deg, #F8F9F6 0%, #F0F2ED 42%, #E4E8E0 100%);
+  display: flex;
+  align-items: flex-end;
+}
+
+.cat-page .cat-photo-wm {
+  position: absolute;
+  top: 22px;
+  right: 30px;
+  font-family: var(--font-unbounded);
+  font-weight: 200;
+  font-size: clamp(64px, 9vw, 140px);
+  line-height: 1;
+  letter-spacing: -.03em;
+  color: rgba(15,22,20,.08);
+  pointer-events: none;
+}
+
+.cat-page .cat-photo-tag {
+  position: relative;
+  z-index: 1;
+  margin: 28px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.cat-page .cat-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.cat-page .cat-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ochre);
+  margin-bottom: 18px;
+}
+
+.cat-page .cat-info h1,
+.cat-page .cat-head h1 {
+  font-family: var(--font-unbounded);
+  font-weight: 200;
+  font-size: clamp(30px, 3.4vw, 50px);
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  margin: 0 0 18px;
+  max-width: 16ch;
+}
+
+.cat-page .cat-info h1 em,
+.cat-page .cat-head h1 em {
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* шапка списочных страниц (категория / тип) */
+.cat-page .cat-head {
+  margin-bottom: 56px;
+  max-width: 720px;
+}
+
+.cat-page .cat-head .cat-lede {
+  margin-bottom: 0;
+}
+
+.cat-page .cat-lede {
+  margin: 0 0 28px;
+  max-width: 46ch;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.cat-page .cat-price-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.cat-page .cat-price {
+  font-family: var(--font-unbounded);
+  font-weight: 300;
+  font-size: clamp(30px, 3.6vw, 46px);
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+.cat-page .cat-size {
+  display: inline-flex;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px dashed var(--line);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.cat-page .cat-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 8px 8px 26px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #F4F6F3;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.cat-page .cat-cta i {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--ochre);
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  transition: transform .25s, background .25s;
+}
+
+.cat-page .cat-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(15,22,20,.25);
+}
+
+.cat-page .cat-cta:hover i {
+  transform: rotate(45deg);
+  background: #F4F6F3;
+}
+
+/* характеристики */
+.cat-page .cat-specs {
+  padding: 40px 44px 44px;
+  border-radius: var(--r-xl);
+  background: linear-gradient(170deg, rgba(255,255,255,.9), rgba(255,255,255,.6));
+  border: 1px solid rgba(255,255,255,.9);
+  box-shadow: 0 14px 40px rgba(15,22,20,.06);
+  margin-bottom: 80px;
+}
+
+.cat-page .cat-specs-head {
+  margin-bottom: 28px;
+}
+
+.cat-page .cat-specs-head h2 {
+  font-family: var(--font-unbounded);
+  font-weight: 200;
+  font-size: clamp(22px, 2.4vw, 32px);
+  letter-spacing: -.02em;
+  margin: 0;
+}
+
+.cat-page .cat-specs dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 40px;
+}
+
+.cat-page .cat-specs dl > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.cat-page .cat-specs dt {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.cat-page .cat-specs dd {
+  margin: 0;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: right;
+}
+
+/* перелинковка на соседние модели */
+.cat-page .cat-related-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.cat-page .cat-related-head h2 {
+  font-family: var(--font-unbounded);
+  font-weight: 200;
+  font-size: clamp(24px, 2.6vw, 38px);
+  letter-spacing: -.02em;
+  margin: 0;
+}
+
+.cat-page .cat-related-head h2 em {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.cat-page .cat-related-head p {
+  margin: 0;
+  max-width: 320px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* сетка карточек: категория → типы, тип → модели */
+.cat-page .cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cat-page .cat-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--r-l);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.9);
+  background: linear-gradient(170deg, rgba(255,255,255,.9), rgba(255,255,255,.6));
+  box-shadow: 0 14px 40px rgba(15,22,20,.06);
+  text-decoration: none;
+  color: inherit;
+  transition: transform .35s cubic-bezier(.16,1,.3,1), border-color .35s, box-shadow .35s;
+}
+
+.cat-page .cat-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--ochre);
+  box-shadow: 0 22px 56px rgba(15,22,20,.12);
+}
+
+.cat-page .cat-card-photo {
+  position: relative;
+  min-height: 200px;
+  border-radius: var(--r-l);
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(120% 90% at 82% 100%, rgba(199,130,43,.20), rgba(199,130,43,0) 55%),
+    radial-gradient(90% 70% at 8% 0%, rgba(30,90,71,.14), rgba(30,90,71,0) 60%),
+    linear-gradient(180deg, #F8F9F6 0%, #F0F2ED 42%, #E4E8E0 100%);
+}
+
+.cat-page .cat-card-wm {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-family: var(--font-unbounded);
+  font-weight: 200;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -.03em;
+  color: rgba(15,22,20,.08);
+  pointer-events: none;
+}
+
+.cat-page .cat-card-body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cat-page .cat-card-body h3 {
+  font-family: var(--font-unbounded);
+  font-weight: 300;
+  font-size: 21px;
+  letter-spacing: -.01em;
+  margin: 0;
+}
+
+.cat-page .cat-card-body p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.cat-page .cat-card-price {
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ochre);
+}
+
+@media (max-width: 1180px) {
+  .cat-page .cat-hero {
+    grid-template-columns: 1fr;
+  }
+  .cat-page .cat-photo {
+    min-height: 340px;
+  }
+  .cat-page .cat-specs dl {
+    grid-template-columns: 1fr;
+  }
+  .cat-page .cat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .cat-page {
+    padding: 64px 4px;
+  }
+  .cat-page .cat-hero {
+    gap: 24px;
+    margin-bottom: 44px;
+  }
+  .cat-page .cat-specs {
+    padding: 28px 24px 32px;
+    margin-bottom: 56px;
+  }
+  .cat-page .cat-info h1 {
+    max-width: none;
+  }
+  .cat-page .cat-head {
+    margin-bottom: 36px;
+  }
+  .cat-page .cat-head h1 {
+    max-width: none;
+  }
+  .cat-page .cat-grid {
+    grid-template-columns: 1fr;
+  }
+}

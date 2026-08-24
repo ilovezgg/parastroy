@@ -94,6 +94,7 @@ export default function Quiz() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           phone,
+          source: "квиз",
           comment: `Квиз подбора блока:\n${summary}`,
           utm: {
             source: params.get("utm_source") || "",

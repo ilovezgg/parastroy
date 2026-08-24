@@ -12,16 +12,18 @@ import AssemblyScroll from './components/AssemblyScroll/AssemblyScroll'
 import Socials from './components/Socials/Socials'
 import Quiz from './components/Quiz/Quiz'
 import Contacts from './components/Contacts/Contacts'
+import Options from './components/Options/Options'
 export default function Landing(){
   return (
     <div className="shell">
       <Header />
       <Hero />
-    
+
        <Products/>
        <Models />
        <Gallery/>
        <Delivery/>
+       <Options/>
       <About/>
        <FAQ />
        <Socials/>

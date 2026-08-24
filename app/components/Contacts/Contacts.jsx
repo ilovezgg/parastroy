@@ -8,20 +8,21 @@ const EASE = [0.16, 1, 0.3, 1];
 const rise = { hidden: { opacity: 0, y: 26 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } } };
 const grid = { hidden: {}, show: { transition: { staggerChildren: 0.07 } } };
 
+/* TODO: реквизиты временные, заменить на реальные данные ПАРА | МОДУЛЬ */
 const CONTACTS = {
-  phoneFree: "8 (800) 350-24-18",
-  phoneFreeHref: "88003502418",
-  phoneOffice: "+7 (812) 250-10-25",
-  phoneOfficeHref: "+78122501025",
-  mail: "info@unistroy.pro",
-  telegram: "@unistroy_manager",
-  telegramUrl: "https://t.me/unistroy_manager",
-  address: "г. Пестово, Новгородская обл.",
-  fullAddress: "ул. Лермонтова, 16А, Пестово, Новгородская обл., 174511",
-  hours: "пн–сб, 9:00–19:00 (мск)",
-  coords: "58.597204, 35.841980",
-  mapUrl: "https://yandex.ru/maps/?ll=35.841980,58.597204&z=17&pt=35.841980,58.597204,pm2rdm&text=ул.%20Лермонтова%2016А%20Пестово",
-  mapEmbed: "https://yandex.ru/map-widget/v1/?ll=35.841980%2C58.597204&z=17&pt=35.841980%2C58.597204,pm2rdm",
+  phoneFree: "8 (800) 350-24-18", // TODO: реальный номер
+  phoneFreeHref: "88003502418", // TODO: реальный номер
+  phoneOffice: "+7 (812) 250-10-25", // TODO: реальный номер
+  phoneOfficeHref: "+78122501025", // TODO: реальный номер
+  mail: "info@para-modul.ru", // TODO: реальный email
+  telegram: "@para_modul_manager", // TODO: реальный telegram
+  telegramUrl: "https://t.me/para_modul_manager", // TODO: реальный telegram
+  address: "г. Пестово, Новгородская обл.", // TODO: реальный адрес
+  fullAddress: "ул. Лермонтова, 16А, Пестово, Новгородская обл., 174511", // TODO: реальный адрес
+  hours: "пн–сб, 9:00–19:00 (мск)", // TODO: уточнить часы работы
+  coords: "58.597204, 35.841980", // TODO: реальные координаты
+  mapUrl: "https://yandex.ru/maps/?ll=35.841980,58.597204&z=17&pt=35.841980,58.597204,pm2rdm&text=ул.%20Лермонтова%2016А%20Пестово", // TODO: реальная карта
+  mapEmbed: "https://yandex.ru/map-widget/v1/?ll=35.841980%2C58.597204&z=17&pt=35.841980%2C58.597204,pm2rdm", // TODO: реальная карта
 };
 
 const CHANNELS = [
@@ -42,7 +43,7 @@ export default function Contacts() {
     if (state === "sending" || state === "ok") return;
     setState("sending");
     try {
-      const res = await fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ phone, name, comment: "Заявка из секции Контакты" }) });
+      const res = await fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ phone, name, source: "контакты", comment: "Заявка из секции Контакты" }) });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Не отправилось");
       setState("ok");

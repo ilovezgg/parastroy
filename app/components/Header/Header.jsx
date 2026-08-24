@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import './Header.css';
 
 export default function Header(){
@@ -13,12 +14,13 @@ export default function Header(){
       </div>
 
       <nav className="nav">
-        <a className="on" href="#hero">Главная</a>
-        <a href="#models">Продукция</a>
-        <a href="#gallery">Галерея</a>
-        <a href="#faq">Вопросы</a>
-        <a href="#contacts">Контакты</a>
-        <a href="#socials">Соц.сети</a>
+        <a className="on" href="/#hero">Главная</a>
+        <a href="/#models">Продукция</a>
+        <a href="/#gallery">Галерея</a>
+        <a href="/#faq">Вопросы</a>
+        <a href="/#contacts">Контакты</a>
+        <a href="/#socials">Соц.сети</a>
+        <Link href="/blog">Статьи</Link>
       </nav>
 
       <div className="acts">

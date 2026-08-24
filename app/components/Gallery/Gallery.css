@@ -303,14 +303,15 @@
   cursor: zoom-out;
 }
 .lb-frame {
+  position: relative;
   margin: 0;
-  max-width: min(1220px, 90vw);
+  width: min(1220px, 90vw);
+  height: 78vh;
   cursor: default;
 }
 .lb-frame img {
   display: block;
-  max-width: 100%;
-  max-height: 78vh;
+  object-fit: contain;
   border-radius: var(--r-l);
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
 }
@@ -424,8 +425,8 @@
     padding: 16px;
     gap: 8px;
   }
-  .lb-frame img {
-    max-height: 64vh;
+  .lb-frame {
+    height: 64vh;
   }
   .lb-close,
   .lb-nav {

@@ -1,41 +1,94 @@
 .flow {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 16px;
 }
 
 .flow .s {
-  padding: 24px 20px 26px;
-  border-radius: var(--r-m);
+  padding: 26px 24px 24px;
+  border-radius: var(--r-l);
   border: 1px solid rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.62);
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+  box-shadow: 0 14px 40px rgba(15, 22, 20, 0.06);
+  transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+  cursor: default;
+}
+
+.flow .s:hover {
+  border-color: var(--ochre);
+  box-shadow: 0 22px 56px rgba(15, 22, 20, 0.12);
+}
+
+.flow .s-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flow .s-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  color: var(--ochre);
+  background: rgba(199, 130, 43, 0.12);
+  transition: background 0.35s, color 0.35s, transform 0.35s;
+}
+
+.flow .s-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.flow .s:hover .s-icon {
+  background: var(--ochre);
+  color: #fff;
+  transform: scale(1.06);
 }
 
 .flow .s u {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--ochre);
+  color: var(--muted);
   text-decoration: none;
 }
 
 .flow .s h4 {
-  font-size: 15px;
-  font-weight: 600;
-  margin: 16px 0 8px;
+  font-family: "Unbounded";
+  font-weight: 300;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+  margin: 18px 0 8px;
 }
 
 .flow .s p {
-  margin: 0;
-  font-size: 12.5px;
-  line-height: 1.5;
+  margin: 0 0 18px;
+  font-size: 13px;
+  line-height: 1.55;
   color: var(--muted);
+  min-height: 40px;
 }
 
 .flow .s .when {
-  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(15, 22, 20, 0.14);
   font-family: var(--font-mono);
   font-size: 11px;
+  letter-spacing: 0.02em;
   color: var(--accent);
+}
+
+.flow .s .when i {
+  font-style: normal;
+  transition: transform 0.25s;
+}
+
+.flow .s:hover .when i {
+  transform: translateX(4px);
 }
 
 @media (max-width: 1180px) {

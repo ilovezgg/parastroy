@@ -10,19 +10,20 @@ const rise = {
 };
 const grid = { hidden: {}, show: { transition: { staggerChildren: 0.06 } } };
 
+/* TODO: ссылки и хендлы временные, заменить на реальные аккаунты ПАРА | МОДУЛЬ */
 const SOCIALS = [
-  { n: "01", name: "Telegram", handle: "@unistroy", text: "Сборки с цеха каждый день", meta: "канал", url: "https://t.me/unistroy" },
-  { n: "02", name: "YouTube", handle: "UNI-STROY", text: "Обзоры блоков и доставка", meta: "видео", url: "https://youtube.com/@unistroy" },
-  { n: "03", name: "ВКонтакте", handle: "unistroy.pro", text: "Фото готовых блоков и отзывы", meta: "сообщество", url: "https://vk.com/unistroy" },
-  { n: "04", name: "Instagram", handle: "@unistroy.pro", text: "Reels со сварки каркаса", meta: "reels", url: "https://instagram.com/unistroy.pro" },
-  { n: "05", name: "TikTok", handle: "@unistroy.pro", text: "Как варим и утепляем", meta: "короткие", url: "https://tiktok.com/@unistroy.pro" },
-  { n: "06", name: "Авито", handle: "12 блоков на складе", text: "Актуальные цены и наличие", meta: "объявления", url: "https://avito.ru/unistroy" },
+  { n: "01", name: "Telegram", handle: "@para_modul", text: "Сборки с цеха каждый день", meta: "канал", url: "https://t.me/para_modul" },
+  { n: "02", name: "YouTube", handle: "PARA-MODUL", text: "Обзоры блоков и доставка", meta: "видео", url: "https://youtube.com/@para_modul" },
+  { n: "03", name: "ВКонтакте", handle: "para-modul.ru", text: "Фото готовых блоков и отзывы", meta: "сообщество", url: "https://vk.com/para_modul" },
+  { n: "04", name: "Instagram", handle: "@para_modul", text: "Reels со сварки каркаса", meta: "reels", url: "https://instagram.com/para_modul" },
+  { n: "05", name: "TikTok", handle: "@para_modul", text: "Как варим и утепляем", meta: "короткие", url: "https://tiktok.com/@para_modul" },
+  { n: "06", name: "Авито", handle: "12 блоков на складе", text: "Актуальные цены и наличие", meta: "объявления", url: "https://avito.ru/para_modul" },
 ];
 
 const MANAGER = {
-  handle: "@unistroy_manager",
+  handle: "@para_modul_manager",
   text: "Отвечаю за 5 минут: пришлю фото блока со склада и расчёт с доставкой до вашего адреса.",
-  url: "https://t.me/unistroy_manager",
+  url: "https://t.me/para_modul_manager",
 };
 
 export default function Socials() {

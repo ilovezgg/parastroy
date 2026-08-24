@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import './AssemblyScroll.css';
 
 const FRAME_COUNT = 90;
+const EAGER_FRAMES = 6; // грузим сразу — достаточно для первого экрана анимации
 
 export default function AssemblyScroll(){
   const wrapRef = useRef(null);
@@ -11,13 +12,42 @@ export default function AssemblyScroll(){
   const [p, setP] = useState(0);
 
   useEffect(()=>{
+    const el = wrapRef.current;
+    if(!el) return;
+    let cancelled = false;
     const arr = [];
-    for(let i=0;i<FRAME_COUNT;i++){
+
+    const frameSrc = (i) => `/assembly_frames/frame_${String(i).padStart(3,'0')}.webp`;
+
+    const loadRest = (i)=>{
+      if(cancelled || i >= FRAME_COUNT) return;
       const img = new Image();
-      img.src = `/assembly_frames/frame_${String(i).padStart(3,'0')}.webp`;
-      arr.push(img);
-    }
-    setFrames(arr);
+      img.src = frameSrc(i);
+      arr[i] = img;
+      setFrames(arr.slice());
+      const idle = window.requestIdleCallback || ((cb)=>setTimeout(cb, 32));
+      idle(()=>loadRest(i+1));
+    };
+
+    const loadAll = ()=>{
+      for(let i=0;i<EAGER_FRAMES;i++){
+        const img = new Image();
+        img.src = frameSrc(i);
+        arr[i] = img;
+      }
+      setFrames(arr.slice());
+      loadRest(EAGER_FRAMES);
+    };
+
+    const io = new IntersectionObserver((entries)=>{
+      if(entries[0].isIntersecting){
+        loadAll();
+        io.disconnect();
+      }
+    }, { rootMargin: '800px' });
+    io.observe(el);
+
+    return ()=>{ cancelled = true; io.disconnect(); };
   },[]);
 
   useEffect(()=>{

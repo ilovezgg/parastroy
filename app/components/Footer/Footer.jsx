@@ -8,26 +8,26 @@ const EASE = [0.16, 1, 0.3, 1];
 const rise = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } } };
 const grid = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
-/* ↓↓↓ ЗАМЕНИТЬ НА РЕАЛЬНЫЕ ДАННЫЕ ↓↓↓ */
+/* ↓↓↓ TODO: реквизиты временные, заменить на реальные данные ПАРА | МОДУЛЬ ↓↓↓ */
 const CO = {
-  name: "ЮНИСТРОЙ",
-  since: "завод бытовок с 2011 года",
-  phone: "+7 (812) 250-10-25",
-  phoneHref: "+78122501025",
-  mail: "info@unistroy.pro",
-  address: "г. Пестово, Новгородская обл.",
-  hours: "пн–сб, 9:00–19:00 (мск)",
-  telegram: "https://t.me/unistroy_manager",
-  legal: "ООО «Юнистрой» · ИНН 0000000000 · ОГРН 0000000000000",
+  name: "ПАРА | МОДУЛЬ",
+  since: "завод бытовок с 2011 года", // TODO: уточнить год основания
+  phone: "+7 (812) 250-10-25", // TODO: реальный телефон
+  phoneHref: "+78122501025", // TODO: реальный телефон
+  mail: "info@para-modul.ru", // TODO: реальный email
+  address: "г. Пестово, Новгородская обл.", // TODO: реальный адрес производства
+  hours: "пн–сб, 9:00–19:00 (мск)", // TODO: уточнить часы работы
+  telegram: "https://t.me/para_modul_manager", // TODO: реальный telegram
+  legal: "ООО «ПАРА МОДУЛЬ» · ИНН 0000000000 (TODO: заменить) · ОГРН 0000000000000 (TODO: заменить)",
 };
 
 const NAV = [
-  ["Главная", "#top"],
-  ["Продукция", "#lineup"],
-  ["Галерея", "#gallery"],
-  ["Вопросы", "#faq"],
-  ["Контакты", "#contacts"],
-  ["Соцсети", "#socials"],
+  ["Главная", "/#hero"],
+  ["Продукция", "/#models"],
+  ["Галерея", "/#gallery"],
+  ["Вопросы", "/#faq"],
+  ["Контакты", "/#contacts"],
+  ["Соцсети", "/#socials"],
 ];
 
 export default function Footer() {
@@ -55,6 +55,7 @@ export default function Footer() {
         body: JSON.stringify({
           phone: form.phone,
           name: form.name,
+          source: "футер",
           comment: `Бесплатное проектирование. Почта: ${form.mail || "—"}. ${form.comment || ""}`,
           utm: {
             source: params.get("utm_source") || "",
@@ -167,7 +168,7 @@ export default function Footer() {
       <footer className="site-footer">
         <div className="f-top">
           <div className="f-brand">
-            <a href="#top" className="f-mark">
+            <a href="/" className="f-mark">
               {CO.name}
             </a>
             <p>{CO.since}</p>
@@ -205,14 +206,18 @@ export default function Footer() {
         <div className="f-bottom">
           <span>© {new Date().getFullYear()} {CO.name}. Все права защищены.</span>
           <span className="f-legal">{CO.legal}</span>
-          <a className="f-up" href="#top">
+          <button
+            type="button"
+            className="f-up"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             Наверх
             <i aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none">
                 <path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </i>
-          </a>
+          </button>
         </div>
       </footer>
     </section>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import "./Gallery.css";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -132,7 +133,7 @@ export default function Gallery() {
             transition={{ delay: Math.min(i * 0.05, 0.25), duration: 0.6, ease: EASE }}
           >
             <span className="g-media">
-              <img src={g.src} alt={`${g.tag} — ${g.sub}`} loading="lazy" />
+              <Image src={g.src} alt={`${g.tag} — ${g.sub}`} fill sizes="(max-width: 768px) 80vw, 25vw" />
               <span className="g-fade" aria-hidden="true" />
             </span>
 
@@ -194,7 +195,7 @@ export default function Gallery() {
               exit={{ scale: 0.97, opacity: 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 26 }}
             >
-              <img key={shot.src} src={shot.src} alt={`${shot.tag} — ${shot.sub}`} />
+              <Image key={shot.src} src={shot.src} alt={`${shot.tag} — ${shot.sub}`} fill sizes="90vw" priority />
               <figcaption>
                 <span>
                   <b className="mono">{shot.tag}</b>
