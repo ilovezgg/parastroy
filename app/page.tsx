@@ -1,10 +1,26 @@
 import Landing from "./Landing";
+import { SITE_URL, pageOpenGraph } from "./lib/seo";
+import { organizationJsonLd, faqJsonLd } from "./lib/jsonld";
+import { FAQS } from "./data/faq";
 
 export const metadata = {
-  title: "ПАРА | МОДУЛЬ — бытовки и блок-контейнеры от завода",
-  description: "Завод бытовок и блок-контейнеров в Пестово. Без посредников, доставка по всей России, отгрузка со склада за 1–2 дня.",
+  alternates: { canonical: SITE_URL },
+  openGraph: pageOpenGraph('/'),
 };
 
 export default function Page() {
-  return <Landing />;
+  const jsonLd = [organizationJsonLd(), faqJsonLd(FAQS)];
+
+  return (
+    <>
+      {jsonLd.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <Landing />
+    </>
+  );
 }

@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useMotionValue, useAnimationFrame, useReducedMotion } from "framer-motion";
+import Image from "next/image";
+import { motion, useMotionValue, useAnimationFrame, useReducedMotion, useInView } from "framer-motion";
 import "./Floating.css";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -18,14 +19,16 @@ const CARDS = [
 ];
 
 export default function Floating() {
+  const section = useRef(null);
   const track = useRef(null);
   const x = useMotionValue(0);
   const factor = useRef(1);
   const [slow, setSlow] = useState(false);
   const reduce = useReducedMotion();
+  const inView = useInView(section, { margin: "200px" });
 
   useAnimationFrame((_, delta) => {
-    if (reduce || !track.current) return;
+    if (reduce || !inView || !track.current) return;
     /* скорость меняется плавно, а не рывком на наведении */
     const target = slow ? 0.18 : 1;
     factor.current += (target - factor.current) * 0.05;
@@ -39,7 +42,7 @@ export default function Floating() {
   const items = [...CARDS, ...CARDS];
 
   return (
-    <section id="lineup" className="floating">
+    <section id="lineup" className="floating" ref={section}>
       <div className="sec-head">
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
@@ -67,7 +70,13 @@ export default function Floating() {
         <motion.div className="fl-track" ref={track} style={{ x }}>
           {items.map((c, i) => (
             <a className="fl-card" key={`${c.name}-${i}`} href="#contacts" aria-hidden={i >= CARDS.length}>
-              <img src={c.img} alt={`${c.kind} ${c.name}`} loading="lazy" />
+              <Image
+                src={c.img}
+                alt={`${c.kind} ${c.name}`}
+                fill
+                sizes="(max-width: 680px) 270px, (max-width: 1180px) 330px, 380px"
+                loading="lazy"
+              />
               <span className="fl-veil" aria-hidden="true" />
 
               {c.stock && <span className="fl-stock mono">в наличии</span>}

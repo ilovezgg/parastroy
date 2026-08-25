@@ -13,9 +13,9 @@ const FOUNDER = {
   role: "основатель и директор завода",
   photo: "/founder.jpg",
   since: "на производстве с 2011 года", // TODO: уточнить год
-  phone: "+7 (812) 250-10-25", // TODO: реальный телефон
-  phoneHref: "+78122501025", // TODO: реальный телефон
-  mail: "info@para-modul.ru", // TODO: реальный email
+  phone: "+7 921 199 23 03",
+  phoneHref: "+79211992303",
+  mail: "antonpara90@gmail.com",
 };
 
 const PILLARS = [

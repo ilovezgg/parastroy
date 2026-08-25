@@ -40,7 +40,7 @@ export default function CategoryView({ category }) {
                   <span className="cat-card-wm mono">{String(i + 1).padStart(2, '0')}</span>
                 </div>
                 <div className="cat-card-body">
-                  <h3>{type.title}</h3>
+                  <h2>{type.title}</h2>
                   <p>{type.description}</p>
                 </div>
               </Link>

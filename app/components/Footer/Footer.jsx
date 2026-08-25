@@ -8,17 +8,17 @@ const EASE = [0.16, 1, 0.3, 1];
 const rise = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } } };
 const grid = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
-/* ↓↓↓ TODO: реквизиты временные, заменить на реальные данные ПАРА | МОДУЛЬ ↓↓↓ */
+/* ↓↓↓ TODO: часы работы, telegram и адрес производства пока временные ↓↓↓ */
 const CO = {
   name: "ПАРА | МОДУЛЬ",
   since: "завод бытовок с 2011 года", // TODO: уточнить год основания
-  phone: "+7 (812) 250-10-25", // TODO: реальный телефон
-  phoneHref: "+78122501025", // TODO: реальный телефон
-  mail: "info@para-modul.ru", // TODO: реальный email
+  phone: "+7 921 199 23 03",
+  phoneHref: "+79211992303",
+  mail: "antonpara90@gmail.com",
   address: "г. Пестово, Новгородская обл.", // TODO: реальный адрес производства
   hours: "пн–сб, 9:00–19:00 (мск)", // TODO: уточнить часы работы
   telegram: "https://t.me/para_modul_manager", // TODO: реальный telegram
-  legal: "ООО «ПАРА МОДУЛЬ» · ИНН 0000000000 (TODO: заменить) · ОГРН 0000000000000 (TODO: заменить)",
+  legal: "ООО «ПАРА МОДУЛЬ»",
 };
 
 const NAV = [

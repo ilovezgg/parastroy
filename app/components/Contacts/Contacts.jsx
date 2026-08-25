@@ -8,13 +8,11 @@ const EASE = [0.16, 1, 0.3, 1];
 const rise = { hidden: { opacity: 0, y: 26 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } } };
 const grid = { hidden: {}, show: { transition: { staggerChildren: 0.07 } } };
 
-/* TODO: реквизиты временные, заменить на реальные данные ПАРА | МОДУЛЬ */
+/* TODO: telegram, адрес и координаты производства пока временные */
 const CONTACTS = {
-  phoneFree: "8 (800) 350-24-18", // TODO: реальный номер
-  phoneFreeHref: "88003502418", // TODO: реальный номер
-  phoneOffice: "+7 (812) 250-10-25", // TODO: реальный номер
-  phoneOfficeHref: "+78122501025", // TODO: реальный номер
-  mail: "info@para-modul.ru", // TODO: реальный email
+  phone: "+7 921 199 23 03",
+  phoneHref: "+79211992303",
+  mail: "antonpara90@gmail.com",
   telegram: "@para_modul_manager", // TODO: реальный telegram
   telegramUrl: "https://t.me/para_modul_manager", // TODO: реальный telegram
   address: "г. Пестово, Новгородская обл.", // TODO: реальный адрес
@@ -26,10 +24,9 @@ const CONTACTS = {
 };
 
 const CHANNELS = [
-  { n: "01", label: "звонок", value: CONTACTS.phoneFree, note: "бесплатно по России, отвечает менеджер", href: `tel:${CONTACTS.phoneFreeHref}` },
-  { n: "02", label: "телефон завода", value: CONTACTS.phoneOffice, note: "производство, гарантия", href: `tel:${CONTACTS.phoneOfficeHref}` },
-  { n: "03", label: "почта", value: CONTACTS.mail, note: "счета, ТЗ, документы для тендера", href: `mailto:${CONTACTS.mail}` },
-  { n: "04", label: "telegram", value: CONTACTS.telegram, note: "ответ за 5 минут, фото со склада", href: CONTACTS.telegramUrl, external: true },
+  { n: "01", label: "звонок", value: CONTACTS.phone, note: "отвечает менеджер", href: `tel:${CONTACTS.phoneHref}` },
+  { n: "02", label: "почта", value: CONTACTS.mail, note: "счета, ТЗ, документы для тендера", href: `mailto:${CONTACTS.mail}` },
+  { n: "03", label: "telegram", value: CONTACTS.telegram, note: "ответ за 5 минут, фото со склада", href: CONTACTS.telegramUrl, external: true },
 ];
 
 export default function Contacts() {
@@ -50,7 +47,7 @@ export default function Contacts() {
       setMessage("Заявка у менеджера — перезвоним.");
     } catch (err) {
       setState("error");
-      setMessage(`${err.message}. Можно позвонить: ${CONTACTS.phoneFree}`);
+      setMessage(`${err.message}. Можно позвонить: ${CONTACTS.phone}`);
     }
   }
 

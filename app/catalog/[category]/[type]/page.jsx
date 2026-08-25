@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import { catalog } from '@/app/data/catalog';
+import { breadcrumbJsonLd } from '@/app/lib/jsonld';
+import { pageOpenGraph } from '@/app/lib/seo';
 import '../../catalog.css';
 import TypeView from './TypeView';
 
@@ -28,6 +30,7 @@ export async function generateMetadata({ params }) {
   return {
     title: type.title,
     description: type.description,
+    openGraph: pageOpenGraph(`/catalog/${category.slug}/${type.slug}`),
   };
 }
 
@@ -37,5 +40,19 @@ export default async function TypePage({ params }) {
   const type = getType(category, typeSlug);
   if (!category || !type) notFound();
 
-  return <TypeView category={category} type={type} />;
+  const jsonLd = breadcrumbJsonLd([
+    { name: 'Главная', path: '/' },
+    { name: category.title, path: `/catalog/${category.slug}` },
+    { name: type.title, path: `/catalog/${category.slug}/${type.slug}` },
+  ]);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <TypeView category={category} type={type} />
+    </>
+  );
 }

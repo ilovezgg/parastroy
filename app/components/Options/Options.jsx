@@ -48,7 +48,7 @@ export default function Options(){
               <span className="s-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">{c.icon}</svg></span>
               <u>{c.n}</u>
             </div>
-            <h4>{c.t}</h4>
+            <h3>{c.t}</h3>
             <p>{c.d}</p>
             <div className="when">по запросу к менеджеру<i>→</i></div>
           </motion.div>

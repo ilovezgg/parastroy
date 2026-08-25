@@ -354,7 +354,7 @@
   gap: 8px;
 }
 
-.cat-page .cat-card-body h3 {
+.cat-page .cat-card-body h2 {
   font-family: var(--font-unbounded);
   font-weight: 300;
   font-size: 21px;

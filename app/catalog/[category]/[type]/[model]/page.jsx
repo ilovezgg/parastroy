@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import { catalog } from '@/app/data/catalog';
+import { breadcrumbJsonLd, productJsonLd } from '@/app/lib/jsonld';
+import { pageOpenGraph } from '@/app/lib/seo';
 import '../../../catalog.css';
 import ModelView from './ModelView';
 
@@ -36,6 +38,7 @@ export async function generateMetadata({ params }) {
   return {
     title: model.title,
     description: `${model.title}: ${model.price}, ${model.size}`,
+    openGraph: pageOpenGraph(`/catalog/${category.slug}/${type.slug}/${model.slug}`),
   };
 }
 
@@ -48,7 +51,27 @@ export default async function ModelPage({ params }) {
 
   const related = type.models.filter((m) => m.slug !== model.slug).slice(0, 3);
 
+  const path = `/catalog/${category.slug}/${type.slug}/${model.slug}`;
+  const jsonLd = [
+    breadcrumbJsonLd([
+      { name: 'Главная', path: '/' },
+      { name: category.title, path: `/catalog/${category.slug}` },
+      { name: type.title, path: `/catalog/${category.slug}/${type.slug}` },
+      { name: model.title, path },
+    ]),
+    productJsonLd({ model, type, category, path }),
+  ];
+
   return (
-    <ModelView category={category} type={type} model={model} related={related} />
+    <>
+      {jsonLd.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <ModelView category={category} type={type} model={model} related={related} />
+    </>
   );
 }

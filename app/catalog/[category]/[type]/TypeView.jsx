@@ -41,7 +41,7 @@ export default function TypeView({ category, type }) {
                   <span className="cat-card-wm mono">{model.slug}</span>
                 </div>
                 <div className="cat-card-body">
-                  <h3>{model.title}</h3>
+                  <h2>{model.title}</h2>
                   <p>{model.size}</p>
                   <span className="cat-card-price mono">от {model.price}</span>
                 </div>

@@ -10,6 +10,15 @@ const fadeUp = {
   transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
 };
 
+/* тело статьи может быть намного выше экрана — amount в долях от
+   высоты блока здесь не подходит, иначе триггер никогда не сработает */
+const fadeUpBody = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0 },
+  transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+};
+
 function formatDate(iso) {
   return new Date(iso).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
 }
@@ -64,7 +73,7 @@ function ArticleLeadForm({ articleTitle }) {
       setMessage('Заявка у менеджера — перезвоним.');
     } catch (err) {
       setState('error');
-      setMessage(`${err.message}. Можно позвонить: 8 (800) 350-24-18`);
+      setMessage(`${err.message}. Можно позвонить: +7 921 199 23 03`);
     }
   }
 
@@ -128,7 +137,7 @@ export default function ArticleView({ article, relatedProducts, tag }) {
           </motion.figure>
         )}
 
-        <motion.div {...fadeUp}>
+        <motion.div {...fadeUpBody}>
           <ArticleBody blocks={article.body} />
         </motion.div>
 

@@ -4,8 +4,8 @@ import { catalog } from '@/app/data/catalog';
 import '../blog.css';
 import '../../components/Contacts/Contacts.css';
 import ArticleView from './ArticleView';
-
-const SITE_URL = 'https://parastroy.example';
+import { SITE_URL, SITE_NAME, pageOpenGraph } from '@/app/lib/seo';
+import { breadcrumbJsonLd } from '@/app/lib/jsonld';
 
 export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
@@ -32,12 +32,13 @@ export async function generateMetadata({ params }) {
   const article = getArticle(slug);
   if (!article) return {};
   return {
-    title: article.title,
+    title: article.metaTitle || article.title,
     description: article.metaDescription,
     keywords: article.keywords,
     alternates: {
       canonical: `${SITE_URL}/blog/${article.slug}`,
     },
+    openGraph: pageOpenGraph(`/blog/${article.slug}`),
   };
 }
 
@@ -50,20 +51,37 @@ export default async function ArticlePage({ params }) {
   const firstCategorySlug = article.relatedProducts[0]?.split('/')[2];
   const tag = catalog.find((c) => c.slug === firstCategorySlug)?.title || 'Статья';
 
-  const jsonLd = {
+  const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.title,
     description: article.metaDescription,
     datePublished: article.datePublished,
-    author: { '@type': 'Organization', name: 'ПАРА | МОДУЛЬ' },
+    dateModified: article.datePublished,
+    mainEntityOfPage: `${SITE_URL}/blog/${article.slug}`,
+    author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/para_modul_logo.png` },
+    },
   };
+
+  const breadcrumbJsonLdData = breadcrumbJsonLd([
+    { name: 'Главная', path: '/' },
+    { name: 'Блог', path: '/blog' },
+    { name: article.title, path: `/blog/${article.slug}` },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLdData) }}
       />
       <ArticleView article={article} relatedProducts={relatedProducts} tag={tag} />
     </>

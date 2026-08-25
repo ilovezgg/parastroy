@@ -108,7 +108,7 @@ export default function Quiz() {
       setStatus("done");
     } catch (err) {
       setStatus("error");
-      setError(`${err.message}. Можно позвонить: 8 (800) 350-24-18`);
+      setError(`${err.message}. Можно позвонить: +7 921 199 23 03`);
     }
   }
 
