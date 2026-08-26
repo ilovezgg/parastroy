@@ -296,16 +296,227 @@
   line-height: 1.5;
 }
 
+/* макет: боковой фильтр + сетка карточек */
+.cat-page .cat-filter-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  align-items: start;
+  gap: 32px;
+}
+
+.cat-page .cat-filter-toggle {
+  display: none;
+}
+
+.cat-page .cat-filter {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 28px;
+  padding: 30px 26px 32px;
+  border-radius: var(--r-l);
+  background: linear-gradient(170deg, rgba(255,255,255,.9), rgba(255,255,255,.6));
+  border: 1px solid rgba(255,255,255,.9);
+  box-shadow: 0 14px 40px rgba(15,22,20,.06);
+}
+
+.cat-page .cat-filter-kicker {
+  display: block;
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ochre);
+}
+
+/* тип бытовки */
+.cat-page .cat-filter-types {
+  display: grid;
+  gap: 6px;
+}
+
+.cat-page .cat-filter-type {
+  border: none;
+  background: transparent;
+  border-radius: 13px;
+  padding: 11px 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: .25s;
+}
+
+.cat-page .cat-filter-type:hover {
+  background: rgba(15,22,20,.05);
+}
+
+.cat-page .cat-filter-type b {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.cat-page .cat-filter-type.on {
+  background: var(--ink);
+}
+
+.cat-page .cat-filter-type.on b {
+  color: #F4F6F3;
+}
+
+/* цена */
+.cat-page .cat-price-slider {
+  position: relative;
+  height: 30px;
+  margin: 4px 0 16px;
+}
+
+.cat-page .cat-price-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 999px;
+  background: rgba(15,22,20,.1);
+  overflow: hidden;
+}
+
+.cat-page .cat-price-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--ochre);
+}
+
+.cat-page .cat-price-slider input[type="range"] {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 30px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.cat-page .cat-price-slider input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: transparent;
+}
+
+.cat-page .cat-price-slider input[type="range"]::-moz-range-track {
+  height: 6px;
+  background: transparent;
+}
+
+.cat-page .cat-price-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  margin-top: -8px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgba(15,22,20,.28);
+  pointer-events: all;
+}
+
+.cat-page .cat-price-slider input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgba(15,22,20,.28);
+  pointer-events: all;
+}
+
+.cat-page .cat-price-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.cat-page .cat-price-inputs label {
+  display: grid;
+  gap: 6px;
+}
+
+.cat-page .cat-price-inputs span {
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.cat-page .cat-price-inputs input {
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.75);
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.cat-page .cat-price-inputs input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #fff;
+}
+
+/* особенности */
+.cat-page .cat-filter-features {
+  display: grid;
+  gap: 10px;
+}
+
+.cat-page .cat-filter-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.cat-page .cat-filter-check input {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  padding: 0;
+  border-radius: 4px;
+  accent-color: var(--ochre);
+}
+
+.cat-page .cat-filter-empty {
+  grid-column: 1 / -1;
+  padding: 40px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 /* сетка карточек: категория → типы, тип → модели */
 .cat-page .cat-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+  align-content: start;
 }
 
 .cat-page .cat-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
   border-radius: var(--r-l);
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.9);
@@ -350,6 +561,7 @@
 .cat-page .cat-card-body {
   padding: 22px 22px 24px;
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 8px;
 }
@@ -358,8 +570,10 @@
   font-family: var(--font-unbounded);
   font-weight: 300;
   font-size: 21px;
+  line-height: 1.25;
   letter-spacing: -.01em;
   margin: 0;
+  min-height: calc(1.25em * 2);
 }
 
 .cat-page .cat-card-body p {
@@ -370,7 +584,8 @@
 }
 
 .cat-page .cat-card-price {
-  margin-top: 6px;
+  margin-top: auto;
+  padding-top: 6px;
   font-family: var(--font-mono);
   font-size: 12.5px;
   color: var(--ochre);
@@ -388,6 +603,12 @@
   }
   .cat-page .cat-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .cat-page .cat-filter-layout {
+    grid-template-columns: 1fr;
+  }
+  .cat-page .cat-filter {
+    position: static;
   }
 }
 
@@ -412,7 +633,66 @@
   .cat-page .cat-head h1 {
     max-width: none;
   }
+  .cat-page .cat-info {
+    align-items: stretch;
+  }
+  .cat-page .cat-photo {
+    min-height: 240px;
+  }
+  .cat-page .cat-photo-wm {
+    font-size: clamp(48px, 16vw, 90px);
+    top: 16px;
+    right: 20px;
+  }
+  .cat-page .cat-photo-tag {
+    margin: 18px;
+  }
+  .cat-page .cat-crumbs li {
+    min-width: 0;
+  }
+  .cat-page .cat-crumbs a,
+  .cat-page .cat-crumbs li:last-child {
+    overflow-wrap: anywhere;
+  }
   .cat-page .cat-grid {
     grid-template-columns: 1fr;
+  }
+  .cat-page .cat-filter-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 14px 18px;
+    min-height: 44px;
+    border: none;
+    border-radius: var(--r-l);
+    background: linear-gradient(170deg, rgba(255,255,255,.9), rgba(255,255,255,.6));
+    box-shadow: 0 14px 40px rgba(15,22,20,.06);
+    font: inherit;
+    cursor: pointer;
+  }
+  .cat-page .cat-filter-toggle b {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .cat-page .cat-filter-toggle i {
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #F4F6F3;
+    font-style: normal;
+    font-size: 16px;
+  }
+  .cat-page .cat-filter {
+    display: none;
+  }
+  .cat-page .cat-filter.open {
+    display: grid;
+    margin-bottom: 8px;
   }
 }

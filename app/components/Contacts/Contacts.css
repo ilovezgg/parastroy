@@ -147,7 +147,13 @@
   .c-fields{ grid-template-columns:1fr; }
   .c-submit{ width:100%; justify-content:center; }
   .c-channels{ grid-template-columns:1fr; }
+  .c-row{ padding:18px 60px 20px 18px; }
+  .c-row b{ overflow-wrap:anywhere; font-size:16px; }
+  .c-note-sm{ max-width:none; }
   .c-map-wrap{ min-height:320px; }
   .c-map-meta{ flex-direction:column; align-items:stretch; }
   .c-map{ justify-content:center; }
+  .c-place-info dl > div{ flex-direction:column; align-items:flex-start; gap:4px; padding-bottom:14px; }
+  .c-place-info dd{ text-align:left; }
+  .c-place-info dl{ gap:16px; }
 }

@@ -229,7 +229,7 @@
   color: #0f0f0f;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1180px) {
   .prod-rail {
     flex-direction: column;
     height: auto;
@@ -240,5 +240,29 @@
   }
   .rail-wm {
     font-size: 64px;
+  }
+}
+
+@media (max-width: 680px) {
+  .products-sec {
+    padding: 64px 4px;
+  }
+  .prod-rail-item {
+    min-height: 380px;
+  }
+  .rail-wm {
+    font-size: 48px;
+  }
+  .rail-bottom {
+    padding: 16px 16px 14px;
+  }
+  .rail-headline {
+    flex-wrap: wrap;
+  }
+  .rail-headline h3 {
+    font-size: 20px;
+  }
+  .rail-desc {
+    max-width: none;
   }
 }

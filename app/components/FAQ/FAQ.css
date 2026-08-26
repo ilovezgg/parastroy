@@ -259,7 +259,14 @@
   .faq {
     padding: 64px 4px;
   }
+  .faq-tabs button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+  }
   .faq-item button {
+    grid-template-columns: 1fr auto;
     gap: 12px;
     padding: 18px 18px;
   }

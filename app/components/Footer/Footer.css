@@ -419,12 +419,35 @@
   .free-final {
     padding: 26px 20px;
   }
+  .free-left {
+    align-items: stretch;
+  }
+  .free-final > .free-left p {
+    max-width: none;
+  }
+  .free-form input,
+  .free-form textarea {
+    font-size: 16px;
+  }
   .f-links a {
     padding: 11px 18px;
     font-size: 13.5px;
   }
   .f-meta {
     max-width: none;
+  }
+  .f-contacts a {
+    overflow-wrap: anywhere;
+    max-width: 100%;
+  }
+  .f-meta > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .f-meta dd {
+    text-align: left;
+    overflow-wrap: anywhere;
   }
   .f-bottom {
     flex-direction: column;
@@ -433,5 +456,9 @@
   }
   .f-legal {
     text-align: left;
+  }
+  .f-up {
+    min-height: 44px;
+    padding: 9px 16px;
   }
 }

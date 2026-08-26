@@ -30,3 +30,7 @@
   height: 2px; background: rgba(15,22,20,.08);
 }
 .assembly-bar div { height: 100%; background: var(--ochre); transition: width .05s linear; }
+
+@media (max-width: 680px) {
+  .assembly-wrap { display: none; }
+}

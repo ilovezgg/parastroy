@@ -236,7 +236,11 @@
 }
 
 @media (max-width: 680px) {
-  .topbar { padding: 16px; }
+  .topbar { padding: 16px; gap: 12px; }
+  .acts { gap: 8px; }
   .acts .btn-light { display: none; }
+  .brand { min-width: 0; gap: 8px; }
   .brand-logo { width: 44px; height: 44px; }
+  .phone { width: 44px; height: 44px; padding: 0; justify-content: center; }
+  .phone b { display: none; }
 }

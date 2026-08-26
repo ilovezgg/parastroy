@@ -435,4 +435,10 @@
     margin-left: 0;
     width: 100%;
   }
+  .d-presets button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+  }
 }
