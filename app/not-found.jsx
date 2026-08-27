@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Header from './components/Header/Header';
+import FreeDesign from './components/Footer/FreeDesign';
 import Footer from './components/Footer/Footer';
 import './not-found.css';
 
@@ -36,6 +37,7 @@ export default function NotFound() {
         </motion.div>
       </section>
 
+      <FreeDesign />
       <Footer />
     </div>
   );

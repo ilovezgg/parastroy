@@ -13,6 +13,7 @@ const About = dynamic(() => import('./components/About/About'));
 const Gallery = dynamic(() => import('./components/Gallery/Gallery'));
 const Delivery = dynamic(() => import('./components/Delivery/Delivery'));
 const FAQ = dynamic(() => import('./components/FAQ/FAQ'));
+const FreeDesign = dynamic(() => import('./components/Footer/FreeDesign'));
 const AssemblyScroll = dynamic(() => import('./components/AssemblyScroll/AssemblyScroll'));
 const Socials = dynamic(() => import('./components/Socials/Socials'));
 const Contacts = dynamic(() => import('./components/Contacts/Contacts'));
@@ -31,6 +32,7 @@ export default function Landing(){
        <Options/>
       <About/>
        <FAQ />
+       <FreeDesign/>
        <Socials/>
 
     <AssemblyScroll/>
