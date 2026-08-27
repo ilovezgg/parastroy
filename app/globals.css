@@ -43,10 +43,10 @@ h1 u{text-decoration:none;color:var(--timber);font-weight:300}
 .cta:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(15,22,20,.25)}
 .cta:hover i{transform:rotate(45deg);background:#F4F6F3}
 
-.assurances{display:flex;gap:24px;margin-top:56px;align-items:center;flex-wrap:wrap}
-.assurances .ic{width:56px;height:56px;border-radius:50%;border:1px solid rgba(255,255,255,.85);background:var(--glass);display:grid;place-items:center;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);flex:none}
-.assurances p{margin:0;font-size:13px;line-height:1.45;color:#3E4A45;max-width:190px}
-.assurances .div{width:1px;height:38px;background:var(--line)}
+.assurances{display:flex;flex-direction:column;gap:12px;margin-top:56px}
+.assurances .a-row{display:flex;align-items:center;gap:14px}
+.assurances .ic{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.85);background:var(--glass);display:grid;place-items:center;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);flex:none}
+.assurances p{margin:0;font-size:13px;line-height:1.4;color:#3E4A45;white-space:nowrap}
 
 .stage-wrap{position:relative;padding-top:4px}
 .model-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:0 6px 4px;flex-wrap:wrap}
@@ -135,6 +135,9 @@ footer{display:flex;justify-content:space-between;gap:20px;padding:34px 6px 46px
   .shell{width:94%}
   .hero{border-radius:26px;min-height:0}
   .stats{grid-template-columns:1fr}
+  .assurances{margin-top:24px;gap:8px}
+  .assurances .ic{width:34px;height:34px;font-size:13px}
+  .assurances p{font-size:10.5px}
   .models,.flow{grid-template-columns:1fr}
   section{padding:64px 4px}
   .card li{flex-wrap:wrap}

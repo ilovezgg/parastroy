@@ -159,6 +159,7 @@
 
 .rail-accent {
   flex-shrink: 0;
+  margin-left: auto;
   padding: 6px 12px;
   border-radius: 999px;
   font-family: var(--font-golos), sans-serif;

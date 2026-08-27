@@ -16,6 +16,7 @@ const LINKS = [
 
 export default function Header(){
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     if (!open) return;
@@ -23,8 +24,15 @@ export default function Header(){
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <div className="topbar">
+    <div className={`topbar${scrolled ? ' is-scrolled' : ''}`}>
       <Link href="/" className="brand">
         <Image
           src="/para_modul_logo.png"

@@ -84,8 +84,8 @@ export default function Hero(){
           <p className="lede">Завод в Пестово, без посредников. Доставка 105 ₽/км — шаланда везет 2 бытовки по цене одной доставки, экономия 52 500 ₽ на примере СПб 500 км.</p>
           <button className="cta" onClick={() => setQuizOpen(true)}><span>Рассчитать с доставкой<br/>за 1 минуту</span><i>↗</i></button>
           <div className="assurances">
-            <div className="ic">⌂</div><p>Отгрузка со склада завтра, документы для тендера в комплекте</p>
-            <div className="div"></div><p>Гарантия 24 мес, установка на ФБС</p>
+            <div className="a-row"><div className="ic">⌂</div><p>Отгрузка со склада завтра, документы для тендера в комплекте</p></div>
+            <div className="a-row"><div className="ic">✓</div><p>Гарантия 24 мес, установка на ФБС</p></div>
           </div>
         </div>
 
