@@ -2,6 +2,7 @@ import './globals.css';
 import Script from 'next/script';
 import { Unbounded, Golos_Text, JetBrains_Mono } from 'next/font/google';
 import { SITE_URL, SITE_NAME } from './lib/seo';
+import SmoothScroll from './components/SmoothScroll/SmoothScroll';
 
 const YANDEX_METRIKA_ID = 111937405;
 
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ru" className={`${unbounded.variable} ${golos.variable} ${mono.variable}`}>
       <body>
+        <SmoothScroll />
         {children}
         <Script id="yandex-metrika" strategy="afterInteractive">
           {`

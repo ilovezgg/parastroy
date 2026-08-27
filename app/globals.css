@@ -21,7 +21,6 @@
   --font-golos: "Golos Text", system-ui, sans-serif;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:"Golos Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .shell{width:90%;max-width:1920px;margin:0 auto;padding:16px 0}
 .mono{font-family:"JetBrains Mono",ui-monospace,monospace}
