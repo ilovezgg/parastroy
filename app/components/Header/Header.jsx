@@ -7,7 +7,7 @@ import './Header.css';
 
 const LINKS = [
   ["Главная", "/#hero"],
-  ["Продукция", "/#models"],
+  ["Продукция", "/products"],
   ["Галерея", "/#gallery"],
   ["Вопросы", "/#faq"],
   ["Контакты", "/#contacts"],
@@ -42,7 +42,7 @@ export default function Header(){
 
       <nav className="nav">
         <a className="on" href="/#hero">Главная</a>
-        <a href="/#models">Продукция</a>
+        <a href="/products">Продукция</a>
         <a href="/#gallery">Галерея</a>
         <a href="/#faq">Вопросы</a>
         <a href="/#contacts">Контакты</a>

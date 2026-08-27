@@ -1,6 +1,8 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
+import '../../../../components/Models/Models.css';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -9,7 +11,26 @@ const fadeUp = {
   transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
 };
 
+function groupSpecsBySection(specs) {
+  const groups = [];
+  const bySection = new Map();
+  for (const spec of specs) {
+    const key = spec.section || null;
+    let group = bySection.get(key);
+    if (!group) {
+      group = { section: key, items: [] };
+      bySection.set(key, group);
+      groups.push(group);
+    }
+    group.items.push(spec);
+  }
+  return groups;
+}
+
 export default function ModelView({ category, type, model, related }) {
+  const specGroups = groupSpecsBySection(model.specs);
+  const hasSections = specGroups.some((g) => g.section);
+
   return (
     <main className="cat-page">
       <div className="shell">
@@ -24,7 +45,18 @@ export default function ModelView({ category, type, model, related }) {
 
         <motion.div className="cat-hero" {...fadeUp}>
           <div className="cat-photo" aria-hidden="true">
-            <span className="cat-photo-wm mono">{model.slug}</span>
+            {model.image ? (
+              <Image
+                src={model.image}
+                alt={model.title}
+                fill
+                sizes="(max-width: 900px) 100vw, 50vw"
+                className="cat-photo-img"
+                priority
+              />
+            ) : (
+              <span className="cat-photo-wm mono">{model.slug}</span>
+            )}
             <span className="cat-photo-tag">{type.title}</span>
           </div>
 
@@ -50,14 +82,30 @@ export default function ModelView({ category, type, model, related }) {
             <span className="cat-kicker">Характеристики</span>
             <h2>Что входит в комплектацию</h2>
           </div>
-          <dl>
-            {model.specs.map((spec) => (
-              <div key={spec.label}>
-                <dt>{spec.label}</dt>
-                <dd>{spec.value}</dd>
+          {hasSections ? (
+            specGroups.map((group, gi) => (
+              <div key={group.section || gi} className="cat-specs-group">
+                {group.section && <span className="cat-kicker">{group.section}</span>}
+                <dl>
+                  {group.items.map((spec, i) => (
+                    <div key={i}>
+                      <dt>{spec.label}</dt>
+                      <dd>{spec.value}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
-            ))}
-          </dl>
+            ))
+          ) : (
+            <dl>
+              {model.specs.map((spec, i) => (
+                <div key={i}>
+                  <dt>{spec.label}</dt>
+                  <dd>{spec.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
         </motion.section>
 
         {related.length > 0 && (
@@ -77,6 +125,20 @@ export default function ModelView({ category, type, model, related }) {
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ delay: i * 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 >
+                  <div className="card-media" aria-hidden="true">
+                    {m.image ? (
+                      <Image
+                        src={m.image}
+                        alt={m.title}
+                        fill
+                        sizes="(max-width: 700px) 100vw, (max-width: 1180px) 50vw, 33vw"
+                        className="card-media-img"
+                      />
+                    ) : (
+                      <span className="card-media-wm mono">{m.slug}</span>
+                    )}
+                  </div>
+
                   <div className="tag">{type.title}</div>
                   <h3>{m.title}</h3>
                   <div className="size mono">{m.size}</div>

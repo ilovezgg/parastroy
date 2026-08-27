@@ -63,7 +63,7 @@ export const articles = [
       { type: 'p', text: 'Точный расчёт делаем по адресу объекта — оставьте заявку, и менеджер посчитает доставку с учётом маршрута и типа техники в течение дня.' },
     ],
     relatedProducts: [
-      '/catalog/blok-konteinery/bytovye',
+      '/catalog/blok-konteinery/metallicheskie',
       '/catalog/bytovki/stroitelnye',
     ],
   },
@@ -96,8 +96,8 @@ export const articles = [
     ],
     relatedProducts: [
       '/catalog/bytovki/metallicheskie',
-      '/catalog/blok-konteinery/ofisnye',
-      '/catalog/blok-konteinery/skladskie',
+      '/catalog/blok-konteinery/metallicheskie',
+      '/catalog/blok-konteinery/sendvich-paneli',
     ],
   },
   {

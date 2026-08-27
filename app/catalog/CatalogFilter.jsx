@@ -1,6 +1,7 @@
 'use client';
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
+import { useDebouncedValue } from '../lib/useDebouncedValue';
 
 function priceToNumber(price) {
   return parseInt(String(price).replace(/[^\d]/g, ''), 10) || 0;
@@ -51,6 +52,11 @@ export default function CatalogFilter({ categorySlug, types, sidebarLinks, subty
   const [activeFeatures, setActiveFeatures] = useState([]);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
+  // Слайдер двигает minPrice/maxPrice на каждый пиксель драга — сам список и его
+  // layout-анимации пересчитываем только по debounced-значению, а не на каждый onChange.
+  const minPriceDebounced = useDebouncedValue(minPrice);
+  const maxPriceDebounced = useDebouncedValue(maxPrice);
+
   const toggleFeature = (feature) => {
     setActiveFeatures((prev) =>
       prev.includes(feature) ? prev.filter((f) => f !== feature) : [...prev, feature]
@@ -61,10 +67,10 @@ export default function CatalogFilter({ categorySlug, types, sidebarLinks, subty
     return models.filter((m) => {
       if (activeSubtype && m.subtype !== activeSubtype) return false;
       const priceNum = priceToNumber(m.price);
-      if (priceNum < minPrice || priceNum > maxPrice) return false;
+      if (priceNum < minPriceDebounced || priceNum > maxPriceDebounced) return false;
       return activeFeatures.every((f) => m.features?.includes(f));
     });
-  }, [models, activeSubtype, minPrice, maxPrice, activeFeatures]);
+  }, [models, activeSubtype, minPriceDebounced, maxPriceDebounced, activeFeatures]);
 
   const minPct = ((minPrice - priceBounds.min) / (priceBounds.max - priceBounds.min || 1)) * 100;
   const maxPct = ((maxPrice - priceBounds.min) / (priceBounds.max - priceBounds.min || 1)) * 100;
@@ -94,16 +100,22 @@ export default function CatalogFilter({ categorySlug, types, sidebarLinks, subty
                 >
                   <b>Все</b>
                 </button>
-                {subtypes.map((subtype) => (
-                  <button
-                    key={subtype.slug}
-                    type="button"
-                    className={`cat-filter-type${activeSubtype === subtype.slug ? ' on' : ''}`}
-                    onClick={() => setActiveSubtype(subtype.slug)}
-                  >
-                    <b>{subtype.title}</b>
-                  </button>
-                ))}
+                {subtypes.map((subtype) =>
+                  subtype.href ? (
+                    <Link key={subtype.slug} href={subtype.href} className="cat-filter-type">
+                      <b>{subtype.title}</b>
+                    </Link>
+                  ) : (
+                    <button
+                      key={subtype.slug}
+                      type="button"
+                      className={`cat-filter-type${activeSubtype === subtype.slug ? ' on' : ''}`}
+                      onClick={() => setActiveSubtype(subtype.slug)}
+                    >
+                      <b>{subtype.title}</b>
+                    </button>
+                  )
+                )}
               </>
             ) : (
               sidebarTypes.map((type) => (
