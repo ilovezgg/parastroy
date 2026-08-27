@@ -150,9 +150,10 @@
   .c-row{ padding:18px 60px 20px 18px; }
   .c-row b{ overflow-wrap:anywhere; font-size:16px; }
   .c-note-sm{ max-width:none; }
-  .c-map-wrap{ min-height:320px; }
-  .c-map-meta{ flex-direction:column; align-items:stretch; }
+  .c-map-wrap{ min-height:440px; }
+  .c-map-meta{ left:12px; right:12px; bottom:64px; flex-direction:column-reverse; align-items:stretch; gap:8px; }
   .c-map{ justify-content:center; }
+  .c-coords{ align-self:center; }
   .c-place-info dl > div{ flex-direction:column; align-items:flex-start; gap:4px; padding-bottom:14px; }
   .c-place-info dd{ text-align:left; }
   .c-place-info dl{ gap:16px; }

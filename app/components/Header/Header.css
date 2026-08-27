@@ -1,10 +1,16 @@
 .topbar {
-  position: relative;
-  z-index: 8;
+  position: sticky;
+  top: 0;
+  z-index: 50;
   display: flex;
   align-items: center;
   gap: 18px;
   padding: 22px 26px;
+  background: rgba(233, 235, 229, 0.72);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-radius: 0 0 24px 24px;
+  transition: box-shadow 0.3s ease;
 }
 
 .brand {
@@ -12,6 +18,8 @@
   flex-direction: row;
   align-items: center;
   min-width: 240px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .brand-logo {
@@ -187,6 +195,21 @@
   background: radial-gradient(90% 60% at 85% 0%, rgba(199, 130, 43, 0.16), transparent 60%), linear-gradient(150deg, #16221E, #0D1412);
 }
 
+.mnav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.mnav-logo img {
+  width: 72px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
+}
+
 .mnav-links {
   display: flex;
   flex-direction: column;
@@ -243,4 +266,6 @@
   .brand-logo { width: 44px; height: 44px; }
   .phone { width: 44px; height: 44px; padding: 0; justify-content: center; }
   .phone b { display: none; }
+  .mnav { gap: 28px; padding: 80px 24px 50px; }
+  .mnav-logo img { width: 56px; }
 }

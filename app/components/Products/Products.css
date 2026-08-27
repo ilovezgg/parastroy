@@ -219,6 +219,11 @@
   transition: transform .25s ease, background .25s ease;
 }
 
+.rail-btn i svg {
+  width: 16px;
+  height: 16px;
+}
+
 .rail-btn:hover {
   transform: translateY(-1px);
 }

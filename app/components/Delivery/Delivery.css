@@ -421,15 +421,20 @@
   .d-route .d-point.end {
     display: none;
   }
+  .d-grid {
+    gap: 22px;
+  }
   .d-total {
     grid-template-columns: 1fr;
     gap: 14px;
   }
   .d-compare {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
   .d-facts {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
   .d-km {
     margin-left: 0;

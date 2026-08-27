@@ -2,6 +2,7 @@
 import dynamic from 'next/dynamic';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
+import Quiz from './components/Quiz/Quiz';
 import Models from './components/Models/Models';
 import Products from './components/Products/Products';
 import Footer from './components/Footer/Footer';
@@ -14,7 +15,6 @@ const Delivery = dynamic(() => import('./components/Delivery/Delivery'));
 const FAQ = dynamic(() => import('./components/FAQ/FAQ'));
 const AssemblyScroll = dynamic(() => import('./components/AssemblyScroll/AssemblyScroll'));
 const Socials = dynamic(() => import('./components/Socials/Socials'));
-const Quiz = dynamic(() => import('./components/Quiz/Quiz'));
 const Contacts = dynamic(() => import('./components/Contacts/Contacts'));
 const Options = dynamic(() => import('./components/Options/Options'));
 export default function Landing(){
@@ -22,6 +22,7 @@ export default function Landing(){
     <div className="shell">
       <Header />
       <Hero />
+      <Quiz/>
 
        <Products/>
        <Models />
@@ -31,7 +32,6 @@ export default function Landing(){
       <About/>
        <FAQ />
        <Socials/>
-<Quiz/>
 
     <AssemblyScroll/>
        <Contacts/>

@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const fadeUp = {
@@ -15,7 +16,6 @@ function formatDate(iso) {
 
 export default function BlogListView({ articles }) {
   const sorted = [...articles].sort((a, b) => new Date(b.datePublished) - new Date(a.datePublished));
-  const [feature, ...rest] = sorted;
 
   return (
     <main className="blog-page">
@@ -33,39 +33,30 @@ export default function BlogListView({ articles }) {
           <p>Отвечаем на частые вопросы про выбор, доставку и установку бытовок и блок-контейнеров.</p>
         </motion.div>
 
-        {feature && (
-          <motion.div {...fadeUp}>
-            <Link href={`/blog/${feature.slug}`} className="blog-feature">
-              <div className="blog-feature-photo" aria-hidden="true">
-                <span className="blog-feature-wm mono">01</span>
-              </div>
-              <div className="blog-feature-meta">
-                <span className="mono">статья</span>
-                <span>{formatDate(feature.datePublished)}</span>
-              </div>
-              <h2>{feature.title}</h2>
-              <p>{feature.excerpt}</p>
-            </Link>
-          </motion.div>
-        )}
-
-        <div className="blog-list">
-          {rest.map((article, i) => (
+        <div className="blog-cards">
+          {sorted.map((article, i) => (
             <motion.div
               key={article.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: i * 0.06, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ delay: i * 0.05, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
-              <Link href={`/blog/${article.slug}`} className="blog-row">
-                <span className="blog-row-date mono">{formatDate(article.datePublished)}</span>
-                <div className="blog-row-main">
-                  <div className="blog-row-thumb" aria-hidden="true" />
-                  <div className="blog-row-body">
-                    <h3>{article.title}</h3>
-                    <p>{article.excerpt}</p>
+              <Link href={`/blog/${article.slug}`} className="blog-card">
+                <div className="blog-card-photo" aria-hidden="true">
+                  {article.coverImage ? (
+                    <Image src={article.coverImage} alt={article.title} fill sizes="(max-width: 800px) 100vw, 800px" className="blog-card-photo-img" priority={i === 0} />
+                  ) : (
+                    <span className="blog-card-wm mono">{String(i + 1).padStart(2, '0')}</span>
+                  )}
+                </div>
+                <div className="blog-card-body">
+                  <div className="blog-card-meta">
+                    <span className="mono">статья</span>
+                    <span>{formatDate(article.datePublished)}</span>
                   </div>
+                  <h2>{article.title}</h2>
+                  <p>{article.excerpt}</p>
                 </div>
               </Link>
             </motion.div>

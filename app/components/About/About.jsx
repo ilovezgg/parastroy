@@ -9,8 +9,8 @@ const grid = { hidden: {}, show: { transition: { staggerChildren: 0.07 } } };
 
 /* TODO: реквизиты временные, заменить на реальные данные ПАРА | МОДУЛЬ */
 const FOUNDER = {
-  name: "Сергей Ковалёв", // TODO: уточнить имя
-  role: "основатель и директор завода",
+  name: "Александр Пара",
+  role: "основатель компании",
   photo: "/founder.jpg",
   since: "на производстве с 2011 года", // TODO: уточнить год
   phone: "+7 921 199 23 03",
@@ -47,7 +47,12 @@ export default function About() {
           <p className="about-word-muted">Цену и срок фиксируем в договоре до отгрузки. Если по гарантии что-то пойдёт не так — заявка идёт не подрядчику, а нам: принимаем и выезжаем сами.</p>
           
           <div className="about-sign">
-            <svg viewBox="0 0 220 60" aria-hidden="true"><path d="M6 44c14-4 22-24 30-30 6-4 8 2 5 10-4 12-14 22-8 24 7 3 16-14 22-22 5-7 9-4 7 4-2 9-9 16-4 18 6 3 14-10 19-18 4-6 8-4 6 3-2 8-8 14-3 16 7 3 20-12 28-22 6-7 11-8 15-6" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" /></svg>
+            <svg viewBox="0 0 220 60" aria-hidden="true" className="sign-p">
+              <path d="M22 52c-1-16-1.5-28 1-38 1-4 5-4 6 0 2 8 1.5 24 1 38" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+              <path d="M29 14c10-6 22-6 32 0" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+              <path d="M61 14c2.5 10 2 24 1 34-.5 5 2 8 6 5 6-4 10-13 12-21" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+              <path d="M10 56c44 8 148 8 198-6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" opacity="0.55" />
+            </svg>
             <div><b>{FOUNDER.name}</b><span>{FOUNDER.role}</span></div>
           </div>
 

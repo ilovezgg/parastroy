@@ -25,7 +25,7 @@ export default function Header(){
 
   return (
     <div className="topbar">
-      <div className="brand">
+      <Link href="/" className="brand">
         <Image
           src="/para_modul_logo.png"
           alt="ПАРА МОДУЛЬ"
@@ -38,7 +38,7 @@ export default function Header(){
           <b>ПАРА | МОДУЛЬ</b>
           <span>бытовки и блок-контейнеры</span>
         </div>
-      </div>
+      </Link>
 
       <nav className="nav">
         <a className="on" href="/#hero">Главная</a>
@@ -80,6 +80,21 @@ export default function Header(){
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
           >
+            <motion.div
+              className="mnav-logo"
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Image
+                src="/para_modul_logo.png"
+                alt="ПАРА МОДУЛЬ"
+                width={72}
+                height={48}
+              />
+            </motion.div>
+
             <motion.nav
               className="mnav-links"
               initial="closed"

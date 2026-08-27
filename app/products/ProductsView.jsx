@@ -1,6 +1,7 @@
 'use client';
 import { useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -154,7 +155,17 @@ export default function ProductsView({ categories }) {
                     className="cat-card"
                   >
                     <div className="cat-card-photo" aria-hidden="true">
-                      <span className="cat-card-wm mono">{model.slug}</span>
+                      {model.image ? (
+                        <Image
+                          src={model.image}
+                          alt={model.title}
+                          fill
+                          sizes="(max-width: 700px) 50vw, 25vw"
+                          className="cat-card-photo-img"
+                        />
+                      ) : (
+                        <span className="cat-card-wm mono">{model.slug}</span>
+                      )}
                     </div>
                     <div className="cat-card-body">
                       <h2>{model.title}</h2>

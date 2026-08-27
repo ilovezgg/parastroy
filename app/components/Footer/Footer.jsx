@@ -25,9 +25,24 @@ const NAV = [
   ["Главная", "/#hero"],
   ["Продукция", "/products"],
   ["Галерея", "/#gallery"],
+  ["Доставка", "/#delivery"],
   ["Вопросы", "/#faq"],
+  ["О заводе", "/#about"],
   ["Контакты", "/#contacts"],
-  ["Соцсети", "/#socials"],
+  ["Статьи", "/blog"],
+];
+
+const CATALOG_LINKS = [
+  ["Бытовки", "/catalog/bytovki"],
+  ["Блок-контейнеры", "/catalog/blok-konteinery"],
+  ["Модульные здания", "/catalog/modulnye-zdaniya"],
+];
+
+const SOCIAL_LINKS = [
+  { name: "Telegram", short: "TG", url: "https://t.me/para_modul" },
+  { name: "YouTube", short: "YT", url: "https://youtube.com/@para_modul" },
+  { name: "ВКонтакте", short: "VK", url: "https://vk.com/para_modul" },
+  { name: "Instagram", short: "IG", url: "https://instagram.com/para_modul" },
 ];
 
 export default function Footer() {
@@ -166,29 +181,27 @@ export default function Footer() {
 
       {/* ---------- футер ---------- */}
       <footer className="site-footer">
+        <div className="f-glow" aria-hidden="true" />
+
         <div className="f-top">
           <div className="f-brand">
             <a href="/" className="f-mark">
               {CO.name}
             </a>
             <p>{CO.since}</p>
+
             <div className="f-contacts">
               <a href={`tel:${CO.phoneHref}`}>{CO.phone}</a>
               <a href={`mailto:${CO.mail}`}>{CO.mail}</a>
-              <a href={CO.telegram} target="_blank" rel="noopener noreferrer">
-                Telegram
-              </a>
             </div>
-            <dl className="f-meta">
-              <div>
-                <dt className="mono">производство</dt>
-                <dd>{CO.address}</dd>
-              </div>
-              <div>
-                <dt className="mono">часы работы</dt>
-                <dd>{CO.hours}</dd>
-              </div>
-            </dl>
+
+            <div className="f-socials">
+              {SOCIAL_LINKS.map((s) => (
+                <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" title={s.name}>
+                  {s.short}
+                </a>
+              ))}
+            </div>
           </div>
 
           <nav className="f-nav">
@@ -201,6 +214,31 @@ export default function Footer() {
               ))}
             </div>
           </nav>
+
+          <nav className="f-nav">
+            <h4 className="mono">Каталог</h4>
+            <div className="f-links f-links-col">
+              {CATALOG_LINKS.map(([label, href]) => (
+                <a key={label} href={href}>
+                  {label}
+                </a>
+              ))}
+            </div>
+          </nav>
+
+          <div className="f-nav f-meta-col">
+            <h4 className="mono">Реквизиты</h4>
+            <dl className="f-meta">
+              <div>
+                <dt className="mono">производство</dt>
+                <dd>{CO.address}</dd>
+              </div>
+              <div>
+                <dt className="mono">часы работы</dt>
+                <dd>{CO.hours}</dd>
+              </div>
+            </dl>
+          </div>
         </div>
 
         <div className="f-bottom">

@@ -2,6 +2,7 @@ export const articles = [
   {
     slug: 'nuzhen-li-fundament-pod-bytovku',
     title: 'Нужен ли фундамент под бытовку',
+    coverImage: '/images/blog/fundament.jpg',
     metaDescription:
       'Разбираемся, когда бытовке нужен фундамент, а когда достаточно опор — влияние грунта, срока эксплуатации и веса конструкции.',
     keywords: [
@@ -35,6 +36,7 @@ export const articles = [
   {
     slug: 'skolko-stoit-dostavka-bytovki',
     title: 'Сколько стоит доставка бытовки: как считается цена',
+    coverImage: '/images/blog/dostavka.jpg',
     metaTitle: 'Сколько стоит доставка бытовки',
     metaDescription:
       'Из чего складывается стоимость доставки бытовки: расстояние, тип транспорта, разгрузка манипулятором — с примерами расчёта.',
@@ -70,6 +72,7 @@ export const articles = [
   {
     slug: 'bytovka-ili-blok-konteiner',
     title: 'Бытовка или блок-контейнер: в чём разница',
+    coverImage: '/images/blog/bytovka-ili-konteiner.jpg',
     metaDescription:
       'Сравниваем бытовку и блок-контейнер по прочности, сроку службы, цене и назначению — что выбрать под стройку, офис или склад.',
     keywords: [
@@ -103,6 +106,7 @@ export const articles = [
   {
     slug: 'nuzhno-li-razreshenie-na-bytovku',
     title: 'Нужно ли разрешение на установку бытовки на участке',
+    coverImage: '/images/blog/razreshenie.jpg',
     metaDescription:
       'Разбираем по закону: нужно ли разрешение и регистрация для бытовки на участке, когда она становится капитальным строением и какие отступы соблюдать.',
     keywords: [
@@ -151,6 +155,7 @@ export const articles = [
   {
     slug: 'kak-uteplit-bytovku-dlya-zimnego-prozhivaniya',
     title: 'Как утеплить бытовку для зимнего проживания',
+    coverImage: '/images/blog/uteplenie.jpg',
     metaDescription:
       'Как утеплить бытовку для зимнего проживания: какой утеплитель выбрать, сколько слоёв нужно, как избежать конденсата и мостиков холода — разбор по нормам.',
     keywords: [
@@ -228,6 +233,7 @@ export const articles = [
   {
     slug: 'kak-podklyuchit-bytovku-k-elektrichestvu',
     title: 'Как подключить бытовку к электричеству',
+    coverImage: '/images/blog/elektrichestvo.jpg',
     metaDescription:
       'Разбираем, как подключить бытовку к электричеству: сетевое или временное подключение, льготное техприсоединение до 15 кВт, заземление и УЗО.',
     keywords: [

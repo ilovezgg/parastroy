@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const fadeUp = {
@@ -129,8 +130,10 @@ export default function ArticleView({ article, relatedProducts, tag }) {
         </motion.div>
 
         {article.coverImage && (
-          <motion.figure {...fadeUp}>
-            <div className="article-image" aria-hidden="true" />
+          <motion.figure className="article-figure" {...fadeUp}>
+            <div className="article-image" aria-hidden="true">
+              <Image src={article.coverImage} alt={article.title} fill sizes="(max-width: 720px) 100vw, 720px" priority className="article-image-img" />
+            </div>
             {article.coverImageCaption && (
               <figcaption className="article-image-caption">{article.coverImageCaption}</figcaption>
             )}

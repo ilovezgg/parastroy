@@ -48,7 +48,7 @@ const BONUS = [
   "Чертёж и фото блока вживую",
 ];
 
-export default function Quiz() {
+export default function Quiz({ id = "quiz" }) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [multi, setMulti] = useState([]);
@@ -115,7 +115,7 @@ export default function Quiz() {
   /* ---------- экран благодарности ---------- */
   if (status === "done") {
     return (
-      <section id="quiz" className="quiz">
+      <section id={id} className="quiz">
         <motion.div
           className="q-thanks"
           initial={{ opacity: 0, y: 20 }}
@@ -136,7 +136,7 @@ export default function Quiz() {
   }
 
   return (
-    <section id="quiz" className="quiz">
+    <section id={id} className="quiz">
       {/* шапка */}
       <div className="q-header">
         <div className="q-top">
