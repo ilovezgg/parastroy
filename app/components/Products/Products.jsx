@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
 import './Products.css';
 
 const data = [
@@ -81,9 +82,7 @@ export default function Products(){
                 <span className="rail-btn">
                   <span>Подробнее</span>
                   <i>
-                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M7 17L17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                    <ArrowUpRight size={16} strokeWidth={1.7} aria-hidden="true" />
                   </i>
                 </span>
               </div>

@@ -5,7 +5,7 @@
 
 .blog-shell {
   width: 90%;
-  max-width: 1240px;
+  max-width: 1920px;
   margin: 0 auto;
 }
 
@@ -95,7 +95,7 @@
 /* ============ список: карточки статей ============ */
 .blog-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
 
@@ -391,9 +391,9 @@
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1180px) {
   .blog-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -401,6 +401,9 @@
   .blog-page,
   .article-page {
     padding: 64px 4px;
+  }
+  .blog-cards {
+    grid-template-columns: 1fr;
   }
   .blog-card-body {
     padding: 20px 18px 22px;

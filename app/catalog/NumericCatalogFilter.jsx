@@ -1,5 +1,7 @@
 'use client';
 import { useMemo, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Check } from 'lucide-react';
 import { useDebouncedValue } from '../lib/useDebouncedValue';
 
 function priceToNumber(price) {
@@ -166,16 +168,34 @@ export default function NumericCatalogFilter({ models, children }) {
         <div className="cat-filter-block">
           <span className="cat-filter-kicker">Этажность</span>
           <div className="cat-filter-features">
-            {floorsOptions.map((floor) => (
-              <label key={floor} className="cat-filter-check">
-                <input
-                  type="checkbox"
-                  checked={activeFloors.includes(floor)}
-                  onChange={() => toggleFloor(floor)}
-                />
-                <span>{floorsLabel(floor)}</span>
-              </label>
-            ))}
+            {floorsOptions.map((floor) => {
+              const checked = activeFloors.includes(floor);
+              return (
+                <label key={floor} className="cat-filter-check">
+                  <span className="cat-filter-check-box">
+                    <input
+                      type="checkbox"
+                      checked={checked}
+                      onChange={() => toggleFloor(floor)}
+                    />
+                    <AnimatePresence>
+                      {checked && (
+                        <motion.span
+                          className="cat-filter-check-icon"
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          exit={{ scale: 0, opacity: 0 }}
+                          transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                        >
+                          <Check size={13} strokeWidth={2.4} />
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
+                  </span>
+                  <span>{floorsLabel(floor)}</span>
+                </label>
+              );
+            })}
           </div>
         </div>
 

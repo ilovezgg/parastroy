@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { FAQS } from "@/app/data/faq";
 import "./FAQ.css";
 
@@ -50,9 +51,7 @@ export default function FAQ() {
             <span className="mono">не нашли ответ</span>
             <b>Спросить менеджера</b>
             <i aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <ArrowRight size={16} strokeWidth={1.6} />
             </i>
           </a>
         </aside>

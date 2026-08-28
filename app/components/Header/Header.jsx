@@ -1,8 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Phone, X } from 'lucide-react';
+import Quiz from '../Quiz/Quiz';
 import './Header.css';
 
 const LINKS = [
@@ -17,6 +20,10 @@ const LINKS = [
 export default function Header(){
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [quizOpen, setQuizOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -25,11 +32,61 @@ export default function Header(){
   }, [open]);
 
   useEffect(() => {
+    if (!quizOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, [quizOpen]);
+
+  useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const quizModal = (
+    <AnimatePresence>
+      {quizOpen && (
+        <motion.div
+          className="header-quiz-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          onClick={() => setQuizOpen(false)}
+        >
+          <motion.div
+            className="header-quiz-modal"
+            initial={{ opacity: 0, y: 24, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 16, scale: 0.98 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <motion.button
+              type="button"
+              className="header-quiz-close"
+              aria-label="Закрыть"
+              onClick={() => setQuizOpen(false)}
+              initial="rest"
+              whileHover="hover"
+              whileTap={{ scale: 0.9 }}
+            >
+              <motion.span
+                variants={{ rest: { rotate: 0 }, hover: { rotate: 90 } }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                style={{ display: 'inline-flex' }}
+              >
+                <X size={18} strokeWidth={1.7} />
+              </motion.span>
+            </motion.button>
+            <Quiz id="header-quiz" />
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
 
   return (
     <div className={`topbar${scrolled ? ' is-scrolled' : ''}`}>
@@ -59,12 +116,10 @@ export default function Header(){
       </nav>
 
       <div className="acts">
-        <button className="btn-light">Рассчитать ваш проект</button>
+        <button type="button" className="btn-light" onClick={() => setQuizOpen(true)}>Рассчитать ваш проект</button>
         <a className="phone" href="tel:+79211992303">
           <i>
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M6.5 4.5c-1 0-1.5.8-1.5 1.6 0 4.7 3.8 8.5 8.5 8.5.8 0 1.6-.5 1.6-1.5l-.2-1.5c-.1-.6-.5-1-1.1-1.2l-2-.6c-.4-.1-.8 0-1.1.3l-.8.8c-1-.5-1.8-1.3-2.3-2.3l.8-.8c.3-.3.4-.7.3-1.1l-.6-2C8 5.5 7.6 5.1 7 5l-1.5-.5h1z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <Phone size={15} strokeWidth={1.6} />
           </i>
           <b>+7 921 199 23 03</b>
         </a>
@@ -145,6 +200,8 @@ export default function Header(){
           </motion.div>
         )}
       </AnimatePresence>
+
+      {mounted && createPortal(quizModal, document.body)}
     </div>
   )
 }

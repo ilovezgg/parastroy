@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 
 const EASE = [0.16, 1, 0.3, 1];
 const fadeUp = {
@@ -123,9 +124,7 @@ export default function ProductsView({ categories }) {
                     <span className="prod-pick-cta">
                       Смотреть каталог
                       <i aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none">
-                          <path d="M7 17L17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                        <ArrowUpRight size={16} strokeWidth={1.7} />
                       </i>
                     </span>
                   </div>

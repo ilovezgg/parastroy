@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import "./Socials.css";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -71,9 +72,7 @@ export default function Socials() {
             <h3>{s.handle}</h3>
             <p>{s.text}</p>
             <i className="s-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M7 17L17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <ArrowUpRight size={16} strokeWidth={1.6} />
             </i>
           </motion.a>
         ))}
@@ -95,9 +94,7 @@ export default function Socials() {
           <span className="s-manager-btn">
             Написать
             <i aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <ArrowRight size={18} strokeWidth={1.6} />
             </i>
           </span>
         </motion.a>

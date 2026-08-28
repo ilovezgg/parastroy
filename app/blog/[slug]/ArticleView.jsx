@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -94,9 +95,19 @@ function ArticleLeadForm({ articleTitle }) {
             <input type="tel" placeholder="+7 (___) ___-__-__" value={phone} onChange={(e) => setPhone(e.target.value)} required disabled={state === 'ok'} />
           </label>
         </div>
-        <motion.button type="submit" className="c-submit" disabled={state === 'sending' || state === 'ok'} whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
+        <motion.button
+          type="submit"
+          className="c-submit"
+          disabled={state === 'sending' || state === 'ok'}
+          initial="rest"
+          whileHover="hover"
+          variants={{ rest: { y: 0 }, hover: { y: -2 } }}
+          whileTap={{ scale: 0.98 }}
+        >
           {state === 'sending' ? 'Отправляем…' : state === 'ok' ? 'Отправлено' : 'Получить расчёт'}
-          <i><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></i>
+          <motion.i variants={{ rest: { x: 0 }, hover: { x: 3 } }} transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}>
+            <ArrowRight size={16} strokeWidth={1.6} />
+          </motion.i>
         </motion.button>
         <small className={state === 'error' ? 'c-note err' : 'c-note'} aria-live="polite">{message || 'Нажимая кнопку, вы соглашаетесь на обработку персональных данных.'}</small>
       </form>

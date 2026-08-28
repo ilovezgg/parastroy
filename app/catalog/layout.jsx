@@ -5,7 +5,9 @@ import Footer from '../components/Footer/Footer';
 export default function CatalogLayout({ children }) {
   return (
     <>
-      <Header />
+      <div className="shell">
+        <Header />
+      </div>
       {children}
       <div className="shell">
         <FreeDesign />

@@ -1,6 +1,8 @@
 'use client';
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Check } from 'lucide-react';
 import { useDebouncedValue } from '../lib/useDebouncedValue';
 
 function priceToNumber(price) {
@@ -191,16 +193,34 @@ export default function CatalogFilter({ categorySlug, types, sidebarLinks, subty
           <div className="cat-filter-block">
             <span className="cat-filter-kicker">Особенности</span>
             <div className="cat-filter-features">
-              {featurePool.map((feature) => (
-                <label key={feature} className="cat-filter-check">
-                  <input
-                    type="checkbox"
-                    checked={activeFeatures.includes(feature)}
-                    onChange={() => toggleFeature(feature)}
-                  />
-                  <span>{feature}</span>
-                </label>
-              ))}
+              {featurePool.map((feature) => {
+                const checked = activeFeatures.includes(feature);
+                return (
+                  <label key={feature} className="cat-filter-check">
+                    <span className="cat-filter-check-box">
+                      <input
+                        type="checkbox"
+                        checked={checked}
+                        onChange={() => toggleFeature(feature)}
+                      />
+                      <AnimatePresence>
+                        {checked && (
+                          <motion.span
+                            className="cat-filter-check-icon"
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                          >
+                            <Check size={13} strokeWidth={2.4} />
+                          </motion.span>
+                        )}
+                      </AnimatePresence>
+                    </span>
+                    <span>{feature}</span>
+                  </label>
+                );
+              })}
             </div>
           </div>
         )}

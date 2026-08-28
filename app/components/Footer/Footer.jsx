@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowUp } from "lucide-react";
 import "./Footer.css";
 
 /* ↓↓↓ TODO: часы работы, telegram и адрес производства пока временные ↓↓↓ */
@@ -113,9 +114,7 @@ export default function Footer() {
           >
             Наверх
             <i aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <ArrowUp size={14} strokeWidth={1.7} />
             </i>
           </button>
         </div>

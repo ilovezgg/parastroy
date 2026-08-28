@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight, ArrowUpRight, X } from "lucide-react";
 import "./Gallery.css";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -106,14 +107,10 @@ export default function Gallery() {
               {String(pos.active + 1).padStart(2, "0")} / {String(SHOTS.length).padStart(2, "0")}
             </span>
             <button type="button" onClick={() => slide(-1)} disabled={pos.atStart} aria-label="Предыдущее фото">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M15 5l-7 7 7 7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <ChevronLeft size={16} strokeWidth={1.7} />
             </button>
             <button type="button" onClick={() => slide(1)} disabled={pos.atEnd} aria-label="Следующее фото">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <ChevronRight size={16} strokeWidth={1.7} />
             </button>
           </div>
         </motion.div>
@@ -148,9 +145,7 @@ export default function Gallery() {
                 <span className="g-sub">{g.sub}</span>
               </span>
               <span className="g-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M7 17L17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <ArrowUpRight size={16} strokeWidth={1.7} />
               </span>
             </span>
           </motion.button>
@@ -174,17 +169,27 @@ export default function Gallery() {
             transition={{ duration: 0.25 }}
             onClick={close}
           >
-            <button type="button" className="lb-close" onClick={close} aria-label="Закрыть">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-              </svg>
-            </button>
+            <motion.button
+              type="button"
+              className="lb-close"
+              onClick={close}
+              aria-label="Закрыть"
+              initial="rest"
+              whileHover="hover"
+              whileTap={{ scale: 0.9 }}
+            >
+              <motion.span
+                variants={{ rest: { rotate: 0, scale: 1 }, hover: { rotate: 90, scale: 1.12 } }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                style={{ display: "inline-flex" }}
+              >
+                <X size={20} strokeWidth={1.7} />
+              </motion.span>
+            </motion.button>
 
             <button type="button" className="lb-nav prev" aria-label="Предыдущее"
               onClick={(e) => { e.stopPropagation(); step(-1); }}>
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M15 5l-7 7 7 7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <ChevronLeft size={20} strokeWidth={1.7} />
             </button>
 
             <motion.figure
@@ -209,9 +214,7 @@ export default function Gallery() {
 
             <button type="button" className="lb-nav next" aria-label="Следующее"
               onClick={(e) => { e.stopPropagation(); step(1); }}>
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <ChevronRight size={20} strokeWidth={1.7} />
             </button>
           </motion.div>
         )}
