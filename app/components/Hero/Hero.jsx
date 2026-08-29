@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import Scene from '../../Scene';
 import Quiz from '../Quiz/Quiz';
+import useScrollLock from '../../lib/useScrollLock';
 import './Hero.css';
 
 function Counter({ value }){
@@ -26,12 +27,7 @@ export default function Hero(){
 
   useEffect(() => { setMounted(true); }, []);
 
-  useEffect(() => {
-    if (!quizOpen) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = prev; };
-  }, [quizOpen]);
+  useScrollLock(quizOpen);
 
   const quizModal = (
     <AnimatePresence>
@@ -60,7 +56,7 @@ export default function Hero(){
             >
               ✕
             </button>
-            <Quiz id="hero-quiz" />
+            <Quiz id="hero-quiz" variant="modal" />
           </motion.div>
         </motion.div>
       )}

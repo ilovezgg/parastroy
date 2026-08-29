@@ -41,9 +41,16 @@
 }
 
 .blog-crumbs a {
+  position: relative;
   color: var(--muted);
   text-decoration: none;
   transition: color .2s;
+}
+
+.blog-crumbs a::before {
+  content: "";
+  position: absolute;
+  inset: -15px -3px;
 }
 
 .blog-crumbs a:hover {

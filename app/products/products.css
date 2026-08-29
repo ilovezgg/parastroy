@@ -139,9 +139,16 @@
 }
 
 .cat-page .prod-popular-groupHead a {
+  position: relative;
   font-size: 13px;
   color: var(--muted);
   transition: .25s;
+}
+
+.cat-page .prod-popular-groupHead a::before {
+  content: "";
+  position: absolute;
+  inset: -14px -6px;
 }
 
 .cat-page .prod-popular-groupHead a:hover {

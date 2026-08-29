@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import PhoneInput from "../PhoneInput/PhoneInput";
 import "./Contacts.css";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -67,7 +68,7 @@ export default function Contacts() {
           <form onSubmit={submit}>
             <div className="c-fields">
               <label><span className="mono">как к вам обращаться</span><input type="text" placeholder="Имя" value={name} onChange={e=>setName(e.target.value)} disabled={state==="ok"} /></label>
-              <label><span className="mono">телефон</span><input type="tel" placeholder="+7 (___) ___-__-__" value={phone} onChange={e=>setPhone(e.target.value)} required disabled={state==="ok"} /></label>
+              <label><span className="mono">телефон</span><PhoneInput value={phone} onChange={setPhone} required disabled={state==="ok"} /></label>
             </div>
             <motion.button type="submit" className="c-submit" disabled={state==="sending"||state==="ok"} initial="rest" whileHover="hover" variants={{ rest: { y: 0 }, hover: { y: -2 } }} whileTap={{ scale: 0.98 }}>
               {state==="sending"?"Отправляем…":state==="ok"?"Отправлено":"Получить расчёт"}

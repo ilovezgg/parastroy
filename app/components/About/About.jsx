@@ -29,7 +29,7 @@ export default function About() {
   return (
     <section id="about" className="about">
       <motion.div className="sec-head" variants={grid} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
-        <motion.h2 variants={rise}>Завод, у которого <em>есть<br/>хозяин</em></motion.h2>
+        <motion.h2 variants={rise}>Завод, у которого <em>есть <br className="only-desktop-br"/>хозяин</em></motion.h2>
         <motion.p variants={rise}>Пестово, Новгородская область. Здесь варят каркас, утепляют и грузят на трал — и здесь же отвечают, если что-то пошло не так.</motion.p>
       </motion.div>
 

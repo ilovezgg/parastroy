@@ -301,6 +301,8 @@
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   cursor: zoom-out;
+  overscroll-behavior: contain;
+  touch-action: none;
 }
 .lb-frame {
   position: relative;

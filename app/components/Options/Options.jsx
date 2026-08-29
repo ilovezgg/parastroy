@@ -32,7 +32,7 @@ const list = [
 export default function Options(){
   return (
     <section id="options">
-      <div className="sec-head"><h2>Дополнительно<br/><em>укомплектуем</em></h2><p>Двери, окна ПВХ, электрика по ПУЭ, отопление, сантехника, слаботочка.</p></div>
+      <div className="sec-head"><h2>Дополнительно <br className="only-desktop-br"/><em>укомплектуем</em></h2><p>Двери, окна ПВХ, электрика по ПУЭ, отопление, сантехника, слаботочка.</p></div>
       <div className="flow">
         {list.map((c,i)=>(
           <motion.div

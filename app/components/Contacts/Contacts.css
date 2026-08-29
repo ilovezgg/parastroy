@@ -23,6 +23,16 @@
 .c-fields span{ font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
 .c-fields input{ width:100%; padding:16px 20px; border-radius:999px; border:1px solid var(--line); background:rgba(255,255,255,.75); font-size:14.5px; }
 .c-fields input:focus{ outline:none; border-color:var(--accent); background:#fff; }
+.c-fields input:-webkit-autofill,
+.c-fields input:-webkit-autofill:hover,
+.c-fields input:-webkit-autofill:focus,
+.c-fields input:-webkit-autofill:active{
+  -webkit-text-fill-color: var(--ink);
+  caret-color: var(--ink);
+  box-shadow: 0 0 0 1000px rgba(255,255,255,.75) inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+.c-fields input:autofill{ background: rgba(255,255,255,.75); color: var(--ink); }
 .c-submit{ display:inline-flex; align-items:center; gap:14px; padding:16px 28px; border:none; border-radius:999px; background:var(--ink); color:#F4F6F3; font-size:14.5px; font-weight:500; cursor:pointer; }
 .c-submit i{ display:grid; place-items:center; transition:.25s; }
 .c-submit svg{ width:18px; height:18px; }

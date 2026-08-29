@@ -139,22 +139,18 @@
 .free-form textarea:disabled {
   opacity: 0.6;
 }
-
-.phone-input {
-  position: relative;
-  display: flex;
-  align-items: center;
+.free-form input:-webkit-autofill,
+.free-form input:-webkit-autofill:hover,
+.free-form input:-webkit-autofill:focus,
+.free-form input:-webkit-autofill:active {
+  -webkit-text-fill-color: #f1f4f1;
+  caret-color: #f1f4f1;
+  box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.08) inset;
+  transition: background-color 9999s ease-in-out 0s;
 }
-.phone-flag {
-  position: absolute;
-  left: 20px;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 14px;
-  color: #8e9c96;
-  pointer-events: none;
-}
-.phone-input input {
-  padding-left: 48px;
+.free-form input:autofill {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f1f4f1;
 }
 
 .agree {
@@ -315,8 +311,8 @@
 .f-socials a {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.05);
@@ -379,12 +375,18 @@
   align-items: flex-start;
 }
 .f-links a {
+  position: relative;
   padding: 4px 0;
   font-size: 14px;
   color: #c4ccc7;
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.25s;
+}
+.f-links a::before {
+  content: "";
+  position: absolute;
+  inset: -10px 0;
 }
 .f-links a:hover {
   color: #f4f7f4;

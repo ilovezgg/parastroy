@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, ArrowUpRight, X } from "lucide-react";
+import useScrollLock from "../../lib/useScrollLock";
 import "./Gallery.css";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -63,6 +64,8 @@ export default function Gallery() {
     []
   );
 
+  useScrollLock(open);
+
   useEffect(() => {
     if (!open) return;
     const onKey = (e) => {
@@ -71,12 +74,7 @@ export default function Gallery() {
       if (e.key === "ArrowLeft") step(-1);
     };
     window.addEventListener("keydown", onKey);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prev;
-    };
+    return () => window.removeEventListener("keydown", onKey);
   }, [open, close, step]);
 
   return (

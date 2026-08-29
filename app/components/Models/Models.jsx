@@ -60,7 +60,7 @@ export default function Models(){
   return (
     <section id="models" className="models-sec">
      <div className="sec-head">
-  <h2>Цена блока<br/><em>и что меняет доставка</em></h2>
+  <h2>Цена блока <br className="only-desktop-br"/><em>и что меняет доставка</em></h2>
   <p>Расчёт на примере Пестово — Санкт-Петербург, 500 км. Шаланда везёт сразу два блока по цене одной машины.</p>
 </div>
 

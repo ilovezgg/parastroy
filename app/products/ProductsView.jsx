@@ -1,9 +1,9 @@
 'use client';
 import { useMemo } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import ModelCard from '../components/ModelCard/ModelCard';
 
 const EASE = [0.16, 1, 0.3, 1];
 const fadeUp = {
@@ -148,30 +148,11 @@ export default function ProductsView({ categories }) {
               </div>
               <div className="cat-grid">
                 {cheapest.map((model) => (
-                  <Link
+                  <ModelCard
                     key={model.slug}
                     href={`/catalog/${category.slug}/${model.typeSlug}/${model.slug}`}
-                    className="cat-card"
-                  >
-                    <div className="cat-card-photo" aria-hidden="true">
-                      {model.image ? (
-                        <Image
-                          src={model.image}
-                          alt={model.title}
-                          fill
-                          sizes="(max-width: 700px) 50vw, 25vw"
-                          className="cat-card-photo-img"
-                        />
-                      ) : (
-                        <span className="cat-card-wm mono">{model.slug}</span>
-                      )}
-                    </div>
-                    <div className="cat-card-body">
-                      <h2>{model.title}</h2>
-                      <p>{model.size}</p>
-                      <span className="cat-card-price mono">от {model.price}</span>
-                    </div>
-                  </Link>
+                    model={model}
+                  />
                 ))}
               </div>
             </div>

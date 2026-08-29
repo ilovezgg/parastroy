@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import PhoneInput from '../../components/PhoneInput/PhoneInput';
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -92,7 +93,7 @@ function ArticleLeadForm({ articleTitle }) {
           </label>
           <label>
             <span className="mono">телефон</span>
-            <input type="tel" placeholder="+7 (___) ___-__-__" value={phone} onChange={(e) => setPhone(e.target.value)} required disabled={state === 'ok'} />
+            <PhoneInput value={phone} onChange={setPhone} required disabled={state === 'ok'} />
           </label>
         </div>
         <motion.button

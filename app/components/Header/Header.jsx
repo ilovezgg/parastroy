@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Phone, X } from 'lucide-react';
 import Quiz from '../Quiz/Quiz';
+import useScrollLock from '../../lib/useScrollLock';
 import './Header.css';
 
 const LINKS = [
@@ -25,18 +26,7 @@ export default function Header(){
 
   useEffect(() => { setMounted(true); }, []);
 
-  useEffect(() => {
-    if (!open) return;
-    document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = ''; };
-  }, [open]);
-
-  useEffect(() => {
-    if (!quizOpen) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = prev; };
-  }, [quizOpen]);
+  useScrollLock(open || quizOpen);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -81,7 +71,7 @@ export default function Header(){
                 <X size={18} strokeWidth={1.7} />
               </motion.span>
             </motion.button>
-            <Quiz id="header-quiz" />
+            <Quiz id="header-quiz" variant="modal" />
           </motion.div>
         </motion.div>
       )}
@@ -91,14 +81,16 @@ export default function Header(){
   return (
     <div className={`topbar${scrolled ? ' is-scrolled' : ''}`}>
       <Link href="/" className="brand">
-        <Image
-          src="/para_modul_logo.png"
-          alt="ПАРА МОДУЛЬ"
-          className="brand-logo"
-          width={156}
-          height={104}
-          priority
-        />
+        <span className="brand-logo-frame">
+          <Image
+            src="/para_modul_logo.png"
+            alt="ПАРА МОДУЛЬ"
+            className="brand-logo"
+            fill
+            sizes="104px"
+            priority
+          />
+        </span>
         <div className="brand-text">
           <b>ПАРА | МОДУЛЬ</b>
           <span>бытовки и блок-контейнеры</span>
@@ -153,8 +145,8 @@ export default function Header(){
               <Image
                 src="/para_modul_logo.png"
                 alt="ПАРА МОДУЛЬ"
-                width={72}
-                height={48}
+                fill
+                sizes="72px"
               />
             </motion.div>
 

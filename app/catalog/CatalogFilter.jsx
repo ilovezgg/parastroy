@@ -77,6 +77,19 @@ export default function CatalogFilter({ categorySlug, types, sidebarLinks, subty
   const minPct = ((minPrice - priceBounds.min) / (priceBounds.max - priceBounds.min || 1)) * 100;
   const maxPct = ((maxPrice - priceBounds.min) / (priceBounds.max - priceBounds.min || 1)) * 100;
 
+  const hasActiveFilters =
+    activeSubtype !== null ||
+    minPrice !== priceBounds.min ||
+    maxPrice !== priceBounds.max ||
+    activeFeatures.length > 0;
+
+  const resetFilters = () => {
+    setActiveSubtype(null);
+    setMinPrice(priceBounds.min);
+    setMaxPrice(priceBounds.max);
+    setActiveFeatures([]);
+  };
+
   return (
     <div className="cat-filter-layout">
       <button
@@ -90,6 +103,12 @@ export default function CatalogFilter({ categorySlug, types, sidebarLinks, subty
       </button>
 
       <aside className={`cat-filter${filtersOpen ? ' open' : ''}`}>
+        {hasActiveFilters && (
+          <button type="button" className="cat-filter-reset" onClick={resetFilters}>
+            Сбросить фильтры
+          </button>
+        )}
+
         <div className="cat-filter-block">
           <span className="cat-filter-kicker">Тип бытовки</span>
           <div className="cat-filter-types">

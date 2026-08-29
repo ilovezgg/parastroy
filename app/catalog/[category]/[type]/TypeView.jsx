@@ -1,10 +1,10 @@
 'use client';
 import { useMemo } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import CatalogFilter from '../../CatalogFilter';
 import NumericCatalogFilter from '../../NumericCatalogFilter';
+import ModelCard from '../../../components/ModelCard/ModelCard';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -41,29 +41,10 @@ export default function TypeView({ category, type }) {
             exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Link
+            <ModelCard
               href={`/catalog/${category.slug}/${model.originTypeSlug}/${model.slug}`}
-              className="cat-card"
-            >
-              <div className="cat-card-photo" aria-hidden="true">
-                {model.image ? (
-                  <Image
-                    src={model.image}
-                    alt={model.title}
-                    fill
-                    sizes="(max-width: 700px) 50vw, 25vw"
-                    className="cat-card-photo-img"
-                  />
-                ) : (
-                  <span className="cat-card-wm mono">{model.slug}</span>
-                )}
-              </div>
-              <div className="cat-card-body">
-                <h2>{model.title}</h2>
-                <p>{model.size}</p>
-                <span className="cat-card-price mono">от {model.price}</span>
-              </div>
-            </Link>
+              model={model}
+            />
           </motion.div>
         ))}
       </AnimatePresence>

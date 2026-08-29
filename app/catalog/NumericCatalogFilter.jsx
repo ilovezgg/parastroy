@@ -138,6 +138,25 @@ export default function NumericCatalogFilter({ models, children }) {
     );
   };
 
+  const hasActiveFilters =
+    priceRange[0] !== priceBounds.min ||
+    priceRange[1] !== priceBounds.max ||
+    activeFloors.length > 0 ||
+    lengthRange[0] !== lengthBounds.min ||
+    lengthRange[1] !== lengthBounds.max ||
+    widthRange[0] !== widthBounds.min ||
+    widthRange[1] !== widthBounds.max ||
+    areaRange[0] !== areaBounds.min ||
+    areaRange[1] !== areaBounds.max;
+
+  const resetFilters = () => {
+    setPriceRange([priceBounds.min, priceBounds.max]);
+    setLengthRange([lengthBounds.min, lengthBounds.max]);
+    setWidthRange([widthBounds.min, widthBounds.max]);
+    setAreaRange([areaBounds.min, areaBounds.max]);
+    setActiveFloors([]);
+  };
+
   const filtered = useMemo(() => {
     return models.filter((m) => {
       const priceNum = priceToNumber(m.price);
@@ -163,6 +182,12 @@ export default function NumericCatalogFilter({ models, children }) {
       </button>
 
       <aside className={`cat-filter${filtersOpen ? ' open' : ''}`}>
+        {hasActiveFilters && (
+          <button type="button" className="cat-filter-reset" onClick={resetFilters}>
+            Сбросить фильтры
+          </button>
+        )}
+
         <RangeField label="Цена" bounds={priceBounds} value={priceRange} onChange={setPriceRange} />
 
         <div className="cat-filter-block">

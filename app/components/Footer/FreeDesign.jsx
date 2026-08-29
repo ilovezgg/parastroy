@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import PhoneInput from "../PhoneInput/PhoneInput";
 import "./Footer.css";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -93,19 +94,14 @@ export default function FreeDesign() {
           <motion.form className="free-form" onSubmit={submit} variants={grid}>
             <motion.input variants={rise} placeholder="Имя" value={form.name} onChange={set("name")} disabled={status === "done"} />
 
-            <motion.div className="phone-input" variants={rise}>
-              <span className="phone-flag" aria-hidden="true">
-                +7
-              </span>
-              <input
-                type="tel"
+            <motion.div variants={rise}>
+              <PhoneInput
                 aria-label="Телефон"
                 value={form.phone}
-                onChange={(e) => {
-                  set("phone")(e);
+                onChange={(next) => {
+                  setForm((f) => ({ ...f, phone: next }));
                   if (status === "error") setStatus("idle");
                 }}
-                placeholder="(000) 000-00-00"
                 disabled={status === "done"}
                 required
               />

@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import ResultCard from "./ResultCard";
+import PhoneInput from "../PhoneInput/PhoneInput";
+import { getRecommendations } from "./matching";
 import "./Quiz.css";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -29,6 +32,21 @@ const STEPS = [
     opts: ["Самая низкая цена", "Тепло зимой", "Перевезти за один день", "Чтобы не вскрыли", "Приличный внешний вид"],
   },
   {
+    type: "single",
+    q: "Какой бюджет закладываете?",
+    opts: ["До 200 000 ₽", "200 000 – 500 000 ₽", "500 000 – 1 500 000 ₽", "От 1 500 000 ₽", "Пока не знаю, ориентируюсь на вас"],
+  },
+  {
+    type: "single",
+    q: "Сколько этажей нужно?",
+    opts: ["Один уровень", "Два этажа", "Три этажа", "Ещё не думал(а), нужна помощь"],
+  },
+  {
+    type: "single",
+    q: "Место труднодоступное?",
+    opts: ["Нет, обычный подъезд", "Да, нужна доставка на санях", "Да, нужна доставка на шасси/колёсах", "Не уверен(а), нужна консультация"],
+  },
+  {
     type: "multi",
     q: "Что должно быть внутри?",
     opts: ["Пустая коробка", "Кровати и спальные места", "Стол, стулья, свет", "Туалет, душ, кухня", "Два входа, тамбур, окна"],
@@ -49,7 +67,16 @@ const BONUS = [
   "Чертёж и фото блока вживую",
 ];
 
-export default function Quiz({ id = "quiz" }) {
+function pluralModel(n) {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod10 === 1 && mod100 !== 11) return "модель";
+  if ([2, 3, 4].includes(mod10) && ![12, 13, 14].includes(mod100)) return "модели";
+  return "моделей";
+}
+
+export default function Quiz({ id = "quiz", variant = "page" }) {
+  const compact = variant === "modal";
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [multi, setMulti] = useState([]);
@@ -58,17 +85,37 @@ export default function Quiz({ id = "quiz" }) {
   const [phone, setPhone] = useState("");
   const [status, setStatus] = useState("idle"); // idle | sending | done | error
   const [error, setError] = useState("");
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const cur = STEPS[step];
   const total = STEPS.length;
   const progress = ((step + 1) / total) * 100;
   const canNext = cur.type === "multi" ? multi.length > 0 : cur.type === "double" ? Boolean(when && who) : true;
 
+  const recommendation = useMemo(() => {
+    if (step !== STEPS.length - 1) return null;
+    return getRecommendations({
+      purpose: answers[0],
+      capacity: answers[1],
+      priority: answers[3],
+      budget: answers[4],
+      accessibility: answers[6],
+      interior: answers[7],
+    });
+  }, [step, answers]);
+
+  const resultCount = recommendation ? recommendation.results.length : 0;
+
   const back = () => setStep((s) => Math.max(0, s - 1));
 
   const pick = (value) => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setAnswers((a) => ({ ...a, [step]: value }));
-    setTimeout(() => setStep((s) => s + 1), 220);
+    setTimeout(() => {
+      setStep((s) => Math.min(s + 1, STEPS.length - 1));
+      setIsTransitioning(false);
+    }, 220);
   };
 
   async function submit(e) {
@@ -80,7 +127,7 @@ export default function Quiz({ id = "quiz" }) {
       return;
     }
     setStatus("sending");
-    const summary = STEPS.slice(0, 6)
+    const summary = STEPS.slice(0, STEPS.length - 1)
       .map((s, i) => {
         const v = answers[i];
         const text = Array.isArray(v) ? v.join(", ") : v && typeof v === "object" ? `${v.when} · ${v.who}` : v;
@@ -143,17 +190,25 @@ export default function Quiz({ id = "quiz" }) {
         <div className="q-top">
           <span className="q-pill mono">
             <s />
-            {step === 6 ? "расчёт готов · 3 комплектации" : "квиз за 60 секунд"}
+            {step === STEPS.length - 1
+              ? `расчёт готов · ${resultCount} ${pluralModel(resultCount)}`
+              : "квиз за 60 секунд"}
           </span>
           <span className="q-step mono">
             {String(step + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
           </span>
         </div>
         <h2>
-          {step === 6 ? (
-            <>
-              Готово. <em>Подобрали три варианта</em> под ваш запрос
-            </>
+          {step === STEPS.length - 1 ? (
+            resultCount <= 2 ? (
+              <>
+                Готово. <em>В этой нише у нас есть ровно то, что нужно</em>
+              </>
+            ) : (
+              <>
+                Готово. <em>Подобрали три варианта</em> под ваш запрос
+              </>
+            )
           ) : (
             <>
               Подберём блок и посчитаем доставку <em>за 60 секунд</em>
@@ -173,30 +228,41 @@ export default function Quiz({ id = "quiz" }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -12 }}
           transition={{ duration: 0.35, ease: EASE }}
-          className={step === 6 ? "q-card dark" : "q-card"}
+          className={step === STEPS.length - 1 ? "q-card dark" : "q-card"}
         >
           {/* ---------- финальный шаг ---------- */}
           {cur.type === "lead" ? (
             <>
+              {recommendation && recommendation.results.length > 0 && (
+                <div className="q-results">
+                  {recommendation.relaxedAccessibility && (
+                    <p className="q-results-note">
+                      Точных совпадений по вашим условиям доставки не нашлось — подобрали ближайшее по назначению, детали уточним по телефону.
+                    </p>
+                  )}
+                  <div className="qr-grid" style={{ gridTemplateColumns: `repeat(${resultCount}, 1fr)` }}>
+                    {recommendation.results.map((r) => (
+                      <ResultCard key={r.model.slug} href={r.href} model={r.model} size={r.size} price={r.price} tags={r.tags} caption={r.caption} compact={compact} />
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="q-bonus">
-                {BONUS.map((b) => (
+                {BONUS.map((b, i) => (
                   <div key={b}>
-                    <i aria-hidden="true">
-                      <Check size={16} strokeWidth={2} />
-                    </i>
+                    <span className="q-bonus-i mono">{String(i + 1).padStart(2, "0")}</span>
                     {b}
                   </div>
                 ))}
               </div>
 
               <form className="q-form" onSubmit={submit}>
-                <input
-                  type="tel"
-                  placeholder="+7 (___) ___-__-__"
+                <PhoneInput
                   aria-label="Телефон"
                   value={phone}
-                  onChange={(e) => {
-                    setPhone(e.target.value);
+                  onChange={(next) => {
+                    setPhone(next);
                     if (status === "error") setStatus("idle");
                   }}
                 />
@@ -232,6 +298,7 @@ export default function Quiz({ id = "quiz" }) {
                       type="button"
                       key={o}
                       className={`q-opt${answers[step] === o ? " sel" : ""}`}
+                      disabled={isTransitioning}
                       onClick={() => pick(o)}
                     >
                       <span>
