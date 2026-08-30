@@ -1,0 +1,51 @@
+- generic [active] [ref=f9e1]:
+  - generic [ref=f9e2]:
+    - banner [ref=f9e3]:
+      - navigation [ref=f9e4]:
+        - generic [ref=f9e5]: PARASTROY
+        - link "Дашборд" [ref=f9e6] [cursor=pointer]:
+          - /url: /
+        - link "Заявки" [ref=f9e7] [cursor=pointer]:
+          - /url: /leads
+        - link "Задачи" [ref=f9e8] [cursor=pointer]:
+          - /url: /tasks
+        - link "Аналитика" [ref=f9e9] [cursor=pointer]:
+          - /url: /analytics
+      - generic [ref=f9e10]:
+        - generic [ref=f9e11]: Даня
+        - button "Выйти" [ref=f9e12] [cursor=pointer]
+    - main [ref=f9e13]:
+      - generic [ref=f9e15]:
+        - generic [ref=f9e16]: 30 августа 2026 г.
+        - heading "Обработка заявок" [level=1] [ref=f9e17]
+        - generic [ref=f9e19]:
+          - link "LEADS INTAKE Заявки 0 новых из 0" [ref=f9e21] [cursor=pointer]:
+            - /url: /leads
+            - generic [ref=f9e22]:
+              - generic [ref=f9e27]: LEADS INTAKE
+              - generic [ref=f9e28]:
+                - generic [ref=f9e29]: Заявки
+                - generic [ref=f9e30]: 0 новых из 0
+          - link "TASK QUEUE Задачи и напоминания 0 на ближайшие 24 часа" [ref=f9e32] [cursor=pointer]:
+            - /url: /tasks
+            - generic [ref=f9e33]:
+              - generic [ref=f9e38]: TASK QUEUE
+              - generic [ref=f9e39]:
+                - generic [ref=f9e40]: Задачи и напоминания
+                - generic [ref=f9e41]: 0 на ближайшие 24 часа
+          - link "PERFORMANCE OUTPUT Аналитика конверсия, источники, динамика" [ref=f9e43] [cursor=pointer]:
+            - /url: /analytics
+            - generic [ref=f9e44]:
+              - generic [ref=f9e49]: PERFORMANCE OUTPUT
+              - generic [ref=f9e50]:
+                - generic [ref=f9e51]: Аналитика
+                - generic [ref=f9e52]: конверсия, источники, динамика
+          - link "CLIENT LOG Клиенты и история 0 закрытых сделок" [ref=f9e54] [cursor=pointer]:
+            - /url: /leads?view=history
+            - generic [ref=f9e55]:
+              - generic [ref=f9e60]: CLIENT LOG
+              - generic [ref=f9e61]:
+                - generic [ref=f9e62]: Клиенты и история
+                - generic [ref=f9e63]: 0 закрытых сделок
+  - button "Open Next.js Dev Tools" [ref=f9e69] [cursor=pointer]
+  - alert [ref=f9e73]

@@ -1,9 +1,6 @@
 import { NextResponse } from 'next/server';
-import { readFile } from 'fs/promises';
-import path from 'path';
 import ExcelJS from 'exceljs';
-
-const LEADS_FILE = path.join(process.cwd(), 'data', 'leads.jsonl');
+import { supabase } from '@/lib/supabase';
 
 export async function GET(request) {
   const key = request.nextUrl.searchParams.get('key');
@@ -11,26 +8,23 @@ export async function GET(request) {
     return NextResponse.json({ error: 'Доступ запрещён' }, { status: 401 });
   }
 
-  let raw;
-  try {
-    raw = await readFile(LEADS_FILE, 'utf8');
-  } catch {
-    raw = '';
-  }
+  const { data, error } = await supabase
+    .from('leads')
+    .select('created_at, source, name, phone, comment, utm')
+    .order('created_at', { ascending: false });
 
-  const leads = raw
-    .split('\n')
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .map((line) => {
-      try {
-        return JSON.parse(line);
-      } catch {
-        return null;
-      }
-    })
-    .filter(Boolean)
-    .reverse();
+  const leads = (error ? [] : data || []).map((lead) => {
+    const createdAt = new Date(lead.created_at);
+    return {
+      date: createdAt.toISOString().slice(0, 10),
+      time: createdAt.toTimeString().slice(0, 8),
+      source: lead.source,
+      name: lead.name,
+      phone: lead.phone,
+      comment: lead.comment,
+      utm: lead.utm,
+    };
+  });
 
   const workbook = new ExcelJS.Workbook();
   workbook.creator = 'ПАРА | МОДУЛЬ';

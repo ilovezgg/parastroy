@@ -1,9 +1,23 @@
 import { NextResponse } from 'next/server';
-import { mkdir, appendFile } from 'fs/promises';
-import path from 'path';
+import { supabase } from '@/lib/supabase';
 
-const LEADS_DIR = path.join(process.cwd(), 'data');
-const LEADS_FILE = path.join(LEADS_DIR, 'leads.jsonl');
+// The admin DB only accepts these four source values (see
+// parastroy-admin/supabase/schema.sql). The site's forms send free-text
+// Russian labels instead — map them here and keep the original detail
+// (product/article title) in model_info so nothing is lost.
+function normalizeSource(raw) {
+  const value = String(raw || '').trim();
+  if (value.startsWith('карточка товара:')) {
+    return { source: 'quiz', model_info: value.replace('карточка товара:', '').trim() };
+  }
+  if (value.startsWith('статья:')) {
+    return { source: 'article', model_info: value.replace('статья:', '').trim() };
+  }
+  if (value === 'квиз') return { source: 'quiz', model_info: null };
+  if (value === 'футер') return { source: 'footer', model_info: null };
+  if (value === 'контакты') return { source: 'contacts', model_info: null };
+  return { source: 'footer', model_info: null };
+}
 
 export async function POST(request) {
   let body;
@@ -19,21 +33,19 @@ export async function POST(request) {
     return NextResponse.json({ error: 'Проверьте номер телефона' }, { status: 400 });
   }
 
-  const now = new Date();
-  const record = {
-    date: now.toISOString().slice(0, 10),
-    time: now.toTimeString().slice(0, 8),
-    source: source || 'неизвестно',
-    name: name || '',
-    phone,
-    comment: comment || '',
-    utm: utm || null,
-  };
+  const { source: dbSource, model_info } = normalizeSource(source);
 
-  try {
-    await mkdir(LEADS_DIR, { recursive: true });
-    await appendFile(LEADS_FILE, JSON.stringify(record) + '\n', 'utf8');
-  } catch (err) {
+  const { error } = await supabase.from('leads').insert({
+    source: dbSource,
+    name: name || null,
+    phone,
+    comment: comment || null,
+    model_info,
+    utm: utm || null,
+  });
+
+  if (error) {
+    console.error('lead insert failed:', error);
     return NextResponse.json({ error: 'Не удалось сохранить заявку, попробуйте ещё раз' }, { status: 500 });
   }
 

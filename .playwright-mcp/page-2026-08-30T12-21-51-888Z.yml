@@ -1,0 +1,17 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: PARASTROY / INTERNAL
+      - heading "Панель заявок" [level=1] [ref=e5]
+    - generic [ref=e6]:
+      - textbox "ЛОГИН" [ref=e7]: danyaadmin
+      - textbox "ПАРОЛЬ" [ref=e8]: danyaadmin
+      - button "ВХОД…" [disabled] [ref=e20] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=e21] [cursor=pointer]:
+    - generic [ref=e24]:
+      - text: Rendering
+      - generic [ref=e25]:
+        - generic [ref=e26]: .
+        - generic [ref=e27]: .
+        - generic [ref=e28]: .
+  - alert [ref=e19]

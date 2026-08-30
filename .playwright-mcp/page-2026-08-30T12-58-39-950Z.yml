@@ -1,0 +1,41 @@
+- generic [active] [ref=f10e1]:
+  - generic [ref=f10e2]:
+    - banner [ref=f10e3]:
+      - navigation [ref=f10e4]:
+        - generic [ref=f10e5]: PARASTROY
+        - link "Дашборд" [ref=f10e6] [cursor=pointer]:
+          - /url: /
+        - link "Заявки" [ref=f10e7] [cursor=pointer]:
+          - /url: /leads
+        - link "Задачи" [ref=f10e8] [cursor=pointer]:
+          - /url: /tasks
+        - link "Аналитика" [ref=f10e9] [cursor=pointer]:
+          - /url: /analytics
+      - generic [ref=f10e10]:
+        - generic [ref=f10e11]: Даня
+        - button "Выйти" [ref=f10e12] [cursor=pointer]
+    - main [ref=f10e13]:
+      - generic [ref=f10e15]:
+        - generic [ref=f10e16]: LEADS INTAKE
+        - heading "Заявки" [level=1] [ref=f10e17]
+        - generic [ref=f10e19]:
+          - 'textbox "ПОИСК: ИМЯ ИЛИ ТЕЛЕФОН" [ref=f10e20]'
+          - combobox [ref=f10e21]:
+            - option "Все статусы" [selected]
+            - option "Новая"
+            - option "В работе"
+            - option "Закрыта"
+            - option "Отказ"
+          - combobox [ref=f10e22]:
+            - option "Все источники" [selected]
+            - option "Квиз"
+            - option "Футер"
+            - option "Контакты"
+            - option "Статья"
+          - combobox [ref=f10e23]:
+            - option "Сначала новые" [selected]
+            - option "Сначала старые"
+        - paragraph [ref=f10e24]: "Ошибка загрузки: TypeError: fetch failed"
+        - paragraph [ref=f10e25]: ничего не найдено
+  - button "Open Next.js Dev Tools" [ref=f10e31] [cursor=pointer]
+  - alert [ref=f10e35]

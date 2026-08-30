@@ -1,0 +1,8 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]: PARASTROY / INTERNAL
+    - heading "Панель заявок" [level=1] [ref=e5]
+  - generic [ref=e6]:
+    - textbox "ЛОГИН" [active] [ref=e7]
+    - textbox "ПАРОЛЬ" [ref=e8]
+    - button "ВОЙТИ" [ref=e9] [cursor=pointer]
