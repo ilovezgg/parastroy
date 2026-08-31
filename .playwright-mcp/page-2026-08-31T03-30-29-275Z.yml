@@ -1,0 +1,803 @@
+- generic [active] [ref=f15e1]:
+  - generic [ref=f15e2]:
+    - link "ПАРА МОДУЛЬ ПАРА | МОДУЛЬ бытовки и блок-контейнеры" [ref=f15e3] [cursor=pointer]:
+      - /url: /
+      - img "ПАРА МОДУЛЬ" [ref=f15e5]
+      - generic [ref=f15e6]:
+        - generic [ref=f15e7]: ПАРА | МОДУЛЬ
+        - generic [ref=f15e8]: бытовки и блок-контейнеры
+    - navigation [ref=f15e9]:
+      - link "Главная" [ref=f15e10] [cursor=pointer]:
+        - /url: /#hero
+      - link "Продукция" [ref=f15e11] [cursor=pointer]:
+        - /url: /products
+      - link "Галерея" [ref=f15e12] [cursor=pointer]:
+        - /url: /#gallery
+      - link "Вопросы" [ref=f15e13] [cursor=pointer]:
+        - /url: /#faq
+      - link "Контакты" [ref=f15e14] [cursor=pointer]:
+        - /url: /#contacts
+      - link "Соц.сети" [ref=f15e15] [cursor=pointer]:
+        - /url: /#socials
+      - link "Статьи" [ref=f15e16] [cursor=pointer]:
+        - /url: /blog
+    - generic [ref=f15e17]:
+      - button "Рассчитать ваш проект" [ref=f15e18] [cursor=pointer]
+      - link "+7 921 199 23 03" [ref=f15e19] [cursor=pointer]:
+        - /url: tel:+79211992303
+  - generic [ref=f15e24]:
+    - generic [ref=f15e26]:
+      - generic [ref=f15e27]:
+        - generic [ref=f15e28]:
+          - generic [ref=f15e30]: В наличии 12 блоков ·
+          - generic [ref=f15e31]: Отгрузка за 24 часа · -52 500 ₽ на доставке
+        - heading [level=1] [ref=f15e32]:
+          - text: Бытовки и модульные здания
+          - emphasis [ref=f15e33]: от 150 000 ₽
+          - text: доставка 2 блоков по цене 1 доставки — за 48 часов под ключ
+        - paragraph [ref=f15e34]: Завод в Пестово, без посредников. Доставка 105 ₽/км — шаланда везет 2 бытовки по цене одной доставки, экономия 52 500 ₽ на примере СПб 500 км.
+        - button "Рассчитать с доставкой за 1 минуту ↗" [ref=f15e35] [cursor=pointer]:
+          - generic [ref=f15e36]: Рассчитать с доставкойза 1 минуту
+          - generic [ref=f15e37]: ↗
+        - generic [ref=f15e38]:
+          - generic [ref=f15e39]:
+            - generic [ref=f15e40]: ⌂
+            - paragraph [ref=f15e41]: Отгрузка со склада завтра, документы для тендера в комплекте
+          - generic [ref=f15e42]:
+            - generic [ref=f15e43]: ✓
+            - paragraph [ref=f15e44]: Гарантия 24 мес, установка на ФБС
+      - generic [ref=f15e45]:
+        - generic [ref=f15e46]:
+          - generic [ref=f15e47]: Бытовка Б 01 · 6,0 × 2,4 м
+          - generic [ref=f15e48]: 05 / 06
+        - img "Сборка бытовки Б 01 по деталям" [ref=f15e51]
+        - generic [ref=f15e52]:
+          - button "01 Обвязка" [ref=f15e53] [cursor=pointer]:
+            - generic [ref=f15e54]: "01"
+            - generic [ref=f15e55]: Обвязка
+          - button "02 Пол" [ref=f15e56] [cursor=pointer]:
+            - generic [ref=f15e57]: "02"
+            - generic [ref=f15e58]: Пол
+          - button "03 Стены" [ref=f15e59] [cursor=pointer]:
+            - generic [ref=f15e60]: "03"
+            - generic [ref=f15e61]: Стены
+          - button "04 Кровля" [ref=f15e62] [cursor=pointer]:
+            - generic [ref=f15e63]: "04"
+            - generic [ref=f15e64]: Кровля
+          - button "05 Окно и дверь" [ref=f15e65] [cursor=pointer]:
+            - generic [ref=f15e66]: "05"
+            - generic [ref=f15e67]: Окно и дверь
+          - button "06 Обшивка" [ref=f15e68] [cursor=pointer]:
+            - generic [ref=f15e69]: "06"
+            - generic [ref=f15e70]: Обшивка
+        - generic [ref=f15e71]:
+          - generic [ref=f15e72]:
+            - generic [ref=f15e73]:
+              - generic [ref=f15e74]: "0"
+              - generic [ref=f15e75]: ₽
+            - paragraph [ref=f15e76]: цена блока без доставки
+          - generic [ref=f15e77]:
+            - generic [ref=f15e78]:
+              - generic [ref=f15e79]: "0"
+              - generic [ref=f15e80]: дня
+            - paragraph [ref=f15e81]: средний срок доставки
+          - generic [ref=f15e82]:
+            - generic [ref=f15e83]:
+              - generic [ref=f15e84]: "0"
+              - generic [ref=f15e85]: ₽/км
+            - paragraph [ref=f15e86]: доставка по России
+    - generic [ref=f15e87]:
+      - generic [ref=f15e88]:
+        - generic [ref=f15e89]:
+          - generic [ref=f15e90]: квиз за 60 секунд
+          - generic [ref=f15e92]: 01 / 10
+        - heading [level=2] [ref=f15e93]:
+          - text: Подберём блок и посчитаем доставку
+          - emphasis [ref=f15e94]: за 60 секунд
+      - generic [ref=f15e97]:
+        - generic [ref=f15e98]:
+          - heading "Для чего нужно помещение?" [level=3] [ref=f15e99]
+          - generic [ref=f15e100]: "01"
+        - generic [ref=f15e101]:
+          - button "01 / вариант Стройка и рабочие" [ref=f15e102] [cursor=pointer]:
+            - generic [ref=f15e103]:
+              - generic [ref=f15e104]: 01 / вариант
+              - generic [ref=f15e105]: Стройка и рабочие
+          - button "02 / вариант Охрана или КПП" [ref=f15e107] [cursor=pointer]:
+            - generic [ref=f15e108]:
+              - generic [ref=f15e109]: 02 / вариант
+              - generic [ref=f15e110]: Охрана или КПП
+          - button "03 / вариант Дача, хозблок" [ref=f15e112] [cursor=pointer]:
+            - generic [ref=f15e113]:
+              - generic [ref=f15e114]: 03 / вариант
+              - generic [ref=f15e115]: Дача, хозблок
+          - button "04 / вариант Офис, прорабская" [ref=f15e117] [cursor=pointer]:
+            - generic [ref=f15e118]:
+              - generic [ref=f15e119]: 04 / вариант
+              - generic [ref=f15e120]: Офис, прорабская
+          - button "05 / вариант Проживание, общежитие" [ref=f15e122] [cursor=pointer]:
+            - generic [ref=f15e123]:
+              - generic [ref=f15e124]: 05 / вариант
+              - generic [ref=f15e125]: Проживание, общежитие
+          - button "06 / вариант Передвижной пункт" [ref=f15e127] [cursor=pointer]:
+            - generic [ref=f15e128]:
+              - generic [ref=f15e129]: 06 / вариант
+              - generic [ref=f15e130]: Передвижной пункт
+        - button "Назад" [disabled] [ref=f15e133]
+    - generic [ref=f15e134]:
+      - generic [ref=f15e135]:
+        - heading [level=2] [ref=f15e136]:
+          - text: Продукция
+          - emphasis [ref=f15e137]: завода
+        - paragraph [ref=f15e138]: Веди мышкой по блокам — они разъезжаются как контейнеры на площадке. 3 типа, все в наличии в Пестово.
+      - generic [ref=f15e139]:
+        - link "Бытовки 01 01 / Б-01 · 6×2.4м Бытовки Хит от 150 000 ₽ Зимние, утепленные, металлические. Готова за 24ч. Подробнее" [ref=f15e141] [cursor=pointer]:
+          - /url: /catalog/bytovki
+          - img "Бытовки" [ref=f15e143]
+          - generic: "01"
+          - generic [ref=f15e144]: 01 / Б-01 · 6×2.4м
+          - generic [ref=f15e146]:
+            - generic [ref=f15e147]:
+              - heading "Бытовки" [level=3] [ref=f15e148]
+              - generic [ref=f15e149]: Хит
+            - generic [ref=f15e150]: от 150 000 ₽
+            - paragraph [ref=f15e151]: Зимние, утепленные, металлические. Готова за 24ч.
+            - generic [ref=f15e152]: Подробнее
+        - link "Блок-контейнеры 02 02 / 2.4×6м / 3×6м Блок-контейнеры Для бизнеса от 200 000 ₽ Посты охраны, офисы, дачные. Собираются в комплексы. Подробнее" [ref=f15e159] [cursor=pointer]:
+          - /url: /catalog/blok-konteinery
+          - img "Блок-контейнеры" [ref=f15e161]
+          - generic: "02"
+          - generic [ref=f15e162]: 02 / 2.4×6м / 3×6м
+          - generic [ref=f15e164]:
+            - generic [ref=f15e165]:
+              - heading "Блок-контейнеры" [level=3] [ref=f15e166]
+              - generic [ref=f15e167]: Для бизнеса
+            - generic [ref=f15e168]: от 200 000 ₽
+            - paragraph [ref=f15e169]: Посты охраны, офисы, дачные. Собираются в комплексы.
+            - generic [ref=f15e170]: Подробнее
+        - link "Модульные здания 03 03 / До 3 этажей Модульные здания Под ключ от 400 000 ₽ Общежития, школы, столовые. Под ключ по РФ. Подробнее" [ref=f15e177] [cursor=pointer]:
+          - /url: /catalog/modulnye-zdaniya
+          - img "Модульные здания" [ref=f15e179]
+          - generic: "03"
+          - generic [ref=f15e180]: 03 / До 3 этажей
+          - generic [ref=f15e182]:
+            - generic [ref=f15e183]:
+              - heading "Модульные здания" [level=3] [ref=f15e184]
+              - generic [ref=f15e185]: Под ключ
+            - generic [ref=f15e186]: от 400 000 ₽
+            - paragraph [ref=f15e187]: Общежития, школы, столовые. Под ключ по РФ.
+            - generic [ref=f15e188]: Подробнее
+    - generic [ref=f15e194]:
+      - generic [ref=f15e195]:
+        - heading [level=2] [ref=f15e196]:
+          - text: Цена блока
+          - emphasis [ref=f15e197]: и что меняет доставка
+        - paragraph [ref=f15e198]: Расчёт на примере Пестово — Санкт-Петербург, 500 км. Шаланда везёт сразу два блока по цене одной машины.
+      - generic [ref=f15e199]:
+        - generic [ref=f15e200]:
+          - generic [ref=f15e201]: Самовывоз с завода
+          - heading "Б 01" [level=3] [ref=f15e202]
+          - generic [ref=f15e203]: 6,0 × 2,4 м · высота 2,5 м · потолки 2,2 м
+          - list [ref=f15e204]:
+            - listitem [ref=f15e205]:
+              - generic [ref=f15e206]: Обвязка
+              - generic [ref=f15e207]: швеллер 120×50×3 мм
+            - listitem [ref=f15e208]:
+              - generic [ref=f15e209]: Каркас
+              - generic [ref=f15e210]: брус 50×50, шаг 600 мм
+            - listitem [ref=f15e211]:
+              - generic [ref=f15e212]: Утеплитель
+              - generic [ref=f15e213]: минвата 50 мм, пароизоляция
+            - listitem [ref=f15e214]:
+              - generic [ref=f15e215]: Обшивка
+              - generic [ref=f15e216]: профлист С8 0,45 мм
+            - listitem [ref=f15e217]:
+              - generic [ref=f15e218]: Пол
+              - generic [ref=f15e219]: ДСП 16 мм, линолеум
+            - listitem [ref=f15e220]:
+              - generic [ref=f15e221]: Окно
+              - generic [ref=f15e222]: ПВХ 800×800, поворотно-откидное
+            - listitem [ref=f15e223]:
+              - generic [ref=f15e224]: Дверь
+              - generic [ref=f15e225]: металл, МДФ с двух сторон
+          - generic [ref=f15e226]:
+            - emphasis [ref=f15e227]: 150 000 ₽
+            - generic [ref=f15e228]: без доставки, готов за 7 дней
+        - generic [ref=f15e229]:
+          - generic [ref=f15e230]: Один блок с доставкой
+          - heading "Б 01 + доставка" [level=3] [ref=f15e231]
+          - generic [ref=f15e232]: "Пример расчета: Пестово — СПб, 500 км"
+          - list [ref=f15e233]:
+            - listitem [ref=f15e234]:
+              - generic [ref=f15e235]: Блок
+              - generic [ref=f15e236]: 150 000 ₽
+            - listitem [ref=f15e237]:
+              - generic [ref=f15e238]: Доставка
+              - generic [ref=f15e239]: 105 ₽/км, шаланда 12 м
+            - listitem [ref=f15e240]:
+              - generic [ref=f15e241]: За 500 км
+              - generic [ref=f15e242]: 52 500 ₽
+            - listitem [ref=f15e243]:
+              - generic [ref=f15e244]: Разгрузка
+              - generic [ref=f15e245]: манипулятор 7 т, 2 часа на месте
+            - listitem [ref=f15e246]:
+              - generic [ref=f15e247]: Срок доставки
+              - generic [ref=f15e248]: 1–2 дня после оплаты
+            - listitem [ref=f15e249]:
+              - generic [ref=f15e250]: Фундамент
+              - generic [ref=f15e251]: блоки 200×200×400 в комплекте
+            - listitem [ref=f15e252]:
+              - generic [ref=f15e253]: Подключение
+              - generic [ref=f15e254]: ввод 220В, розетки, свет
+          - generic [ref=f15e255]:
+            - emphasis [ref=f15e256]: 202 500 ₽
+            - generic [ref=f15e257]: с доставкой и разгрузкой
+        - generic [ref=f15e258]:
+          - generic [ref=f15e259]: Два блока шаландой
+          - heading "Б 01 × 2" [level=3] [ref=f15e260]
+          - generic [ref=f15e261]: Шаланда везёт два блока по цене одной
+          - list [ref=f15e262]:
+            - listitem [ref=f15e263]:
+              - generic [ref=f15e264]: Два блока
+              - generic [ref=f15e265]: 300 000 ₽ (по 150 000 ₽)
+            - listitem [ref=f15e266]:
+              - generic [ref=f15e267]: Доставка
+              - generic [ref=f15e268]: 52 500 ₽ за оба
+            - listitem [ref=f15e269]:
+              - generic [ref=f15e270]: Цена за блок
+              - generic [ref=f15e271]: 176 250 ₽ с дорогой
+            - listitem [ref=f15e272]:
+              - generic [ref=f15e273]: Стыковка
+              - generic [ref=f15e274]: на месте, герметизация шва
+            - listitem [ref=f15e275]:
+              - generic [ref=f15e276]: Экономия
+              - generic [ref=f15e277]: 52 500 ₽ на второй машине
+            - listitem [ref=f15e278]:
+              - generic [ref=f15e279]: Итого площадь
+              - generic [ref=f15e280]: 28 м², две комнаты
+            - listitem [ref=f15e281]:
+              - generic [ref=f15e282]: Монтаж
+              - generic [ref=f15e283]: за 1 день, без сварки
+          - generic [ref=f15e284]:
+            - emphasis [ref=f15e285]: 352 500 ₽
+            - generic [ref=f15e286]: за два блока с доставкой
+    - generic [ref=f15e287]:
+      - generic [ref=f15e288]:
+        - generic [ref=f15e289]:
+          - generic [ref=f15e290]: галерея · площадка в пестово
+          - heading [level=2] [ref=f15e291]:
+            - text: Б-01 вживую —
+            - emphasis [ref=f15e292]: экстерьер и интерьер
+        - generic [ref=f15e293]:
+          - paragraph [ref=f15e294]: "Реальные фото: RAL 7024, профлист С8 0,45 мм, установка на ФБС. Клик — открыть в полный размер."
+          - generic [ref=f15e295]:
+            - generic [ref=f15e296]: 01 / 08
+            - button "Предыдущее фото" [disabled] [ref=f15e297]
+            - button "Следующее фото" [ref=f15e300] [cursor=pointer]
+      - generic [ref=f15e303]:
+        - 'button "Открыть фото: Б-01 · ФБС · RAL 7024" [ref=f15e304]':
+          - img "Б-01 · ФБС · RAL 7024 — Пестово · 6 × 2,4 м" [ref=f15e306]
+          - generic [ref=f15e307]: "01"
+          - generic [ref=f15e311]:
+            - generic [ref=f15e312]: Б-01 · ФБС · RAL 7024
+            - generic [ref=f15e313]: Пестово · 6 × 2,4 м
+        - 'button "Открыть фото: Интерьер · ДВП" [ref=f15e318]':
+          - img "Интерьер · ДВП — стол прораба" [ref=f15e320]
+          - generic [ref=f15e321]: "02"
+          - generic [ref=f15e325]:
+            - generic [ref=f15e326]: Интерьер · ДВП
+            - generic [ref=f15e327]: стол прораба
+        - 'button "Открыть фото: Экстерьер" [ref=f15e332]':
+          - img "Экстерьер — профлист С8 0,45 мм" [ref=f15e334]
+          - generic [ref=f15e335]: "03"
+          - generic [ref=f15e339]:
+            - generic [ref=f15e340]: Экстерьер
+            - generic [ref=f15e341]: профлист С8 0,45 мм
+        - 'button "Открыть фото: Боковой вид" [ref=f15e346]':
+          - img "Боковой вид — установка на ФБС" [ref=f15e348]
+          - generic [ref=f15e349]: "04"
+          - generic [ref=f15e353]:
+            - generic [ref=f15e354]: Боковой вид
+            - generic [ref=f15e355]: установка на ФБС
+        - 'button "Открыть фото: На ФБС блоках" [ref=f15e360]':
+          - img "На ФБС блоках — без фундамента" [ref=f15e362]
+          - generic [ref=f15e363]: "05"
+          - generic [ref=f15e367]:
+            - generic [ref=f15e368]: На ФБС блоках
+            - generic [ref=f15e369]: без фундамента
+        - 'button "Открыть фото: Интерьер" [ref=f15e374]':
+          - img "Интерьер — пол ДСП 16 мм" [ref=f15e376]
+          - generic [ref=f15e377]: "06"
+          - generic [ref=f15e381]:
+            - generic [ref=f15e382]: Интерьер
+            - generic [ref=f15e383]: пол ДСП 16 мм
+        - 'button "Открыть фото: Отделка ДВП" [ref=f15e388]':
+          - img "Отделка ДВП — утеплитель 50 мм" [ref=f15e390]
+          - generic [ref=f15e391]: "07"
+          - generic [ref=f15e395]:
+            - generic [ref=f15e396]: Отделка ДВП
+            - generic [ref=f15e397]: утеплитель 50 мм
+        - 'button "Открыть фото: Окно ПВХ" [ref=f15e402]':
+          - img "Окно ПВХ — 1000 × 1000 мм" [ref=f15e404]
+          - generic [ref=f15e405]: "08"
+          - generic [ref=f15e409]:
+            - generic [ref=f15e410]: Окно ПВХ
+            - generic [ref=f15e411]: 1000 × 1000 мм
+    - generic [ref=f15e418]:
+      - generic [ref=f15e419]:
+        - heading [level=2] [ref=f15e420]:
+          - text: Доставка
+          - emphasis [ref=f15e421]: по всей России
+        - paragraph [ref=f15e422]: Отгружаем с производства в Пестово. Ставка 105 ₽/км, средний срок 1–2 дня. Шаланда везёт два блока за цену одной машины.
+      - generic [ref=f15e423]:
+        - generic [ref=f15e424]:
+          - generic [ref=f15e425]:
+            - generic [ref=f15e426]: калькулятор доставки
+            - generic [ref=f15e427]: цена блока + км × 105
+          - generic [ref=f15e428]:
+            - generic [ref=f15e429]: Пестово
+            - generic [ref=f15e438]: ваш адрес
+          - generic [ref=f15e440]:
+            - generic [ref=f15e441]: Расстояние доставки, км
+            - slider "Расстояние доставки, км" [ref=f15e442] [cursor=pointer]: "500"
+          - generic [ref=f15e443]:
+            - button "200 км" [ref=f15e444] [cursor=pointer]
+            - button "500 км" [ref=f15e445] [cursor=pointer]
+            - button "1000 км" [ref=f15e446] [cursor=pointer]
+            - button "1500 км" [ref=f15e447] [cursor=pointer]
+            - generic [ref=f15e448]: 500 км · 105 ₽/км
+          - generic [ref=f15e449]:
+            - generic [ref=f15e450]:
+              - generic [ref=f15e451]: стоимость перевозки
+              - text: 52 500 ₽
+            - paragraph [ref=f15e452]: "Цена за машину, а не за блок: вторым блоком перевозка не растёт. Разгрузка считается отдельно — вашей техникой или нашим манипулятором."
+        - generic [ref=f15e453]:
+          - generic [ref=f15e454]:
+            - generic [ref=f15e455]: один блок
+            - generic [ref=f15e456]: 202 500 ₽
+            - generic [ref=f15e457]:
+              - generic [ref=f15e458]:
+                - term [ref=f15e459]: Блок Б 01
+                - definition [ref=f15e460]: 150 000 ₽
+              - generic [ref=f15e461]:
+                - term [ref=f15e462]: Перевозка
+                - definition [ref=f15e463]: 52 500 ₽
+          - generic [ref=f15e464]:
+            - generic [ref=f15e465]: выгоднее
+            - generic [ref=f15e466]: два блока шаландой
+            - generic [ref=f15e467]: 176 250 ₽
+            - generic [ref=f15e468]: за блок · всего 352 500 ₽
+            - generic [ref=f15e469]:
+              - generic [ref=f15e470]:
+                - term [ref=f15e471]: Два блока
+                - definition [ref=f15e472]: 300 000 ₽
+              - generic [ref=f15e473]:
+                - term [ref=f15e474]: Перевозка
+                - definition [ref=f15e475]: 52 500 ₽
+            - generic [ref=f15e476]: экономия 26 250 ₽ на каждом блоке
+        - generic [ref=f15e477]:
+          - generic [ref=f15e478]:
+            - generic [ref=f15e479]: 1–2 дня
+            - text: средний срок доставки с производства
+          - generic [ref=f15e480]:
+            - generic [ref=f15e481]: 105 ₽/км
+            - text: ставка по всей России, без наценок за регион
+          - generic [ref=f15e482]:
+            - generic [ref=f15e483]: ФБС
+            - text: ставим на блоки, фундамент чаще всего не нужен
+          - generic [ref=f15e484]:
+            - generic [ref=f15e485]: манипулятор
+            - text: разгрузка вашей техникой или нашей
+    - generic [ref=f15e486]:
+      - generic [ref=f15e487]:
+        - heading [level=2] [ref=f15e488]:
+          - text: Дополнительно
+          - emphasis [ref=f15e489]: укомплектуем
+        - paragraph [ref=f15e490]: Двери, окна ПВХ, электрика по ПУЭ, отопление, сантехника, слаботочка.
+      - generic [ref=f15e491]:
+        - generic [ref=f15e492]:
+          - generic [ref=f15e493]: "01"
+          - heading "Двери" [level=3] [ref=f15e498]
+          - paragraph [ref=f15e499]: Входные и межкомнатные стальные / деревянные, замки повышенной безопасности
+          - generic [ref=f15e500]:
+            - text: по запросу к менеджеру
+            - generic [ref=f15e501]: →
+        - generic [ref=f15e502]:
+          - generic [ref=f15e503]: "02"
+          - heading "Окна" [level=3] [ref=f15e509]
+          - paragraph [ref=f15e510]: ПВХ двойное остекление, энергосберегающие, москитные сетки
+          - generic [ref=f15e511]:
+            - text: по запросу к менеджеру
+            - generic [ref=f15e512]: →
+        - generic [ref=f15e513]:
+          - generic [ref=f15e514]: "03"
+          - heading "Электрика" [level=3] [ref=f15e519]
+          - paragraph [ref=f15e520]: Щиты, автоматы, розетки, освещение, заземление по ПУЭ
+          - generic [ref=f15e521]:
+            - text: по запросу к менеджеру
+            - generic [ref=f15e522]: →
+        - generic [ref=f15e523]:
+          - generic [ref=f15e524]: "04"
+          - heading "Климат" [level=3] [ref=f15e529]
+          - paragraph [ref=f15e530]: Конвекторы, сплит-системы, тепловые завесы, котлы
+          - generic [ref=f15e531]:
+            - text: по запросу к менеджеру
+            - generic [ref=f15e532]: →
+        - generic [ref=f15e533]:
+          - generic [ref=f15e534]: "05"
+          - heading "Сантехника" [level=3] [ref=f15e539]
+          - paragraph [ref=f15e540]: Водопровод, бойлеры, умывальники, унитазы, душевые
+          - generic [ref=f15e541]:
+            - text: по запросу к менеджеру
+            - generic [ref=f15e542]: →
+        - generic [ref=f15e543]:
+          - generic [ref=f15e544]: "06"
+          - heading "СЛС" [level=3] [ref=f15e551]
+          - paragraph [ref=f15e552]: Видеонаблюдение, контроль доступа, LAN, Wi-Fi
+          - generic [ref=f15e553]:
+            - text: по запросу к менеджеру
+            - generic [ref=f15e554]: →
+    - generic [ref=f15e555]:
+      - generic [ref=f15e556]:
+        - heading [level=2] [ref=f15e557]:
+          - text: Завод, у которого
+          - emphasis [ref=f15e558]: есть хозяин
+        - paragraph [ref=f15e559]: Пестово, Новгородская область. Здесь варят каркас, утепляют и грузят на трал — и здесь же отвечают, если что-то пошло не так.
+      - generic [ref=f15e560]:
+        - figure "Александр Пара основатель компании" [ref=f15e561]:
+          - img "Александр Пара" [ref=f15e562]
+          - generic [ref=f15e563]: на производстве с 2011 года
+          - generic [ref=f15e564]:
+            - generic [ref=f15e565]: Александр Пара
+            - generic [ref=f15e566]: основатель компании
+        - generic [ref=f15e567]:
+          - generic [ref=f15e568]: слово владельца
+          - blockquote [ref=f15e569]:
+            - text: «Я не отгружаю блок,
+            - emphasis [ref=f15e570]: который не поставил бы себе на участок
+            - text: . Поэтому каждую отгрузку смотрю лично.»
+          - paragraph [ref=f15e571]: Мы делаем строительные, жилые, санитарные и охранные бытовки — от поста охраны до общежития из состыкованных блоков. Каждый блок собирается под крышей цеха, поэтому на площадку приезжает готовое изделие, а не конструктор.
+          - paragraph [ref=f15e572]: "Цену и срок фиксируем в договоре до отгрузки. Если по гарантии что-то пойдёт не так — заявка идёт не подрядчику, а нам: принимаем и выезжаем сами."
+          - generic [ref=f15e579]:
+            - generic [ref=f15e580]: Александр Пара
+            - generic [ref=f15e581]: основатель компании
+          - generic [ref=f15e582]:
+            - link "прямой телефон +7 921 199 23 03" [ref=f15e583] [cursor=pointer]:
+              - /url: tel:+79211992303
+              - generic [ref=f15e584]: прямой телефон
+              - generic [ref=f15e585]: +7 921 199 23 03
+            - link "почта antonpara90@gmail.com" [ref=f15e586] [cursor=pointer]:
+              - /url: mailto:antonpara90@gmail.com
+              - generic [ref=f15e587]: почта
+              - generic [ref=f15e588]: antonpara90@gmail.com
+            - generic [ref=f15e589]:
+              - generic [ref=f15e590]: производство
+              - generic [ref=f15e591]: г. Пестово, Новгородская обл.
+        - article [ref=f15e592]:
+          - text: "01"
+          - heading "Свой цех, а не перепродажа" [level=3] [ref=f15e593]
+          - paragraph [ref=f15e594]: Варим металлокаркас, собираем деревянный каркас, утепляем, обшиваем и разводим электрику на одной площадке в Пестово. Между вами и цехом нет посредников.
+        - article [ref=f15e595]:
+          - text: "02"
+          - heading "Склад и сборка под заказ" [level=3] [ref=f15e596]
+          - paragraph [ref=f15e597]: Популярные модели стоят готовыми — отгрузка за 1–2 дня. С перегородками, тамбуром или санузлом — 3–5 дней в зависимости от загрузки цеха.
+        - article [ref=f15e598]:
+          - text: "03"
+          - heading "Довозим и ставим сами" [level=3] [ref=f15e599]
+          - paragraph [ref=f15e600]: Собственный автопарк и проверенные перевозчики, доставка по всей России от 105 ₽/км. Установка чаще всего без фундамента — на блоки ФБС.
+        - article [ref=f15e601]:
+          - text: "04"
+          - heading "Тендеры и госконтракты" [level=3] [ref=f15e602]
+          - paragraph [ref=f15e603]: Паспорт изделия и пакет документов в комплекте. Постоянным клиентам — рассрочка до 60 дней, на складские позиции скидка до 15%.
+    - generic [ref=f15e605]:
+      - complementary [ref=f15e606]:
+        - heading [level=2] [ref=f15e607]:
+          - text: Частые
+          - emphasis [ref=f15e608]: вопросы
+        - paragraph [ref=f15e609]: Производство, комплектация, сроки, гарантия и оплата — коротко и по делу.
+        - generic [ref=f15e610]:
+          - button "Все" [ref=f15e611] [cursor=pointer]
+          - button "Продукция" [ref=f15e612] [cursor=pointer]
+          - button "Комплектация" [ref=f15e613] [cursor=pointer]
+          - button "Сроки и доставка" [ref=f15e614] [cursor=pointer]
+          - button "Гарантия и оплата" [ref=f15e615] [cursor=pointer]
+        - link "не нашли ответ Спросить менеджера" [ref=f15e616] [cursor=pointer]:
+          - /url: "#contacts"
+          - generic [ref=f15e617]: не нашли ответ
+          - text: Спросить менеджера
+      - generic [ref=f15e621]:
+        - generic [ref=f15e622]:
+          - button "01 Какие типы бытовок вы производите?" [expanded] [ref=f15e623] [cursor=pointer]:
+            - generic [ref=f15e624]: "01"
+            - generic [ref=f15e625]: Какие типы бытовок вы производите?
+          - generic [ref=f15e630]:
+            - generic [ref=f15e631]: Продукция
+            - paragraph [ref=f15e632]: Строительные, жилые, санитарные и охранные. Строительные ставят на площадках, жилые — для временного проживания рабочих, санитарные оснащаются душем и туалетом, охранные и КПП делаем со смотровыми окнами и компактной планировкой.
+        - generic [ref=f15e633]:
+          - button "02 Какие размеры и планировки доступны?" [ref=f15e634] [cursor=pointer]:
+            - generic [ref=f15e635]: "02"
+            - generic [ref=f15e636]: Какие размеры и планировки доступны?
+          - generic [ref=f15e640]:
+            - generic [ref=f15e641]: Продукция
+            - paragraph [ref=f15e642]: Типовой размер — 2,4 × 6 м. Есть варианты с перегородками, тамбуром и санузлом, делаем и по индивидуальным размерам. Несколько блоков стыкуются между собой в модульное здание — от бытового городка до общежития.
+        - generic [ref=f15e643]:
+          - button "03 Что входит в конструкцию?" [ref=f15e644] [cursor=pointer]:
+            - generic [ref=f15e645]: "03"
+            - generic [ref=f15e646]: Что входит в конструкцию?
+          - generic [ref=f15e650]:
+            - generic [ref=f15e651]: Комплектация
+            - paragraph [ref=f15e652]: Сварной металлический каркас, утепление 50–100 мм, наружная обшивка оцинкованным профлистом С8 0,45 мм, внутренняя отделка ДВП, деревянные окна и двери. Проводка и розетка идут в базовой комплектации.
+        - generic [ref=f15e653]:
+          - button "04 Какие опции можно добавить и сколько это стоит?" [ref=f15e654] [cursor=pointer]:
+            - generic [ref=f15e655]: "04"
+            - generic [ref=f15e656]: Какие опции можно добавить и сколько это стоит?
+          - generic [ref=f15e660]:
+            - generic [ref=f15e661]: Комплектация
+            - paragraph [ref=f15e662]: Двери стальные и деревянные, окна ПВХ, электрика по ПУЭ, конвекторы, сплит-системы, тепловые завесы, сантехника и бойлеры, слаботочка — видеонаблюдение и СКС. Цена зависит от набора, менеджер сориентирует по вашему списку.
+        - generic [ref=f15e663]:
+          - button "05 Это готовый товар или изготавливается под заказ?" [ref=f15e664] [cursor=pointer]:
+            - generic [ref=f15e665]: "05"
+            - generic [ref=f15e666]: Это готовый товар или изготавливается под заказ?
+          - generic [ref=f15e670]:
+            - generic [ref=f15e671]: Сроки и доставка
+            - paragraph [ref=f15e672]: "Популярные модели стоят на складе — отгружаем за 1–2 дня. Индивидуальные конфигурации собираем за 3–5 дней: срок зависит от сложности и загрузки производства."
+        - generic [ref=f15e673]:
+          - button "06 Как организуется доставка и установка?" [ref=f15e674] [cursor=pointer]:
+            - generic [ref=f15e675]: "06"
+            - generic [ref=f15e676]: Как организуется доставка и установка?
+          - generic [ref=f15e680]:
+            - generic [ref=f15e681]: Сроки и доставка
+            - paragraph [ref=f15e682]: Возим по всей России собственным автопарком и с проверенными перевозчиками, от 105 ₽/км. Ставим на подготовленное место, чаще всего без фундамента — на блоки ФБС. Нужна подъездная дорога, разгрузка краном-манипулятором за счёт заказчика. Средний срок доставки 1–2 дня.
+        - generic [ref=f15e683]:
+          - button "07 Какая гарантия и как подать заявку на ремонт?" [ref=f15e684] [cursor=pointer]:
+            - generic [ref=f15e685]: "07"
+            - generic [ref=f15e686]: Какая гарантия и как подать заявку на ремонт?
+          - generic [ref=f15e690]:
+            - generic [ref=f15e691]: Гарантия и оплата
+            - paragraph [ref=f15e692]: 24 месяца на каркас и конструкцию, 12 месяцев на отделку и инженерные системы. Заявка принимается по телефону +7 921 199 23 03 или на antonpara90@gmail.com, специалист выезжает в течение 5–7 рабочих дней.
+        - generic [ref=f15e693]:
+          - button "08 Как оформить заказ и каков график платежей?" [ref=f15e694] [cursor=pointer]:
+            - generic [ref=f15e695]: "08"
+            - generic [ref=f15e696]: Как оформить заказ и каков график платежей?
+          - generic [ref=f15e700]:
+            - generic [ref=f15e701]: Гарантия и оплата
+            - paragraph [ref=f15e702]: Заказ онлайн или по телефону +7 921 199 23 03. Аванс 50%, остаток при сдаче. Постоянным клиентам даём рассрочку до 60 дней, на складские позиции действует скидка до 15%.
+    - generic [ref=f15e704]:
+      - generic [ref=f15e705]:
+        - generic [ref=f15e706]: бесплатно · за 1 день
+        - heading [level=2] [ref=f15e707]:
+          - text: Бесплатное проектирование
+          - emphasis [ref=f15e708]: под ваши задачи
+        - paragraph [ref=f15e709]: Разработаем планировку и подготовим проект с учётом ваших требований. Поможем подобрать комплектацию и рассчитаем стоимость с доставкой.
+        - generic [ref=f15e710]:
+          - generic [ref=f15e711]:
+            - generic [ref=f15e712]: "01"
+            - generic [ref=f15e713]: Планировка под ваш участок, количество людей и назначение
+          - generic [ref=f15e714]:
+            - generic [ref=f15e715]: "02"
+            - generic [ref=f15e716]: Подбор комплектации и точная смета без скрытых доплат
+          - generic [ref=f15e717]:
+            - generic [ref=f15e718]: "03"
+            - generic [ref=f15e719]: Фото готовых блоков с завода и сроки отгрузки
+      - generic [ref=f15e721]:
+        - textbox "Имя" [ref=f15e722]
+        - textbox "Телефон" [ref=f15e724]:
+          - /placeholder: "+7"
+        - textbox "Электронная почта" [ref=f15e725]
+        - textbox "Комментарий — что нужно разместить внутри?" [ref=f15e726]
+        - generic [ref=f15e727] [cursor=pointer]:
+          - checkbox "Я соглашаюсь с политикой обработки персональных данных и даю согласие на обработку" [ref=f15e728]
+          - generic [ref=f15e729]:
+            - text: Я соглашаюсь с
+            - link "политикой обработки персональных данных" [ref=f15e730]:
+              - /url: "#contact"
+            - text: и даю
+            - link "согласие на обработку" [ref=f15e731]:
+              - /url: "#contact"
+        - button "Отправить" [disabled] [ref=f15e732]
+        - generic [ref=f15e738]: Отвечаем за 12 минут · Пестово, отгрузка по РФ
+    - generic [ref=f15e739]:
+      - generic [ref=f15e740]:
+        - heading [level=2] [ref=f15e741]:
+          - text: Мы
+          - emphasis [ref=f15e742]: в соцсетях
+        - paragraph [ref=f15e743]: Каждый день фото и видео с цеха в Пестово. Без монтажа, как есть.
+      - generic [ref=f15e744]:
+        - link "01 · Telegram канал @para_modul Сборки с цеха каждый день" [ref=f15e745] [cursor=pointer]:
+          - /url: https://t.me/para_modul
+          - generic [ref=f15e746]:
+            - generic [ref=f15e747]: 01 · Telegram
+            - generic [ref=f15e748]: канал
+          - heading "@para_modul" [level=3] [ref=f15e749]
+          - paragraph [ref=f15e750]: Сборки с цеха каждый день
+        - link "02 · YouTube видео PARA-MODUL Обзоры блоков и доставка" [ref=f15e755] [cursor=pointer]:
+          - /url: https://youtube.com/@para_modul
+          - generic [ref=f15e756]:
+            - generic [ref=f15e757]: 02 · YouTube
+            - generic [ref=f15e758]: видео
+          - heading "PARA-MODUL" [level=3] [ref=f15e759]
+          - paragraph [ref=f15e760]: Обзоры блоков и доставка
+        - link "03 · ВКонтакте сообщество para-modul.ru Фото готовых блоков и отзывы" [ref=f15e765] [cursor=pointer]:
+          - /url: https://vk.com/para_modul
+          - generic [ref=f15e766]:
+            - generic [ref=f15e767]: 03 · ВКонтакте
+            - generic [ref=f15e768]: сообщество
+          - heading "para-modul.ru" [level=3] [ref=f15e769]
+          - paragraph [ref=f15e770]: Фото готовых блоков и отзывы
+        - link "04 · Instagram reels @para_modul Reels со сварки каркаса" [ref=f15e775] [cursor=pointer]:
+          - /url: https://instagram.com/para_modul
+          - generic [ref=f15e776]:
+            - generic [ref=f15e777]: 04 · Instagram
+            - generic [ref=f15e778]: reels
+          - heading "@para_modul" [level=3] [ref=f15e779]
+          - paragraph [ref=f15e780]: Reels со сварки каркаса
+        - link "05 · TikTok короткие @para_modul Как варим и утепляем" [ref=f15e785] [cursor=pointer]:
+          - /url: https://tiktok.com/@para_modul
+          - generic [ref=f15e786]:
+            - generic [ref=f15e787]: 05 · TikTok
+            - generic [ref=f15e788]: короткие
+          - heading "@para_modul" [level=3] [ref=f15e789]
+          - paragraph [ref=f15e790]: Как варим и утепляем
+        - link "06 · Авито объявления 12 блоков на складе Актуальные цены и наличие" [ref=f15e795] [cursor=pointer]:
+          - /url: https://avito.ru/para_modul
+          - generic [ref=f15e796]:
+            - generic [ref=f15e797]: 06 · Авито
+            - generic [ref=f15e798]: объявления
+          - heading "12 блоков на складе" [level=3] [ref=f15e799]
+          - paragraph [ref=f15e800]: Актуальные цены и наличие
+        - 'link "прямая связь · telegram @para_modul_manager Отвечаю за 5 минут: пришлю фото блока со склада и расчёт с доставкой до вашего адреса. Написать" [ref=f15e805] [cursor=pointer]':
+          - /url: https://t.me/para_modul_manager
+          - generic [ref=f15e806]:
+            - generic [ref=f15e807]: прямая связь · telegram
+            - heading "@para_modul_manager" [level=3] [ref=f15e808]
+            - paragraph [ref=f15e809]: "Отвечаю за 5 минут: пришлю фото блока со склада и расчёт с доставкой до вашего адреса."
+          - generic [ref=f15e810]: Написать
+    - generic [ref=f15e815]:
+      - generic [ref=f15e816]:
+        - heading [level=2] [ref=f15e817]:
+          - text: Собирается
+          - emphasis [ref=f15e818]: по деталям
+        - paragraph [ref=f15e819]: Скролль — смотри как из каркаса получается готовая бытовка
+      - generic [ref=f15e821]:
+        - generic [ref=f15e822]:
+          - generic [ref=f15e823]: "01"
+          - generic [ref=f15e824]: Каркас 40×80, сварка
+        - generic [ref=f15e825]:
+          - generic [ref=f15e826]: "02"
+          - generic [ref=f15e827]: Утепление 150мм + пароизоляция
+        - generic [ref=f15e828]:
+          - generic [ref=f15e829]: "03"
+          - generic [ref=f15e830]: Обшивка, окна, дверь, электрика
+        - generic [ref=f15e831]:
+          - generic [ref=f15e832]: "04"
+          - generic [ref=f15e833]: Готово к отгрузке
+    - generic [ref=f15e835]:
+      - generic [ref=f15e836]:
+        - heading [level=2] [ref=f15e837]:
+          - text: Свяжитесь
+          - emphasis [ref=f15e838]: напрямую с заводом
+        - paragraph [ref=f15e839]: Считаем комплектацию и доставку до вашего адреса в день обращения.
+      - generic [ref=f15e840]:
+        - generic [ref=f15e841]:
+          - generic [ref=f15e842]: расчёт за 1 минуту
+          - heading "Оставьте номер — пришлём цену с доставкой" [level=3] [ref=f15e843]
+          - paragraph [ref=f15e844]: Скажем стоимость блока, перевозки и что есть на складе прямо сейчас.
+          - generic [ref=f15e845]:
+            - generic [ref=f15e846]:
+              - generic [ref=f15e847]:
+                - generic [ref=f15e848]: как к вам обращаться
+                - textbox "как к вам обращаться" [ref=f15e849]:
+                  - /placeholder: Имя
+              - generic [ref=f15e850]:
+                - generic [ref=f15e851]: телефон
+                - textbox "телефон" [ref=f15e852]:
+                  - /placeholder: "+7"
+            - button [ref=f15e853] [cursor=pointer]
+            - generic [ref=f15e857]: Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
+        - generic [ref=f15e858]:
+          - link "01 звонок +7 921 199 23 03 отвечает менеджер" [ref=f15e859] [cursor=pointer]:
+            - /url: tel:+79211992303
+            - generic [ref=f15e860]:
+              - generic [ref=f15e861]: "01"
+              - generic [ref=f15e862]: звонок
+            - generic [ref=f15e863]: +7 921 199 23 03
+            - generic [ref=f15e864]: отвечает менеджер
+          - link "02 почта antonpara90@gmail.com счета, ТЗ, документы для тендера" [ref=f15e869] [cursor=pointer]:
+            - /url: mailto:antonpara90@gmail.com
+            - generic [ref=f15e870]:
+              - generic [ref=f15e871]: "02"
+              - generic [ref=f15e872]: почта
+            - generic [ref=f15e873]: antonpara90@gmail.com
+            - generic [ref=f15e874]: счета, ТЗ, документы для тендера
+          - link "03 telegram @para_modul_manager ответ за 5 минут, фото со склада" [ref=f15e879] [cursor=pointer]:
+            - /url: https://t.me/para_modul_manager
+            - generic [ref=f15e880]:
+              - generic [ref=f15e881]: "03"
+              - generic [ref=f15e882]: telegram
+            - generic [ref=f15e883]: "@para_modul_manager"
+            - generic [ref=f15e884]: ответ за 5 минут, фото со склада
+        - generic [ref=f15e889]:
+          - generic [ref=f15e890]:
+            - generic [ref=f15e891]: производство и отгрузка
+            - heading "г. Пестово, Новгородская обл." [level=3] [ref=f15e892]
+            - generic [ref=f15e893]: ул. Лермонтова, 16А, Пестово, Новгородская обл., 174511
+            - paragraph [ref=f15e894]: Отгружаем блоки с площадки завода. Доставка по всей России от 105 ₽/км, средний срок 1–2 дня. Шаланда везёт сразу два блока по цене одной машины.
+            - generic [ref=f15e895]:
+              - generic [ref=f15e896]:
+                - term [ref=f15e897]: часы работы
+                - definition [ref=f15e898]: пн–сб, 9:00–19:00 (мск)
+              - generic [ref=f15e899]:
+                - term [ref=f15e900]: самовывоз
+                - definition [ref=f15e901]: по согласованию
+              - generic [ref=f15e902]:
+                - term [ref=f15e903]: разгрузка
+                - definition [ref=f15e904]: ваша техника или наш манипулятор
+          - generic [ref=f15e905]:
+            - iframe [ref=f15e906]:
+              
+            - generic:
+              - generic [ref=f15e907]: 58.597204, 35.841980
+              - link [ref=f15e908] [cursor=pointer]:
+                - /url: https://yandex.ru/maps/?ll=35.841980,58.597204&z=17&pt=35.841980,58.597204,pm2rdm&text=ул.%20Лермонтова%2016А%20Пестово
+    - contentinfo [ref=f15e913]:
+      - generic [ref=f15e914]:
+        - generic [ref=f15e915]:
+          - link "ПАРА | МОДУЛЬ" [ref=f15e916] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f15e917]: завод бытовок с 2011 года
+          - generic [ref=f15e918]:
+            - link "+7 921 199 23 03" [ref=f15e919] [cursor=pointer]:
+              - /url: tel:+79211992303
+            - link "antonpara90@gmail.com" [ref=f15e920] [cursor=pointer]:
+              - /url: mailto:antonpara90@gmail.com
+          - generic [ref=f15e921]:
+            - link "TG" [ref=f15e922] [cursor=pointer]:
+              - /url: https://t.me/para_modul
+            - link "YT" [ref=f15e923] [cursor=pointer]:
+              - /url: https://youtube.com/@para_modul
+            - link "VK" [ref=f15e924] [cursor=pointer]:
+              - /url: https://vk.com/para_modul
+            - link "IG" [ref=f15e925] [cursor=pointer]:
+              - /url: https://instagram.com/para_modul
+        - navigation [ref=f15e926]:
+          - heading "Разделы сайта" [level=4] [ref=f15e927]
+          - generic [ref=f15e928]:
+            - link "Главная" [ref=f15e929] [cursor=pointer]:
+              - /url: /#hero
+            - link "Продукция" [ref=f15e930] [cursor=pointer]:
+              - /url: /products
+            - link "Галерея" [ref=f15e931] [cursor=pointer]:
+              - /url: /#gallery
+            - link "Доставка" [ref=f15e932] [cursor=pointer]:
+              - /url: /#delivery
+            - link "Вопросы" [ref=f15e933] [cursor=pointer]:
+              - /url: /#faq
+            - link "О заводе" [ref=f15e934] [cursor=pointer]:
+              - /url: /#about
+            - link "Контакты" [ref=f15e935] [cursor=pointer]:
+              - /url: /#contacts
+            - link "Статьи" [ref=f15e936] [cursor=pointer]:
+              - /url: /blog
+        - navigation [ref=f15e937]:
+          - heading "Каталог" [level=4] [ref=f15e938]
+          - generic [ref=f15e939]:
+            - link "Бытовки" [ref=f15e940] [cursor=pointer]:
+              - /url: /catalog/bytovki
+            - link "Блок-контейнеры" [ref=f15e941] [cursor=pointer]:
+              - /url: /catalog/blok-konteinery
+            - link "Модульные здания" [ref=f15e942] [cursor=pointer]:
+              - /url: /catalog/modulnye-zdaniya
+        - generic [ref=f15e943]:
+          - heading "Реквизиты" [level=4] [ref=f15e944]
+          - generic [ref=f15e945]:
+            - generic [ref=f15e946]:
+              - term [ref=f15e947]: производство
+              - definition [ref=f15e948]: г. Пестово, Новгородская обл.
+            - generic [ref=f15e949]:
+              - term [ref=f15e950]: часы работы
+              - definition [ref=f15e951]: пн–сб, 9:00–19:00 (мск)
+      - generic [ref=f15e952]:
+        - generic [ref=f15e953]: © 2026 ПАРА | МОДУЛЬ. Все права защищены.
+        - generic [ref=f15e954]: ООО «ПАРА МОДУЛЬ»
+        - button "Наверх" [ref=f15e955] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=f15e964] [cursor=pointer]

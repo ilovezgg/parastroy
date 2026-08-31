@@ -8,9 +8,10 @@ import './not-found.css';
 
 export default function NotFound() {
   return (
-    <div className="shell">
+    <>
       <Header />
 
+      <div className="shell">
       <section className="nf">
         <motion.div
           className="nf-card"
@@ -39,6 +40,7 @@ export default function NotFound() {
 
       <FreeDesign />
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }

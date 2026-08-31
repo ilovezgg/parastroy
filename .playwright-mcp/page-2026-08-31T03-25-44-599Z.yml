@@ -1,0 +1,293 @@
+- generic [active] [ref=f7e1]:
+  - generic [ref=f7e3]:
+    - link "ПАРА МОДУЛЬ ПАРА | МОДУЛЬ бытовки и блок-контейнеры" [ref=f7e4] [cursor=pointer]:
+      - /url: /
+      - img "ПАРА МОДУЛЬ" [ref=f7e6]
+      - generic [ref=f7e7]:
+        - generic [ref=f7e8]: ПАРА | МОДУЛЬ
+        - generic [ref=f7e9]: бытовки и блок-контейнеры
+    - navigation [ref=f7e10]:
+      - link "Главная" [ref=f7e11] [cursor=pointer]:
+        - /url: /#hero
+      - link "Продукция" [ref=f7e12] [cursor=pointer]:
+        - /url: /products
+      - link "Галерея" [ref=f7e13] [cursor=pointer]:
+        - /url: /#gallery
+      - link "Вопросы" [ref=f7e14] [cursor=pointer]:
+        - /url: /#faq
+      - link "Контакты" [ref=f7e15] [cursor=pointer]:
+        - /url: /#contacts
+      - link "Соц.сети" [ref=f7e16] [cursor=pointer]:
+        - /url: /#socials
+      - link "Статьи" [ref=f7e17] [cursor=pointer]:
+        - /url: /blog
+    - generic [ref=f7e18]:
+      - button "Рассчитать ваш проект" [ref=f7e19] [cursor=pointer]
+      - link "+7 921 199 23 03" [ref=f7e20] [cursor=pointer]:
+        - /url: tel:+79211992303
+  - main [ref=f7e25]:
+    - generic [ref=f7e26]:
+      - navigation "Хлебные крошки" [ref=f7e27]:
+        - list [ref=f7e28]:
+          - listitem [ref=f7e29]:
+            - link "Главная" [ref=f7e30] [cursor=pointer]:
+              - /url: /
+            - text: /
+          - listitem [ref=f7e31]:
+            - link "Бытовки" [ref=f7e32] [cursor=pointer]:
+              - /url: /catalog/bytovki
+            - text: /
+          - listitem [ref=f7e33]:
+            - link "Бытовки металлические" [ref=f7e34] [cursor=pointer]:
+              - /url: /catalog/bytovki/metallicheskie
+            - text: /
+          - listitem [ref=f7e35]: Бытовка сантехническая БС 01
+      - generic [ref=f7e36]:
+        - generic [ref=f7e37]:
+          - group "Слайдер фото модели" [ref=f7e38]:
+            - button "Открыть фото в полном размере" [ref=f7e39]:
+              - img "Бытовка сантехническая БС 01" [ref=f7e40]
+            - button "Предыдущее фото" [ref=f7e41] [cursor=pointer]
+            - button "Следующее фото" [ref=f7e44] [cursor=pointer]
+            - generic [ref=f7e47]: Бытовки металлические
+          - generic [ref=f7e48]:
+            - button "Фото 1" [ref=f7e49] [cursor=pointer]
+            - button "Фото 2" [ref=f7e50] [cursor=pointer]
+            - button "Фото 3" [ref=f7e51] [cursor=pointer]
+            - button "Фото 4" [ref=f7e52] [cursor=pointer]
+            - button "Фото 5" [ref=f7e53] [cursor=pointer]
+            - button "Фото 6" [ref=f7e54] [cursor=pointer]
+            - button "Фото 7" [ref=f7e55] [cursor=pointer]
+            - button "Фото 8" [ref=f7e56] [cursor=pointer]
+        - generic [ref=f7e57]:
+          - generic [ref=f7e58]: Бытовки
+          - heading "Бытовка сантехническая БС 01" [level=1] [ref=f7e59]
+          - paragraph [ref=f7e60]: Бытовки металлические — характеристики и цены.
+          - generic [ref=f7e61]: 454 900 ₽
+          - generic [ref=f7e63]:
+            - generic [ref=f7e64]:
+              - text: Конфигуратор
+              - heading "Материал отделки и размер" [level=3] [ref=f7e65]
+            - generic [ref=f7e66]:
+              - button [ref=f7e67] [cursor=pointer]:
+                - img "ПВХ" [ref=f7e69]
+                - emphasis [ref=f7e70]: ПВХ
+              - button [ref=f7e71] [cursor=pointer]:
+                - img "ВЛДСП + ПВХ" [ref=f7e73]
+                - emphasis [ref=f7e74]: ВЛДСП + ПВХ
+              - button [ref=f7e75] [cursor=pointer]:
+                - img "ВЛДСП" [ref=f7e77]
+                - emphasis [ref=f7e78]: ВЛДСП
+            - button "6.0x2.4" [ref=f7e80] [cursor=pointer]
+            - generic [ref=f7e81]:
+              - generic [ref=f7e82]: "Выбрано: ПВХ, размер 6.0x2.4 м"
+              - generic [ref=f7e83]: "Артикул: ПЛ-БС-01"
+            - button "Оставить заявку ↗" [ref=f7e84]:
+              - generic [ref=f7e85]: Оставить заявку
+              - generic [ref=f7e86]: ↗
+      - generic [ref=f7e87]:
+        - generic [ref=f7e88]:
+          - text: Характеристики
+          - heading "Что входит в комплектацию" [level=2] [ref=f7e89]
+        - generic [ref=f7e90]:
+          - generic [ref=f7e91]:
+            - button "01 Общие характеристики 2 параметра +" [expanded] [ref=f7e92] [cursor=pointer]:
+              - generic [ref=f7e93]: "01"
+              - generic [ref=f7e94]: Общие характеристики
+              - generic [ref=f7e95]: 2 параметра
+              - generic [ref=f7e96]: +
+            - generic [ref=f7e98]:
+              - generic [ref=f7e99]:
+                - term [ref=f7e100]: "Высота:"
+                - definition [ref=f7e101]: 2,5 м.
+              - generic [ref=f7e102]:
+                - term [ref=f7e103]: "Высота потолков:"
+                - definition [ref=f7e104]: 2,2 м.
+          - button "02 Металлокаркас 6 параметров +" [ref=f7e106] [cursor=pointer]:
+            - generic [ref=f7e107]: "02"
+            - generic [ref=f7e108]: Металлокаркас
+            - generic [ref=f7e109]: 6 параметров
+            - generic [ref=f7e110]: +
+          - button "03 Деревянный каркас 3 параметра +" [ref=f7e112] [cursor=pointer]:
+            - generic [ref=f7e113]: "03"
+            - generic [ref=f7e114]: Деревянный каркас
+            - generic [ref=f7e115]: 3 параметра
+            - generic [ref=f7e116]: +
+          - button "04 Отделка 4 параметра +" [ref=f7e118] [cursor=pointer]:
+            - generic [ref=f7e119]: "04"
+            - generic [ref=f7e120]: Отделка
+            - generic [ref=f7e121]: 4 параметра
+            - generic [ref=f7e122]: +
+          - button "05 Двери 2 параметра +" [ref=f7e124] [cursor=pointer]:
+            - generic [ref=f7e125]: "05"
+            - generic [ref=f7e126]: Двери
+            - generic [ref=f7e127]: 2 параметра
+            - generic [ref=f7e128]: +
+          - button "06 Окна 1 параметр +" [ref=f7e130] [cursor=pointer]:
+            - generic [ref=f7e131]: "06"
+            - generic [ref=f7e132]: Окна
+            - generic [ref=f7e133]: 1 параметр
+            - generic [ref=f7e134]: +
+          - button "07 Сантехника 5 параметров +" [ref=f7e136] [cursor=pointer]:
+            - generic [ref=f7e137]: "07"
+            - generic [ref=f7e138]: Сантехника
+            - generic [ref=f7e139]: 5 параметров
+            - generic [ref=f7e140]: +
+      - generic [ref=f7e141]:
+        - generic [ref=f7e142]:
+          - heading [level=2] [ref=f7e143]:
+            - text: Похожие
+            - emphasis [ref=f7e144]: модели
+          - paragraph [ref=f7e145]: Другие варианты из категории «бытовки металлические».
+        - generic [ref=f7e146]:
+          - generic [ref=f7e147]:
+            - generic [ref=f7e150]: Бытовки металлические
+            - heading "Бытовка сантехническая БС 02" [level=3] [ref=f7e151]
+            - generic [ref=f7e152]: 6.0 × 2.5 × 2.5 м
+            - list [ref=f7e153]:
+              - listitem [ref=f7e154]:
+                - generic [ref=f7e155]: "Высота:"
+                - generic [ref=f7e156]: 2,5 м.
+              - listitem [ref=f7e157]:
+                - generic [ref=f7e158]: "Высота потолков:"
+                - generic [ref=f7e159]: 2,2 м.
+              - listitem [ref=f7e160]:
+                - generic [ref=f7e161]: Верхняя обвязка
+                - generic [ref=f7e162]: Швеллер сложногнутый х/к 120х50х3 мм.
+            - generic [ref=f7e163]:
+              - emphasis [ref=f7e164]: 517 300 ₽
+              - link "Подробнее →" [ref=f7e165] [cursor=pointer]:
+                - /url: /catalog/bytovki/metallicheskie/bm-02
+          - generic [ref=f7e166]:
+            - generic [ref=f7e169]: Бытовки металлические
+            - heading "Бытовка сантехническая БС 03" [level=3] [ref=f7e170]
+            - generic [ref=f7e171]: 6.0 × 2.5 × 2.5 м
+            - list [ref=f7e172]:
+              - listitem [ref=f7e173]:
+                - generic [ref=f7e174]: "Высота:"
+                - generic [ref=f7e175]: 2,5 м.
+              - listitem [ref=f7e176]:
+                - generic [ref=f7e177]: "Высота потолков:"
+                - generic [ref=f7e178]: 2,2 м.
+              - listitem [ref=f7e179]:
+                - generic [ref=f7e180]: Верхняя обвязка
+                - generic [ref=f7e181]: Швеллер сложногнутый х/к 120х50х3 мм.
+            - generic [ref=f7e182]:
+              - emphasis [ref=f7e183]: 481 000 ₽
+              - link "Подробнее →" [ref=f7e184] [cursor=pointer]:
+                - /url: /catalog/bytovki/metallicheskie/bm-03
+          - generic [ref=f7e185]:
+            - generic [ref=f7e188]: Бытовки металлические
+            - heading "Бытовка сантехническая БС 04" [level=3] [ref=f7e189]
+            - generic [ref=f7e190]: 6.0 × 2.5 × 2.5 м
+            - list [ref=f7e191]:
+              - listitem [ref=f7e192]:
+                - generic [ref=f7e193]: "Высота:"
+                - generic [ref=f7e194]: 2,5 м.
+              - listitem [ref=f7e195]:
+                - generic [ref=f7e196]: "Высота потолков:"
+                - generic [ref=f7e197]: 2,2 м.
+              - listitem [ref=f7e198]:
+                - generic [ref=f7e199]: Верхняя обвязка
+                - generic [ref=f7e200]: Швеллер сложногнутый х/к 120х50х3 мм.
+            - generic [ref=f7e201]:
+              - emphasis [ref=f7e202]: 477 300 ₽
+              - link "Подробнее →" [ref=f7e203] [cursor=pointer]:
+                - /url: /catalog/bytovki/metallicheskie/bm-04
+  - generic [ref=f7e204]:
+    - generic [ref=f7e206]:
+      - generic [ref=f7e207]:
+        - generic [ref=f7e208]: бесплатно · за 1 день
+        - heading [level=2] [ref=f7e209]:
+          - text: Бесплатное проектирование
+          - emphasis [ref=f7e210]: под ваши задачи
+        - paragraph [ref=f7e211]: Разработаем планировку и подготовим проект с учётом ваших требований. Поможем подобрать комплектацию и рассчитаем стоимость с доставкой.
+        - generic [ref=f7e212]:
+          - generic [ref=f7e213]:
+            - generic [ref=f7e214]: "01"
+            - generic [ref=f7e215]: Планировка под ваш участок, количество людей и назначение
+          - generic [ref=f7e216]:
+            - generic [ref=f7e217]: "02"
+            - generic [ref=f7e218]: Подбор комплектации и точная смета без скрытых доплат
+          - generic [ref=f7e219]:
+            - generic [ref=f7e220]: "03"
+            - generic [ref=f7e221]: Фото готовых блоков с завода и сроки отгрузки
+      - generic [ref=f7e223]:
+        - textbox "Имя" [ref=f7e224]
+        - textbox "Телефон" [ref=f7e226]:
+          - /placeholder: "+7"
+        - textbox "Электронная почта" [ref=f7e227]
+        - textbox "Комментарий — что нужно разместить внутри?" [ref=f7e228]
+        - generic [ref=f7e229] [cursor=pointer]:
+          - checkbox "Я соглашаюсь с политикой обработки персональных данных и даю согласие на обработку" [ref=f7e230]
+          - generic [ref=f7e231]:
+            - text: Я соглашаюсь с
+            - link "политикой обработки персональных данных" [ref=f7e232]:
+              - /url: "#contact"
+            - text: и даю
+            - link "согласие на обработку" [ref=f7e233]:
+              - /url: "#contact"
+        - button "Отправить" [disabled] [ref=f7e234]
+        - generic [ref=f7e240]: Отвечаем за 12 минут · Пестово, отгрузка по РФ
+    - contentinfo [ref=f7e241]:
+      - generic [ref=f7e242]:
+        - generic [ref=f7e243]:
+          - link "ПАРА | МОДУЛЬ" [ref=f7e244] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f7e245]: завод бытовок с 2011 года
+          - generic [ref=f7e246]:
+            - link "+7 921 199 23 03" [ref=f7e247] [cursor=pointer]:
+              - /url: tel:+79211992303
+            - link "antonpara90@gmail.com" [ref=f7e248] [cursor=pointer]:
+              - /url: mailto:antonpara90@gmail.com
+          - generic [ref=f7e249]:
+            - link "TG" [ref=f7e250] [cursor=pointer]:
+              - /url: https://t.me/para_modul
+            - link "YT" [ref=f7e251] [cursor=pointer]:
+              - /url: https://youtube.com/@para_modul
+            - link "VK" [ref=f7e252] [cursor=pointer]:
+              - /url: https://vk.com/para_modul
+            - link "IG" [ref=f7e253] [cursor=pointer]:
+              - /url: https://instagram.com/para_modul
+        - navigation [ref=f7e254]:
+          - heading "Разделы сайта" [level=4] [ref=f7e255]
+          - generic [ref=f7e256]:
+            - link "Главная" [ref=f7e257] [cursor=pointer]:
+              - /url: /#hero
+            - link "Продукция" [ref=f7e258] [cursor=pointer]:
+              - /url: /products
+            - link "Галерея" [ref=f7e259] [cursor=pointer]:
+              - /url: /#gallery
+            - link "Доставка" [ref=f7e260] [cursor=pointer]:
+              - /url: /#delivery
+            - link "Вопросы" [ref=f7e261] [cursor=pointer]:
+              - /url: /#faq
+            - link "О заводе" [ref=f7e262] [cursor=pointer]:
+              - /url: /#about
+            - link "Контакты" [ref=f7e263] [cursor=pointer]:
+              - /url: /#contacts
+            - link "Статьи" [ref=f7e264] [cursor=pointer]:
+              - /url: /blog
+        - navigation [ref=f7e265]:
+          - heading "Каталог" [level=4] [ref=f7e266]
+          - generic [ref=f7e267]:
+            - link "Бытовки" [ref=f7e268] [cursor=pointer]:
+              - /url: /catalog/bytovki
+            - link "Блок-контейнеры" [ref=f7e269] [cursor=pointer]:
+              - /url: /catalog/blok-konteinery
+            - link "Модульные здания" [ref=f7e270] [cursor=pointer]:
+              - /url: /catalog/modulnye-zdaniya
+        - generic [ref=f7e271]:
+          - heading "Реквизиты" [level=4] [ref=f7e272]
+          - generic [ref=f7e273]:
+            - generic [ref=f7e274]:
+              - term [ref=f7e275]: производство
+              - definition [ref=f7e276]: г. Пестово, Новгородская обл.
+            - generic [ref=f7e277]:
+              - term [ref=f7e278]: часы работы
+              - definition [ref=f7e279]: пн–сб, 9:00–19:00 (мск)
+      - generic [ref=f7e280]:
+        - generic [ref=f7e281]: © 2026 ПАРА | МОДУЛЬ. Все права защищены.
+        - generic [ref=f7e282]: ООО «ПАРА МОДУЛЬ»
+        - button "Наверх" [ref=f7e283] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=f7e292] [cursor=pointer]

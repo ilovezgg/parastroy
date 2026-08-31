@@ -20,24 +20,26 @@ const Contacts = dynamic(() => import('./components/Contacts/Contacts'));
 const Options = dynamic(() => import('./components/Options/Options'));
 export default function Landing(){
   return (
-    <div className="shell">
+    <>
       <Header />
-      <Hero />
-      <Quiz/>
+      <div className="shell">
+        <Hero />
+        <Quiz/>
 
-       <Products/>
-       <Models />
-       <Gallery/>
-       <Delivery/>
-       <Options/>
-      <About/>
-       <FAQ />
-       <FreeDesign/>
-       <Socials/>
+        <Products/>
+        <Models />
+        <Gallery/>
+        <Delivery/>
+        <Options/>
+        <About/>
+        <FAQ />
+        <FreeDesign/>
+        <Socials/>
 
-    <AssemblyScroll/>
-       <Contacts/>
-      <Footer />
-    </div>
+        <AssemblyScroll/>
+        <Contacts/>
+        <Footer />
+      </div>
+    </>
   )
 }
