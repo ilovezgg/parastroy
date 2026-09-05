@@ -9,7 +9,7 @@ const grid = { hidden: {}, show: { transition: { staggerChildren: 0.07 } } };
 
 /* TODO: реквизиты временные, заменить на реальные данные ПАРА | МОДУЛЬ */
 const FOUNDER = {
-  name: "Александр Пара",
+  name: "Дмитрий Соколов",
   role: "основатель компании",
   photo: "/founder.jpg",
   since: "на производстве с 2011 года", // TODO: уточнить год
